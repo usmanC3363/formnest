@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* app/globals.css or your Tailwind CSS file */
+
+/* Base transition properties for all animated elements */
+
+.background-gradient {
+  background: radial-gradient(
+    circle at top center,
+    hsla(221, 4%, 100%, 0.05) 0%,
+    hsla(221, 4%, 100%, 0.05) 50%,
+    /* extra color stop */ hsla(222, 0%, 0%, 0.05) 100%
+  );
+}
+
+@media (max-width: 768px) {
+  .background-gradient {
+    background: radial-gradient(
+      circle at top center,
+      hsla(221, 4%, 100%, 0.05) 0%,
+      hsla(221, 4%, 100%, 0.06) 44%,
+      hsla(221, 4%, 100%, 0.06) 70%,
+      /* extra color stop */ hsla(222, 0%, 0%, 0.1) 100%
+    );
+  }
+}
+
+h1 {
+  letter-spacing: -0.03em;
+  font-weight: 300;
+  color: #101010; /* Default: Black */
+}
+
+h2,
+p,
+span {
+  letter-spacing: -0.04%;
+  color: "#33ffaa";
+  /* font-weight: 300; */
+}
+
+:root {
+  --foreground-color: #3f2b24; /* Default: Black */
+  --background-start-color: #eaeaea; /* background start color */
+  --background-end-color: #eaeaea; /* background end color */
+}
+
+html {
+  overflow-x: hidden;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  color: var(--foreground-color);
+  font-family: var(--font-inter); /* Default body font */
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      var(--background-end-color)
+    )
+    var(--background-start-color);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
