@@ -15,7 +15,7 @@ export default function RootLayout({
     <html lang="en" className={`no-scrollbar font-montreal`}>
       <body className={`no-scrollbar min-h-screen`}>
         <Header />
-        <div className="max-h-max min-h-[84svh] lg:min-h-[100vh] 2xl:min-h-[71vh]">
+        <div className="mt-32 max-h-max min-h-[84svh] lg:min-h-[100vh] 2xl:min-h-[71vh]">
           {/* <InViewObserver /> */}
           {children}
         </div>
