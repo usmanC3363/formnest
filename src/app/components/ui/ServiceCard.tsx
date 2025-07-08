@@ -235,7 +235,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
                     </h1>
                     <GoArrowRight
                       className={`w-12 text-2xl transition-all duration-300 ease-in-out ${
-                        isActiveOrHovered ? "text-mywhite-50" : "text-myblue-50"
+                        isActiveOrHovered
+                          ? "text-mywhite-50"
+                          : "text-mybrown-50"
                       }`}
                       style={
                         isActiveOrHovered

@@ -35,12 +35,12 @@ module.exports = {
           200: "#333333",
           250: "#2a2a2a",
         },
-        myblue: {
-          50: "#236BFE",
-          100: "#236BFE",
+        mybrown: {
+          50: "#3F2B24",
+          100: "#3F2B24",
         },
         mywhite: {
-          50: "#fafafa",
+          50: "#eaeaea",
           100: "#fefefe",
           200: "#fdfdfd",
         },

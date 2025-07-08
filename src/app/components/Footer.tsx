@@ -17,7 +17,7 @@ export default async function Footer({ extraClass }: { extraClass?: string }) {
       <div className="grid h-full w-full max-w-full gap-x-10 gap-y-7 md:grid-cols-[1fr_2fr] lg:h-[17em] lg:grid-cols-[2fr_3fr] lg:justify-between xl:justify-items-center xl:place-self-center 2xl:max-w-screen-2xl 2xl:py-10 3xl:max-w-screen-2xl max-sm:h-full">
         <div className="flex flex-col gap-5 place-self-start">
           <PrismicNextLink field={footer.data.home_link}>
-            <h1 className="fade-up text-3xl font-semibold -tracking-[0.05em] text-myblue-50 sm:text-4xl">
+            <h1 className="fade-up text-mybrown-50 text-3xl font-semibold -tracking-[0.05em] sm:text-4xl">
               {footer.data.home_title}
             </h1>
           </PrismicNextLink>

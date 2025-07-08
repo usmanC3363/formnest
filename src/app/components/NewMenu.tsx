@@ -62,7 +62,7 @@ export default function NewMenu({ menuLinks }: Props) {
       </div>
 
       {/* Desktop Menu */}
-      {["md", "lg", "xl", "2xl", "3xl"].includes(screenSize || "") && (
+      {/* {["md", "lg", "xl", "2xl", "3xl"].includes(screenSize || "") && (
         <div className="flex gap-2 lg:gap-4">
           {menuLinks?.map((item, index) => (
             <button
@@ -80,14 +80,14 @@ export default function NewMenu({ menuLinks }: Props) {
             </button>
           ))}
         </div>
-      )}
+      )} */}
 
       {/* Menu Toggle Button */}
       <button
         title="Menu"
         type="button"
         onClick={toggleMenu}
-        className="group z-50 h-10 w-10 cursor-pointer outline-none transition-all duration-300 ease-in-out md:hidden max-sm:h-8 max-sm:w-8"
+        className="group z-50 h-10 w-10 cursor-pointer outline-none transition-all duration-300 ease-in-out max-sm:h-8 max-sm:w-8"
       >
         <div
           className={`group flex scale-x-110 items-center justify-center transition-all duration-300 ease-in-out ${
@@ -110,7 +110,7 @@ export default function NewMenu({ menuLinks }: Props) {
                 y1={y}
                 x2="20"
                 y2={y}
-                className={`stroke-blue-500 stroke-1 transition-all duration-200 ease-linear ${
+                className={`stroke-mybrown-50 stroke-1 transition-all duration-200 ease-linear ${
                   open ? "rotate-[40deg]" : ""
                 }`}
               />
