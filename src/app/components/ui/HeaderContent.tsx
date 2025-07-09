@@ -13,7 +13,7 @@ type Props = {
 export default async function HeaderContent({ newdata }: Props) {
   return (
     <header
-      className={`${paddingClass} grid h-[6.25rem] min-w-full grid-cols-[1fr_1fr] items-center justify-between bg-transparent backdrop-blur-[20px] sm:grid-cols-[1fr_4fr_1fr] lg:grid-cols-[1fr_7fr_1fr]`}
+      className={`${paddingClass} grid h-[6.25rem] min-w-full grid-cols-[1fr_1fr] items-center justify-between backdrop-blur-[20px] sm:grid-cols-[1fr_4fr_1fr] lg:grid-cols-[1fr_7fr_1fr]`}
     >
       <div className="flex h-full w-full flex-col justify-center">
         <span className="flex h-9 w-fit items-center text-sm font-normal">
