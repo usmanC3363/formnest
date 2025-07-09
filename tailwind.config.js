@@ -53,10 +53,9 @@ module.exports = {
         },
       },
 
-      fontFamily: {
-        montreal: ['"Neue Montreal"', "sans-serif"],
-        // body: ["var(--font-wix)", "sans-serif"], // For paragraphs
-      },
+      // fontFamily: {
+      //   montreal: ["var(--font-montreal)"],
+      // },
       keyframes: {
         scroll: {
           "0%": { transform: "translateX(0%)" },
