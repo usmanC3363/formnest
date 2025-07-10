@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* app/globals.css or your Tailwind CSS file */
-
-/* Base transition properties for all animated elements */
-
 .background-gradient {
   background: radial-gradient(
     circle at top center,

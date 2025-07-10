@@ -20,8 +20,12 @@ const About: FC<AboutProps> = ({ slice }) => {
       data-slice-variation={slice.variation}
       className="bg-white py-20"
     >
-      <div className="flex flex-col pr-40">
+      {/* Main DIV */}
+
+      <div className="flex flex-col pr-40 uppercase">
         <div className="flex w-full flex-col gap-2">
+          {/* SECTION title */}
+
           <div className="flex items-center gap-2">
             <BsDot className="h-8 w-8 rounded-full bg-mybrown-50" />
             <h1 className="text-[40px] sm:text-[60px] md:text-[32px]">
