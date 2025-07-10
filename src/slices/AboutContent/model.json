@@ -1,0 +1,65 @@
+{
+  "type": "SharedSlice",
+  "id": "icon_text_highlights",
+  "name": "AboutContent",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Each highlight includes an image, title, and descriptive text, accompanied by a main introductory statement above.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "mission": {
+          "type": "Text",
+          "config": {
+            "label": "Mission",
+            "placeholder": ""
+          }
+        },
+        "highlights": {
+          "type": "Group",
+          "config": {
+            "label": "Highlights",
+            "repeat": true,
+            "fields": {
+              "title": {
+                "type": "Text",
+                "config": {
+                  "label": "Title",
+                  "placeholder": ""
+                }
+              },
+              "description": {
+                "type": "Text",
+                "config": {
+                  "label": "Description",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "about_images": {
+          "type": "Group",
+          "config": {
+            "label": "About Images",
+            "repeat": true,
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

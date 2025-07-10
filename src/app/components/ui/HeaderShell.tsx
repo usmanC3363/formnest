@@ -13,7 +13,7 @@ export default function HeaderShell({
   useEffect(() => {
     const handleScroll = () => {
       const currentY = window.scrollY;
-      setScrollUp(currentY < lastScrollY || currentY < 980);
+      setScrollUp(currentY < lastScrollY || currentY < 880);
       setLastScrollY(currentY);
     };
 
@@ -24,7 +24,7 @@ export default function HeaderShell({
   return (
     <div
       className={`fixed left-0 top-0 z-50 w-full translate-y-0 transition-all duration-500 ease-in-out ${
-        scrollUp ? "" : "bg-transparent backdrop-blur-[8px]"
+        scrollUp ? "" : "bg-mywhite-50/30 backdrop-blur-[8px]"
       }`}
     >
       {children}

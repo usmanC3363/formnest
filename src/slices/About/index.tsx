@@ -18,33 +18,38 @@ const About: FC<AboutProps> = ({ slice }) => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="bg-white py-20"
+      className="grid grid-cols-[3fr_1fr] bg-white py-[36px] xl:grid-cols-[2fr_1fr]"
     >
       {/* Main DIV */}
 
-      <div className="flex flex-col pr-40 uppercase">
+      <div className="flex flex-col gap-y-8 uppercase">
+        {/* Title and Heading Div */}
+
         <div className="flex w-full flex-col gap-2">
           {/* SECTION title */}
 
-          <div className="flex items-center gap-2">
-            <BsDot className="h-8 w-8 rounded-full bg-mybrown-50" />
+          <div className="flex items-center gap-3.5">
+            <BsDot className="h-5 w-5 rounded-full bg-mybrown-50" />
             <h1 className="text-[40px] sm:text-[60px] md:text-[32px]">
               {slice.primary.section_title}
             </h1>
           </div>
-          {/* <div className='flex flex-col'>
-        </div> */}
-          <h1 className="text-[40px] sm:text-[60px] md:text-[72px]">
+
+          {/* Section Heading */}
+          <h1 className="text-[40px] sm:text-[60px] md:text-[80px] xl:text-[6.25rem]">
             {slice.primary.heading}
           </h1>
         </div>
-        <div className="relative h-[34.625rem] w-full xl:w-[63.5rem]">
+
+        {/* About Image */}
+        <div className="relative h-[34.625rem] w-full xl:w-[63.45rem]">
           <PrismicNextImage
             field={slice.primary.about_image}
             className="h-full w-full object-cover object-center"
           />
         </div>
       </div>
+      <div></div>
     </Bounded>
   );
 };

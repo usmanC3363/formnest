@@ -423,7 +423,10 @@ export type HeaderDocument<Lang extends string = string> =
     Lang
   >;
 
-type HomeDocumentDataSlicesSlice = AboutSlice | HeroSlice;
+type HomeDocumentDataSlicesSlice =
+  | IconTextHighlightsSlice
+  | AboutSlice
+  | HeroSlice;
 
 /**
  * Content for Home documents
@@ -850,6 +853,115 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Item in *AboutContent → Default → Primary → Highlights*
+ */
+export interface IconTextHighlightsSliceDefaultPrimaryHighlightsItem {
+  /**
+   * Title field in *AboutContent → Default → Primary → Highlights*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icon_text_highlights.default.primary.highlights[].title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Description field in *AboutContent → Default → Primary → Highlights*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icon_text_highlights.default.primary.highlights[].description
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  description: prismic.KeyTextField;
+}
+
+/**
+ * Item in *AboutContent → Default → Primary → About Images*
+ */
+export interface IconTextHighlightsSliceDefaultPrimaryAboutImagesItem {
+  /**
+   * Image field in *AboutContent → Default → Primary → About Images*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icon_text_highlights.default.primary.about_images[].image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *AboutContent → Default → Primary*
+ */
+export interface IconTextHighlightsSliceDefaultPrimary {
+  /**
+   * Mission field in *AboutContent → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icon_text_highlights.default.primary.mission
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  mission: prismic.KeyTextField;
+
+  /**
+   * Highlights field in *AboutContent → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icon_text_highlights.default.primary.highlights[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  highlights: prismic.GroupField<
+    Simplify<IconTextHighlightsSliceDefaultPrimaryHighlightsItem>
+  >;
+
+  /**
+   * About Images field in *AboutContent → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icon_text_highlights.default.primary.about_images[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  about_images: prismic.GroupField<
+    Simplify<IconTextHighlightsSliceDefaultPrimaryAboutImagesItem>
+  >;
+}
+
+/**
+ * Default variation for AboutContent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Each highlight includes an image, title, and descriptive text, accompanied by a main introductory statement above.
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type IconTextHighlightsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<IconTextHighlightsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *AboutContent*
+ */
+type IconTextHighlightsSliceVariation = IconTextHighlightsSliceDefault;
+
+/**
+ * AboutContent Shared Slice
+ *
+ * - **API ID**: `icon_text_highlights`
+ * - **Description**: *None*
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type IconTextHighlightsSlice = prismic.SharedSlice<
+  "icon_text_highlights",
+  IconTextHighlightsSliceVariation
+>;
+
+/**
  * Primary content in *RichText → Default → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
@@ -942,6 +1054,12 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      IconTextHighlightsSlice,
+      IconTextHighlightsSliceDefaultPrimaryHighlightsItem,
+      IconTextHighlightsSliceDefaultPrimaryAboutImagesItem,
+      IconTextHighlightsSliceDefaultPrimary,
+      IconTextHighlightsSliceVariation,
+      IconTextHighlightsSliceDefault,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,

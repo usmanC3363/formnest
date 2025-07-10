@@ -28,14 +28,14 @@
   font-weight: 300;
   color: #3f2b24; 
 }
+*/
 
 h2,
 p,
 span {
-  letter-spacing: -0.04%;
-  color: "#3f2b24";
-  font-weight: 300;
-} */
+  letter-spacing: 0%;
+  line-height: 133%;
+}
 
 :root {
   --foreground-color: #3f2b24; /* Default: Black */
