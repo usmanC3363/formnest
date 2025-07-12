@@ -424,6 +424,7 @@ export type HeaderDocument<Lang extends string = string> =
   >;
 
 type HomeDocumentDataSlicesSlice =
+  | ServiceListingNavigationSlice
   | IconTextHighlightsSlice
   | AboutSlice
   | HeroSlice;
@@ -697,6 +698,17 @@ export type AllDocumentTypes =
  */
 export interface AboutSliceDefaultPrimary {
   /**
+   * IsSticky field in *About → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: about.default.primary.issticky
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  issticky: prismic.BooleanField;
+
+  /**
    * section title field in *About → Default → Primary*
    *
    * - **Field Type**: Text
@@ -758,6 +770,17 @@ export type AboutSlice = prismic.SharedSlice<"about", AboutSliceVariation>;
  * Primary content in *Hero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
+  /**
+   * IsSticky field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: hero.default.primary.issticky
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  issticky: prismic.BooleanField;
+
   /**
    * Heading field in *Hero → Default → Primary*
    *
@@ -897,6 +920,17 @@ export interface IconTextHighlightsSliceDefaultPrimaryAboutImagesItem {
  */
 export interface IconTextHighlightsSliceDefaultPrimary {
   /**
+   * IsSticky field in *AboutContent → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: icon_text_highlights.default.primary.issticky
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  issticky: prismic.BooleanField;
+
+  /**
    * Mission field in *AboutContent → Default → Primary*
    *
    * - **Field Type**: Text
@@ -1006,6 +1040,184 @@ export type RichTextSlice = prismic.SharedSlice<
   RichTextSliceVariation
 >;
 
+/**
+ * Item in *Services → With Featured Items → Primary → Services*
+ */
+export interface ServiceListingNavigationSliceWithFeaturedItemsPrimaryServicesItem {
+  /**
+   * Service id field in *Services → With Featured Items → Primary → Services*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_listing_navigation.with_featured_items.primary.Services[].service_id
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  service_id: prismic.KeyTextField;
+
+  /**
+   * Service Title field in *Services → With Featured Items → Primary → Services*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_listing_navigation.with_featured_items.primary.Services[].service_title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  service_title: prismic.KeyTextField;
+}
+
+/**
+ * Item in *Services → With Featured Items → Primary → Service Images*
+ */
+export interface ServiceListingNavigationSliceWithFeaturedItemsPrimaryServiceImagesItem {
+  /**
+   * Service Image Id field in *Services → With Featured Items → Primary → Service Images*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_listing_navigation.with_featured_items.primary.service_images[].service_image_id
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  service_image_id: prismic.KeyTextField;
+
+  /**
+   * Image 1 field in *Services → With Featured Items → Primary → Service Images*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_listing_navigation.with_featured_items.primary.service_images[].image_1
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image_1: prismic.ImageField<never>;
+
+  /**
+   * Image 2 field in *Services → With Featured Items → Primary → Service Images*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_listing_navigation.with_featured_items.primary.service_images[].image_2
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image_2: prismic.ImageField<never>;
+
+  /**
+   * Image 3 field in *Services → With Featured Items → Primary → Service Images*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_listing_navigation.with_featured_items.primary.service_images[].image_3
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image_3: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *Services → With Featured Items → Primary*
+ */
+export interface ServiceListingNavigationSliceWithFeaturedItemsPrimary {
+  /**
+   * IsSticky field in *Services → With Featured Items → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: service_listing_navigation.with_featured_items.primary.issticky
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  issticky: prismic.BooleanField;
+
+  /**
+   * section title field in *Services → With Featured Items → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_listing_navigation.with_featured_items.primary.section_title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  section_title: prismic.KeyTextField;
+
+  /**
+   * section description field in *Services → With Featured Items → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_listing_navigation.with_featured_items.primary.section_description
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  section_description: prismic.KeyTextField;
+
+  /**
+   * Services field in *Services → With Featured Items → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_listing_navigation.with_featured_items.primary.Services[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  Services: prismic.GroupField<
+    Simplify<ServiceListingNavigationSliceWithFeaturedItemsPrimaryServicesItem>
+  >;
+
+  /**
+   * View All field in *Services → With Featured Items → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_listing_navigation.with_featured_items.primary.view_services
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  view_services: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
+   * Service Images field in *Services → With Featured Items → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_listing_navigation.with_featured_items.primary.service_images[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  service_images: prismic.GroupField<
+    Simplify<ServiceListingNavigationSliceWithFeaturedItemsPrimaryServiceImagesItem>
+  >;
+}
+
+/**
+ * With Featured Items variation for Services Slice
+ *
+ * - **API ID**: `with_featured_items`
+ * - **Description**: Displays service categories as a navigational list, a category description, and a grid of featured items belonging to the selected category.
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ServiceListingNavigationSliceWithFeaturedItems =
+  prismic.SharedSliceVariation<
+    "with_featured_items",
+    Simplify<ServiceListingNavigationSliceWithFeaturedItemsPrimary>,
+    never
+  >;
+
+/**
+ * Slice variation for *Services*
+ */
+type ServiceListingNavigationSliceVariation =
+  ServiceListingNavigationSliceWithFeaturedItems;
+
+/**
+ * Services Shared Slice
+ *
+ * - **API ID**: `service_listing_navigation`
+ * - **Description**: *None*
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ServiceListingNavigationSlice = prismic.SharedSlice<
+  "service_listing_navigation",
+  ServiceListingNavigationSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -1064,6 +1276,12 @@ declare module "@prismicio/client" {
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
       RichTextSliceDefault,
+      ServiceListingNavigationSlice,
+      ServiceListingNavigationSliceWithFeaturedItemsPrimaryServicesItem,
+      ServiceListingNavigationSliceWithFeaturedItemsPrimaryServiceImagesItem,
+      ServiceListingNavigationSliceWithFeaturedItemsPrimary,
+      ServiceListingNavigationSliceVariation,
+      ServiceListingNavigationSliceWithFeaturedItems,
     };
   }
 }

@@ -54,6 +54,10 @@
 					"url": "https://prismic.io",
 					"text": "gentle"
 				}
+			},
+			"issticky": {
+				"__TYPE__": "BooleanContent",
+				"value": true
 			}
 		},
 		"items": []

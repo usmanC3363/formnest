@@ -12,6 +12,15 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "issticky": {
+          "type": "Boolean",
+          "config": {
+            "label": "IsSticky",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
+        },
         "section_title": {
           "type": "Text",
           "config": {

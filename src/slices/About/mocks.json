@@ -35,6 +35,10 @@
 				"__TYPE__": "FieldContent",
 				"value": "symbol",
 				"type": "Text"
+			},
+			"issticky": {
+				"__TYPE__": "BooleanContent",
+				"value": true
 			}
 		},
 		"items": []

@@ -11,6 +11,15 @@
       "imageUrl": "",
       "docURL": "...",
       "primary": {
+        "issticky": {
+          "type": "Boolean",
+          "config": {
+            "label": "IsSticky",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
+        },
         "mission": {
           "type": "Text",
           "config": {

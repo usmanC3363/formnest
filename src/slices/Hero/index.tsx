@@ -16,12 +16,13 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 const Hero: FC<HeroProps> = ({ slice }) => {
   return (
     <Bounded
+      isSticky={slice.primary.issticky}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex h-full w-screen flex-col justify-center xl:items-center"
+      className={`flex h-full w-screen flex-col justify-center xl:items-center`}
     >
       {/* Main Grid with Rows */}
-      <div className="relative grid h-full w-full gap-y-1 md:grid-rows-[1fr_1fr_3fr] xl:justify-items-center xl:place-self-center 2xl:max-w-screen-2xl 2xl:py-20 3xl:max-w-screen-3xl max-md:grid-rows-[9.5em_2fr_2fr]">
+      <div className="relative grid h-full w-full gap-y-3 md:grid-rows-[1fr_1fr_3fr] xl:justify-items-center xl:place-self-center 2xl:max-w-screen-2xl 2xl:py-20 3xl:max-w-screen-3xl max-md:grid-rows-[9.5em_2fr_2fr]">
         {/* Hero Heading DIV */}
 
         <div

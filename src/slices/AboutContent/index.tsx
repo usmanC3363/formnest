@@ -16,9 +16,10 @@ export type IconTextHighlightsProps =
 const IconTextHighlights: FC<IconTextHighlightsProps> = ({ slice }) => {
   return (
     <Bounded
+      isSticky={slice.primary.issticky}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="grid h-full w-screen grid-cols-[1fr_3fr] gap-x-14 bg-white py-[36px] xl:grid-cols-[1fr_4fr]"
+      className="grid h-full w-screen grid-cols-[1fr_3fr] gap-x-14 bg-white py-9 xl:grid-cols-[1fr_4fr]"
     >
       <div className="order-2 flex flex-col gap-y-24 pl-2">
         <div className="flex max-w-[42em]">

@@ -16,6 +16,8 @@ export default async function SliceSimulatorPage({
   return (
     <SliceSimulator>
       <SliceZone slices={slices} components={components} />
+      {/* <div className={`relative min-h-[100vh] overflow-y-scroll`}> */}
+      {/* </div> */}
     </SliceSimulator>
   );
 }

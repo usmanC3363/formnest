@@ -16,9 +16,10 @@ export type AboutProps = SliceComponentProps<Content.AboutSlice>;
 const About: FC<AboutProps> = ({ slice }) => {
   return (
     <Bounded
+      isSticky={slice.primary.issticky}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="grid grid-cols-[3fr_1fr] bg-white py-[36px] xl:grid-cols-[2fr_1fr]"
+      className="grid grid-cols-[3fr_1fr] bg-white py-9 xl:grid-cols-[2fr_1fr]"
     >
       {/* Main DIV */}
 

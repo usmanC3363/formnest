@@ -12,16 +12,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`no-scrollbar font-montreal`}>
-      <body className={`no-scrollbar min-h-screen`}>
+    <html lang="en" className="h-full">
+      <body className="no-scrollbar h-full">
         <Header />
-        <div className="mt-[7.5rem] max-h-max min-h-[84svh] lg:min-h-[100vh] 2xl:min-h-[71vh]">
-          {/* <InViewObserver /> */}
-          {children}
-        </div>
-        {/* <Footer extraClass=" text-mywhite-50" /> */}
+
+        <div className="mt-32">{children}</div>
+
+        <PrismicPreview repositoryName={repositoryName} />
       </body>
-      <PrismicPreview repositoryName={repositoryName} />
     </html>
   );
 }
