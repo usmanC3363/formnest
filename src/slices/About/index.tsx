@@ -19,7 +19,7 @@ const About: FC<AboutProps> = ({ slice }) => {
       isSticky={slice.primary.issticky}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="grid grid-cols-[3fr_1fr] bg-white py-9 xl:grid-cols-[2fr_1fr]"
+      className="grid grid-cols-[3fr_1fr] bg-white py-16 xl:grid-cols-[2fr_1fr]"
     >
       {/* Main DIV */}
 

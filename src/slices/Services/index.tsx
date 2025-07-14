@@ -1,11 +1,11 @@
 "use client";
-import { FC, useState } from "react";
+import React, { FC, useState } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import Bounded from "@/app/components/Bounded";
-import { HiArrowLongRight } from "react-icons/hi2";
 import { Arrows } from "@/app/constants";
 import { BsDot } from "react-icons/bs";
+import { PrismicNextImage } from "@prismicio/next";
 
 /**
  * Props for `ServiceListingNavigation`.
@@ -26,21 +26,25 @@ const ServiceListingNavigation: FC<ServiceListingNavigationProps> = ({
       isSticky={slice.primary.issticky}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex h-screen flex-col bg-mywhite-50 py-9"
+      className="flex h-full flex-col gap-y-14 bg-mywhite-50 py-20"
     >
       <div className="flex items-start gap-x-52 gap-y-8 lg:gap-x-60 max-sm:flex-col">
+        {/* Section TITLE & Description */}
         <div className="flex items-center gap-x-3.5">
           <BsDot className="h-5 w-5 rounded-full bg-mybrown-50" />
+          {/* Section TITLE */}
           <h1 className="text-[40px] uppercase md:text-[32px]">
             {slice.primary.section_title}
           </h1>
         </div>
+        {/* Section Description */}
         <span className="text-[18px] lg:text-[28px] max-sm:pl-9">
           {slice.primary.section_description}
         </span>
       </div>
-      {/* Main Grid */}
-      <div className="grid w-full grid-cols-[1fr_2fr]">
+      {/* Service Title and Images Main Grid */}
+      <div className="grid h-[80vh] w-full grid-cols-[1fr_2fr] items-end">
+        {/* Button FLEX */}
         <div className="flex max-w-[20rem] flex-col">
           {slice.primary.Services.map((service, index) => (
             <div
@@ -63,7 +67,31 @@ const ServiceListingNavigation: FC<ServiceListingNavigationProps> = ({
             </div>
           ))}
         </div>
-        <div className="flex flex-col"></div>
+        <div className="flex w-full">
+          <div className="grid grid-cols-2">
+            {slice.primary.service_images.map((serviceImg, index) => (
+              <React.Fragment key={index}>
+                <div
+                  className={`${currentService === index ? "" : "hidden"} w-72`}
+                >
+                  <PrismicNextImage field={serviceImg.image_1} />
+                </div>
+                <div
+                  className={`${currentService === index ? "" : "hidden"} w-72`}
+                >
+                  <PrismicNextImage field={serviceImg.image_2} />
+                </div>
+                {serviceImg.image_3 && (
+                  <div
+                    className={`${currentService === index ? "" : "hidden"} w-72`}
+                  >
+                    <PrismicNextImage field={serviceImg.image_3} />
+                  </div>
+                )}
+              </React.Fragment>
+            ))}
+          </div>
+        </div>
       </div>
     </Bounded>
   );
