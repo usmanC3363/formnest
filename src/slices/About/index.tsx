@@ -31,7 +31,7 @@ const About: FC<AboutProps> = ({ slice }) => {
 
           <div className="flex items-center gap-3.5">
             <BsDot className="h-5 w-5 rounded-full bg-mybrown-50" />
-            <h1 className="text-[40px] sm:text-[60px] md:text-[32px]">
+            <h1 className="text-[40px] md:text-[32px]">
               {slice.primary.section_title}
             </h1>
           </div>

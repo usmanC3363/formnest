@@ -32,7 +32,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
 
           <h1
             className="min-w-fit text-[3em] uppercase leading-[24px] tracking-tighter xs:text-[3.5rem] sm:text-[60px] md:text-[72px] md:leading-none lg:text-[6rem] xl:text-[6.25rem] 3xl:text-[7rem] max-xs:pr-12 max-sm:w-[22rem]"
-            style={{ wordSpacing: "0.05em" }}
+            style={{ wordSpacing: "0.1em" }}
           >
             {slice.primary.heading}
           </h1>
