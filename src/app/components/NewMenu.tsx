@@ -1,7 +1,7 @@
 "use client";
 import { PrismicNextLink } from "@prismicio/next";
 import React, { useEffect, useState } from "react";
-import { getCurrentScreenSize } from "../constants.js";
+import { getCurrentScreenSize } from "../utils/constants.js";
 import { Content } from "@prismicio/client";
 import { GoArrowRight } from "react-icons/go";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { paddingClass } from "../../constants";
+import { paddingClass } from "../../utils/constants";
 import Link from "next/link";
 // import CTAButton from "./CTAButton";
 import Menu from "../Menu";

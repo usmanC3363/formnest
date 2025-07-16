@@ -25,6 +25,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "materials_grid": {
+              "type": "SharedSlice"
+            },
             "service_listing_navigation": {
               "type": "SharedSlice"
             },

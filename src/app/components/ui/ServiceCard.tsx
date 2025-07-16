@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
-import { getCurrentScreenSize } from "../../constants.js";
+import { getCurrentScreenSize } from "../../utils/constants.js";
 import { GoArrowRight, GoArrowLeft } from "react-icons/go";
 import { ServiceCardData, ServiceCardProps } from "@/app/utils/lib.js";
 

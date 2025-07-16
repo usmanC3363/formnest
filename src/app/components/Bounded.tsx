@@ -1,6 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-import { paddingClass } from "../constants";
+import { paddingClass } from "../utils/constants";
 
 type BoundedProps = {
   as?: React.ElementType;

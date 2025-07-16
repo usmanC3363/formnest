@@ -1,0 +1,163 @@
+{
+  "type": "SharedSlice",
+  "id": "materials_grid",
+  "name": "Materials",
+  "variations": [
+    {
+      "id": "withSectionTitle",
+      "name": "With Section Title",
+      "description": "A grid layout for showcasing wood materials, each with an image, title, and subtitle, as part of a materials overview.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "issticky": {
+          "type": "Boolean",
+          "config": {
+            "label": "IsSticky",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
+        },
+        "section_title": {
+          "type": "Text",
+          "config": {
+            "label": "section title",
+            "placeholder": ""
+          }
+        },
+        "section_headline": {
+          "type": "Text",
+          "config": {
+            "label": "Section Headline",
+            "placeholder": ""
+          }
+        },
+        "view_all_link": {
+          "type": "Link",
+          "config": {
+            "label": "View All Link",
+            "allowText": true,
+            "repeat": false,
+            "select": null
+          }
+        },
+        "material_title": {
+          "type": "Text",
+          "config": {
+            "label": "Material Title",
+            "placeholder": ""
+          }
+        },
+        "materials": {
+          "type": "Group",
+          "config": {
+            "label": "Materials",
+            "fields": {
+              "order": {
+                "type": "Number",
+                "config": {
+                  "label": "Order"
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "label": "Image"
+                }
+              },
+              "title": {
+                "type": "Text",
+                "config": {
+                  "label": "Title",
+                  "placeholder": ""
+                }
+              },
+              "subtitle": {
+                "type": "Text",
+                "config": {
+                  "label": "Subtitle",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "withoutSectionTitle",
+      "name": "without Section Title",
+      "description": "A grid layout for showcasing wood materials, each with an image, title, and subtitle, as part of a materials overview.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "issticky": {
+          "type": "Boolean",
+          "config": {
+            "label": "IsSticky",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
+        },
+        "material_title": {
+          "type": "Text",
+          "config": {
+            "label": "Material Title",
+            "placeholder": ""
+          }
+        },
+        "view_all_link": {
+          "type": "Link",
+          "config": {
+            "label": "View All Link",
+            "allowText": true,
+            "repeat": false,
+            "select": null
+          }
+        },
+        "materials": {
+          "type": "Group",
+          "config": {
+            "label": "Materials",
+            "fields": {
+              "order": {
+                "type": "Number",
+                "config": {
+                  "label": "Order"
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "label": "Image"
+                }
+              },
+              "title": {
+                "type": "Text",
+                "config": {
+                  "label": "Title",
+                  "placeholder": ""
+                }
+              },
+              "subtitle": {
+                "type": "Text",
+                "config": {
+                  "label": "Subtitle",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

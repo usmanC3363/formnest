@@ -3,9 +3,10 @@ import React, { FC, useState } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import Bounded from "@/app/components/Bounded";
-import { Arrows } from "@/app/constants";
+import { Arrows } from "@/app/utils/constants";
 import { BsDot } from "react-icons/bs";
-import { PrismicNextImage } from "@prismicio/next";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { GoArrowUpRight } from "react-icons/go";
 
 /**
  * Props for `ServiceListingNavigation`.
@@ -43,10 +44,10 @@ const ServiceListingNavigation: FC<ServiceListingNavigationProps> = ({
         </span>
       </div>
       {/* Service Title and Images Main Grid */}
-      <div className="grid h-[80vh] w-full grid-cols-[1fr_2fr] items-end">
-        {/* Button FLEX */}
+      <div className="grid h-[36em] w-full grid-cols-[1fr_2fr] items-center">
+        {/* Button FLEX COl */}
         <div className="flex max-w-[20rem] flex-col">
-          {slice.primary.Services.map((service, index) => (
+          {slice.primary.services_data.map((service, index) => (
             <div
               key={index}
               className={`${index % 2 === 0 ? "justify-center" : ""} ${currentService === index ? "" : ""} flex w-full items-center transition-all duration-300 ease-in-out`}
@@ -67,31 +68,48 @@ const ServiceListingNavigation: FC<ServiceListingNavigationProps> = ({
             </div>
           ))}
         </div>
-        <div className="flex w-full">
-          <div className="grid grid-cols-2">
-            {slice.primary.service_images.map((serviceImg, index) => (
+        <div className="flex h-full w-full">
+          <div className="relative grid h-full w-full grid-cols-3 items-center">
+            {slice.primary.services_data.map((servImg, index) => (
               <React.Fragment key={index}>
                 <div
-                  className={`${currentService === index ? "" : "hidden"} w-72`}
+                  className={`${currentService === index ? "left-0 top-1/3 w-72" : "h-0 w-0 opacity-0"} absolute h-fit transition-all duration-300 ease-in-out`}
                 >
-                  <PrismicNextImage field={serviceImg.image_1} />
+                  <PrismicNextImage
+                    field={servImg.service_image_1}
+                    className={``}
+                  />
                 </div>
                 <div
-                  className={`${currentService === index ? "" : "hidden"} w-72`}
+                  className={`${currentService === index ? "right-0 top-1/3 w-72" : "h-0 w-0 opacity-0"} absolute h-fit transition-all duration-300 ease-in-out`}
                 >
-                  <PrismicNextImage field={serviceImg.image_2} />
+                  <PrismicNextImage
+                    field={servImg.service_image_2}
+                    className={``}
+                  />
                 </div>
-                {serviceImg.image_3 && (
+                {servImg.service_image_3 && (
                   <div
-                    className={`${currentService === index ? "" : "hidden"} w-72`}
+                    className={`${currentService === index ? "bottom-1/3 w-72" : "h-0 w-0 opacity-0"} absolute h-fit transition-all duration-300 ease-in-out`}
                   >
-                    <PrismicNextImage field={serviceImg.image_3} />
+                    <PrismicNextImage
+                      field={servImg.service_image_3}
+                      className={``}
+                    />
                   </div>
                 )}
               </React.Fragment>
             ))}
           </div>
         </div>
+      </div>
+      <div className="flex">
+        <PrismicNextLink field={slice.primary.view_services} className="w-fit">
+          <button className="flex items-center gap-2 border border-b-mybrown-50">
+            <span>View All</span>
+            <GoArrowUpRight className="text-xl" />
+          </button>
+        </PrismicNextLink>
       </div>
     </Bounded>
   );
