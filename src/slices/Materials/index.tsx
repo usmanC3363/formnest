@@ -23,7 +23,7 @@ const Materials: FC<MaterialsProps> = ({ slice }) => {
       isSticky={slice.primary.issticky}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex h-full flex-col gap-y-14 bg-white py-20 uppercase"
+      className="flex h-full flex-col gap-y-14 bg-white pb-12 pt-20 uppercase"
     >
       <div className="flex w-full flex-col gap-2">
         <div className="flex items-center gap-3.5">
@@ -49,7 +49,7 @@ const Materials: FC<MaterialsProps> = ({ slice }) => {
       </div>
     </Bounded>
   ) : (
-    <Bounded className="flex h-full flex-col gap-y-14 bg-white py-20 uppercase">
+    <Bounded className="flex h-full flex-col gap-y-14 bg-white py-12 uppercase">
       <MaterialsData
         gridData={slice.primary.materials.map((item) => ({
           title: item.title ?? "",
