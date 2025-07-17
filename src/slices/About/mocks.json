@@ -28,17 +28,17 @@
 			},
 			"section_title": {
 				"__TYPE__": "FieldContent",
-				"value": "satisfied",
-				"type": "Text"
-			},
-			"heading": {
-				"__TYPE__": "FieldContent",
-				"value": "symbol",
+				"value": "swung",
 				"type": "Text"
 			},
 			"issticky": {
 				"__TYPE__": "BooleanContent",
 				"value": true
+			},
+			"section_headline": {
+				"__TYPE__": "FieldContent",
+				"value": "cheese",
+				"type": "Text"
 			}
 		},
 		"items": []

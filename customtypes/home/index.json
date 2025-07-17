@@ -25,6 +25,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "process": {
+              "type": "SharedSlice"
+            },
+            "works": {
+              "type": "SharedSlice"
+            },
             "materials_grid": {
               "type": "SharedSlice"
             },

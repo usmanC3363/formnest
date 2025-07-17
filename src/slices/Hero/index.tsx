@@ -31,7 +31,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
           {/* Hero Heading */}
 
           <h1
-            className="min-w-fit text-[3em] uppercase leading-[24px] tracking-tighter xs:text-[3.5rem] sm:text-[60px] md:text-[72px] md:leading-none lg:text-[6rem] xl:text-[6.25rem] 3xl:text-[7rem] max-xs:pr-12 max-sm:w-[22rem]"
+            className="min-w-fit text-[3em] uppercase tracking-[-0.04em] xs:text-[3.5rem] sm:text-[60px] md:text-[72px] lg:text-[6rem] xl:text-[6.25rem] 3xl:text-[7rem] max-xs:pr-12 max-sm:w-[22rem] max-md:leading-[133%]"
             style={{ wordSpacing: "0.1em" }}
           >
             {slice.primary.heading}

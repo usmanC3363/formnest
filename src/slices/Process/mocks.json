@@ -1,0 +1,112 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "withSectionTitle",
+		"primary": {
+			"issticky": {
+				"__TYPE__": "BooleanContent",
+				"value": false
+			},
+			"section_title": {
+				"__TYPE__": "FieldContent",
+				"value": "practical",
+				"type": "Text"
+			},
+			"section_description": {
+				"__TYPE__": "FieldContent",
+				"value": "lead",
+				"type": "Text"
+			},
+			"steps_data": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"title",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "fierce",
+									"type": "Text"
+								}
+							],
+							[
+								"description",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "mud",
+									"type": "Text"
+								}
+							],
+							[
+								"order",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "22",
+									"type": "Number"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "withoutSectionTitle",
+		"primary": {
+			"issticky": {
+				"__TYPE__": "BooleanContent",
+				"value": false
+			},
+			"steps_data": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"title",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "flew",
+									"type": "Text"
+								}
+							],
+							[
+								"description",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "heavy",
+									"type": "Text"
+								}
+							],
+							[
+								"order",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "87",
+									"type": "Number"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	}
+]

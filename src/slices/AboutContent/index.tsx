@@ -19,23 +19,25 @@ const IconTextHighlights: FC<IconTextHighlightsProps> = ({ slice }) => {
       isSticky={slice.primary.issticky}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="grid h-full w-screen grid-cols-[1fr_3fr] gap-x-14 bg-white py-16 xl:grid-cols-[1fr_4fr]"
+      className="grid h-full w-screen gap-x-14 bg-white py-16 lg:grid-cols-[1fr_3fr] xl:grid-cols-[1fr_4fr]"
     >
-      <div className="order-2 flex flex-col gap-y-24 pl-2">
+      <div className="order-2 flex flex-col gap-y-20 pl-2 lg:gap-y-24">
+        {/* MISSION DIV */}
+
         <div className="flex max-w-[42em]">
           <span className="text-[18px] leading-[133%]">
             {slice.primary.mission}
           </span>
         </div>
         {/* SubGrid */}
-        <div className="grid grid-cols-[1fr_3fr] gap-x-[6.25rem]">
+        <div className="grid gap-x-[6.25rem] gap-y-14 lg:grid-cols-[1fr_3fr]">
           {/* Images */}
-          <div className="flex flex-col gap-y-10">
+          <div className="flex gap-x-6 gap-y-10 lg:flex-col">
             {slice.primary.about_images &&
               slice.primary.about_images.map((abtImg, index) => (
                 <div
                   key={index}
-                  className={`${index === 0 ? "h-[260px] w-[210px]" : "h-[127px] w-[210px]"} relative`}
+                  className={`${index === 0 ? "h-[260px] w-[180px] sm:w-[210px]" : "h-[127px] w-[180px] sm:w-[210px]"} relative`}
                 >
                   <PrismicNextImage
                     field={abtImg.image}
@@ -46,10 +48,10 @@ const IconTextHighlights: FC<IconTextHighlightsProps> = ({ slice }) => {
           </div>
 
           {/* Highlights text */}
-          <div className="flex flex-col gap-y-14">
+          <div className="flex flex-col gap-y-12 lg:gap-y-14">
             {slice.primary.highlights.map((highlight, index) => (
               <React.Fragment key={index}>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-y-2.5 lg:gap-y-2">
                   <span className="text-[28px]">{highlight.title}</span>
                   <span className="text-[18px]">{highlight.description}</span>
                 </div>
@@ -58,7 +60,7 @@ const IconTextHighlights: FC<IconTextHighlightsProps> = ({ slice }) => {
           </div>
         </div>
       </div>
-      <div className="order-1"></div>
+      <div className="order-1 max-md:hidden"></div>
     </Bounded>
   );
 };

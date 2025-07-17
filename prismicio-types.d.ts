@@ -28,8 +28,8 @@ type PickContentRelationshipFieldData<
       TSubRelationship["customtypes"],
       TLang
     >;
-  } & {
-    // Group
+  } & // Group
+  {
     [TGroup in Extract<
       TRelationship["fields"][number],
       | prismic.CustomTypeModelFetchGroupLevel1
@@ -41,8 +41,8 @@ type PickContentRelationshipFieldData<
           PickContentRelationshipFieldData<TGroup, TGroupData, TLang>
         >
       : never;
-  } & {
-    // Other fields
+  } & // Other fields
+  {
     [TFieldKey in Extract<
       TRelationship["fields"][number],
       string
@@ -424,7 +424,9 @@ export type HeaderDocument<Lang extends string = string> =
   >;
 
 type HomeDocumentDataSlicesSlice =
-  | MaterialsSlice
+  | ProcessSlice
+  | WorksSlice
+  | MaterialsGridSlice
   | ServiceListingNavigationSlice
   | IconTextHighlightsSlice
   | AboutSlice
@@ -710,7 +712,7 @@ export interface AboutSliceDefaultPrimary {
   issticky: prismic.BooleanField;
 
   /**
-   * section title field in *About → Default → Primary*
+   * Section Title field in *About → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -720,14 +722,14 @@ export interface AboutSliceDefaultPrimary {
   section_title: prismic.KeyTextField;
 
   /**
-   * Heading field in *About → Default → Primary*
+   * Section Headline field in *About → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: about.default.primary.heading
+   * - **API ID Path**: about.default.primary.section_headline
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
-  heading: prismic.KeyTextField;
+  section_headline: prismic.KeyTextField;
 
   /**
    * About Image field in *About → Default → Primary*
@@ -999,13 +1001,13 @@ export type IconTextHighlightsSlice = prismic.SharedSlice<
 /**
  * Item in *Materials → With Section Title → Primary → Materials*
  */
-export interface MaterialsSliceWithSectionTitlePrimaryMaterialsItem {
+export interface MaterialsGridSliceWithSectionTitlePrimaryMaterialsItem {
   /**
    * Order field in *Materials → With Section Title → Primary → Materials*
    *
    * - **Field Type**: Number
    * - **Placeholder**: *None*
-   * - **API ID Path**: materials.withSectionTitle.primary.materials[].order
+   * - **API ID Path**: materials_grid.withSectionTitle.primary.materials[].order
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
   order: prismic.NumberField;
@@ -1015,7 +1017,7 @@ export interface MaterialsSliceWithSectionTitlePrimaryMaterialsItem {
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: materials.withSectionTitle.primary.materials[].image
+   * - **API ID Path**: materials_grid.withSectionTitle.primary.materials[].image
    * - **Documentation**: https://prismic.io/docs/fields/image
    */
   image: prismic.ImageField<never>;
@@ -1025,7 +1027,7 @@ export interface MaterialsSliceWithSectionTitlePrimaryMaterialsItem {
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: materials.withSectionTitle.primary.materials[].title
+   * - **API ID Path**: materials_grid.withSectionTitle.primary.materials[].title
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   title: prismic.KeyTextField;
@@ -1035,7 +1037,7 @@ export interface MaterialsSliceWithSectionTitlePrimaryMaterialsItem {
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: materials.withSectionTitle.primary.materials[].subtitle
+   * - **API ID Path**: materials_grid.withSectionTitle.primary.materials[].subtitle
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   subtitle: prismic.KeyTextField;
@@ -1044,13 +1046,13 @@ export interface MaterialsSliceWithSectionTitlePrimaryMaterialsItem {
 /**
  * Item in *Materials → without Section Title → Primary → Materials*
  */
-export interface MaterialsSliceWithoutSectionTitlePrimaryMaterialsItem {
+export interface MaterialsGridSliceWithoutSectionTitlePrimaryMaterialsItem {
   /**
    * Order field in *Materials → without Section Title → Primary → Materials*
    *
    * - **Field Type**: Number
    * - **Placeholder**: *None*
-   * - **API ID Path**: materials.withoutSectionTitle.primary.materials[].order
+   * - **API ID Path**: materials_grid.withoutSectionTitle.primary.materials[].order
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
   order: prismic.NumberField;
@@ -1060,7 +1062,7 @@ export interface MaterialsSliceWithoutSectionTitlePrimaryMaterialsItem {
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: materials.withoutSectionTitle.primary.materials[].image
+   * - **API ID Path**: materials_grid.withoutSectionTitle.primary.materials[].image
    * - **Documentation**: https://prismic.io/docs/fields/image
    */
   image: prismic.ImageField<never>;
@@ -1070,7 +1072,7 @@ export interface MaterialsSliceWithoutSectionTitlePrimaryMaterialsItem {
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: materials.withoutSectionTitle.primary.materials[].title
+   * - **API ID Path**: materials_grid.withoutSectionTitle.primary.materials[].title
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   title: prismic.KeyTextField;
@@ -1080,7 +1082,7 @@ export interface MaterialsSliceWithoutSectionTitlePrimaryMaterialsItem {
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: materials.withoutSectionTitle.primary.materials[].subtitle
+   * - **API ID Path**: materials_grid.withoutSectionTitle.primary.materials[].subtitle
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   subtitle: prismic.KeyTextField;
@@ -1089,14 +1091,14 @@ export interface MaterialsSliceWithoutSectionTitlePrimaryMaterialsItem {
 /**
  * Primary content in *Materials → With Section Title → Primary*
  */
-export interface MaterialsSliceWithSectionTitlePrimary {
+export interface MaterialsGridSliceWithSectionTitlePrimary {
   /**
    * IsSticky field in *Materials → With Section Title → Primary*
    *
    * - **Field Type**: Boolean
    * - **Placeholder**: *None*
    * - **Default Value**: false
-   * - **API ID Path**: materials.withSectionTitle.primary.issticky
+   * - **API ID Path**: materials_grid.withSectionTitle.primary.issticky
    * - **Documentation**: https://prismic.io/docs/fields/boolean
    */
   issticky: prismic.BooleanField;
@@ -1106,7 +1108,7 @@ export interface MaterialsSliceWithSectionTitlePrimary {
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: materials.withSectionTitle.primary.section_title
+   * - **API ID Path**: materials_grid.withSectionTitle.primary.section_title
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   section_title: prismic.KeyTextField;
@@ -1116,7 +1118,7 @@ export interface MaterialsSliceWithSectionTitlePrimary {
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: materials.withSectionTitle.primary.section_headline
+   * - **API ID Path**: materials_grid.withSectionTitle.primary.section_headline
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   section_headline: prismic.KeyTextField;
@@ -1126,7 +1128,7 @@ export interface MaterialsSliceWithSectionTitlePrimary {
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: materials.withSectionTitle.primary.view_all_link
+   * - **API ID Path**: materials_grid.withSectionTitle.primary.view_all_link
    * - **Documentation**: https://prismic.io/docs/fields/link
    */
   view_all_link: prismic.LinkField<
@@ -1142,7 +1144,7 @@ export interface MaterialsSliceWithSectionTitlePrimary {
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: materials.withSectionTitle.primary.material_title
+   * - **API ID Path**: materials_grid.withSectionTitle.primary.material_title
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   material_title: prismic.KeyTextField;
@@ -1152,11 +1154,11 @@ export interface MaterialsSliceWithSectionTitlePrimary {
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: materials.withSectionTitle.primary.materials[]
+   * - **API ID Path**: materials_grid.withSectionTitle.primary.materials[]
    * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
    */
   materials: prismic.GroupField<
-    Simplify<MaterialsSliceWithSectionTitlePrimaryMaterialsItem>
+    Simplify<MaterialsGridSliceWithSectionTitlePrimaryMaterialsItem>
   >;
 }
 
@@ -1167,23 +1169,23 @@ export interface MaterialsSliceWithSectionTitlePrimary {
  * - **Description**: A grid layout for showcasing wood materials, each with an image, title, and subtitle, as part of a materials overview.
  * - **Documentation**: https://prismic.io/docs/slices
  */
-export type MaterialsSliceWithSectionTitle = prismic.SharedSliceVariation<
+export type MaterialsGridSliceWithSectionTitle = prismic.SharedSliceVariation<
   "withSectionTitle",
-  Simplify<MaterialsSliceWithSectionTitlePrimary>,
+  Simplify<MaterialsGridSliceWithSectionTitlePrimary>,
   never
 >;
 
 /**
  * Primary content in *Materials → without Section Title → Primary*
  */
-export interface MaterialsSliceWithoutSectionTitlePrimary {
+export interface MaterialsGridSliceWithoutSectionTitlePrimary {
   /**
    * IsSticky field in *Materials → without Section Title → Primary*
    *
    * - **Field Type**: Boolean
    * - **Placeholder**: *None*
    * - **Default Value**: false
-   * - **API ID Path**: materials.withoutSectionTitle.primary.issticky
+   * - **API ID Path**: materials_grid.withoutSectionTitle.primary.issticky
    * - **Documentation**: https://prismic.io/docs/fields/boolean
    */
   issticky: prismic.BooleanField;
@@ -1193,7 +1195,7 @@ export interface MaterialsSliceWithoutSectionTitlePrimary {
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: materials.withoutSectionTitle.primary.material_title
+   * - **API ID Path**: materials_grid.withoutSectionTitle.primary.material_title
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   material_title: prismic.KeyTextField;
@@ -1203,7 +1205,7 @@ export interface MaterialsSliceWithoutSectionTitlePrimary {
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: materials.withoutSectionTitle.primary.view_all_link
+   * - **API ID Path**: materials_grid.withoutSectionTitle.primary.view_all_link
    * - **Documentation**: https://prismic.io/docs/fields/link
    */
   view_all_link: prismic.LinkField<
@@ -1219,11 +1221,11 @@ export interface MaterialsSliceWithoutSectionTitlePrimary {
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: materials.withoutSectionTitle.primary.materials[]
+   * - **API ID Path**: materials_grid.withoutSectionTitle.primary.materials[]
    * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
    */
   materials: prismic.GroupField<
-    Simplify<MaterialsSliceWithoutSectionTitlePrimaryMaterialsItem>
+    Simplify<MaterialsGridSliceWithoutSectionTitlePrimaryMaterialsItem>
   >;
 }
 
@@ -1234,29 +1236,221 @@ export interface MaterialsSliceWithoutSectionTitlePrimary {
  * - **Description**: A grid layout for showcasing wood materials, each with an image, title, and subtitle, as part of a materials overview.
  * - **Documentation**: https://prismic.io/docs/slices
  */
-export type MaterialsSliceWithoutSectionTitle = prismic.SharedSliceVariation<
-  "withoutSectionTitle",
-  Simplify<MaterialsSliceWithoutSectionTitlePrimary>,
-  never
->;
+export type MaterialsGridSliceWithoutSectionTitle =
+  prismic.SharedSliceVariation<
+    "withoutSectionTitle",
+    Simplify<MaterialsGridSliceWithoutSectionTitlePrimary>,
+    never
+  >;
 
 /**
  * Slice variation for *Materials*
  */
-type MaterialsSliceVariation =
-  | MaterialsSliceWithSectionTitle
-  | MaterialsSliceWithoutSectionTitle;
+type MaterialsGridSliceVariation =
+  | MaterialsGridSliceWithSectionTitle
+  | MaterialsGridSliceWithoutSectionTitle;
 
 /**
  * Materials Shared Slice
  *
- * - **API ID**: `materials`
+ * - **API ID**: `materials_grid`
  * - **Description**: *None*
  * - **Documentation**: https://prismic.io/docs/slices
  */
-export type MaterialsSlice = prismic.SharedSlice<
-  "materials",
-  MaterialsSliceVariation
+export type MaterialsGridSlice = prismic.SharedSlice<
+  "materials_grid",
+  MaterialsGridSliceVariation
+>;
+
+/**
+ * Item in *Process → With Section Title → Primary → Steps Data*
+ */
+export interface ProcessSliceWithSectionTitlePrimaryStepsDataItem {
+  /**
+   * Order field in *Process → With Section Title → Primary → Steps Data*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: process.withSectionTitle.primary.steps_data[].order
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  order: prismic.NumberField;
+
+  /**
+   * Title field in *Process → With Section Title → Primary → Steps Data*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: process.withSectionTitle.primary.steps_data[].title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Description field in *Process → With Section Title → Primary → Steps Data*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: process.withSectionTitle.primary.steps_data[].description
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  description: prismic.KeyTextField;
+}
+
+/**
+ * Item in *Process → without Section Title → Primary → Steps Data*
+ */
+export interface ProcessSliceWithoutSectionTitlePrimaryStepsDataItem {
+  /**
+   * Order field in *Process → without Section Title → Primary → Steps Data*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: process.withoutSectionTitle.primary.steps_data[].order
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  order: prismic.NumberField;
+
+  /**
+   * Title field in *Process → without Section Title → Primary → Steps Data*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: process.withoutSectionTitle.primary.steps_data[].title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Description field in *Process → without Section Title → Primary → Steps Data*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: process.withoutSectionTitle.primary.steps_data[].description
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  description: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Process → With Section Title → Primary*
+ */
+export interface ProcessSliceWithSectionTitlePrimary {
+  /**
+   * IsSticky field in *Process → With Section Title → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: process.withSectionTitle.primary.issticky
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  issticky: prismic.BooleanField;
+
+  /**
+   * Section title field in *Process → With Section Title → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: process.withSectionTitle.primary.section_title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  section_title: prismic.KeyTextField;
+
+  /**
+   * Section description field in *Process → With Section Title → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: process.withSectionTitle.primary.section_description
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  section_description: prismic.KeyTextField;
+
+  /**
+   * Steps Data field in *Process → With Section Title → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: process.withSectionTitle.primary.steps_data[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  steps_data: prismic.GroupField<
+    Simplify<ProcessSliceWithSectionTitlePrimaryStepsDataItem>
+  >;
+}
+
+/**
+ * With Section Title variation for Process Slice
+ *
+ * - **API ID**: `withSectionTitle`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ProcessSliceWithSectionTitle = prismic.SharedSliceVariation<
+  "withSectionTitle",
+  Simplify<ProcessSliceWithSectionTitlePrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Process → without Section Title → Primary*
+ */
+export interface ProcessSliceWithoutSectionTitlePrimary {
+  /**
+   * IsSticky field in *Process → without Section Title → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: process.withoutSectionTitle.primary.issticky
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  issticky: prismic.BooleanField;
+
+  /**
+   * Steps Data field in *Process → without Section Title → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: process.withoutSectionTitle.primary.steps_data[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  steps_data: prismic.GroupField<
+    Simplify<ProcessSliceWithoutSectionTitlePrimaryStepsDataItem>
+  >;
+}
+
+/**
+ * without Section Title variation for Process Slice
+ *
+ * - **API ID**: `withoutSectionTitle`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ProcessSliceWithoutSectionTitle = prismic.SharedSliceVariation<
+  "withoutSectionTitle",
+  Simplify<ProcessSliceWithoutSectionTitlePrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Process*
+ */
+type ProcessSliceVariation =
+  | ProcessSliceWithSectionTitle
+  | ProcessSliceWithoutSectionTitle;
+
+/**
+ * Process Shared Slice
+ *
+ * - **API ID**: `process`
+ * - **Description**: Process
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ProcessSlice = prismic.SharedSlice<
+  "process",
+  ProcessSliceVariation
 >;
 
 /**
@@ -1485,6 +1679,96 @@ export type ServiceListingNavigationSlice = prismic.SharedSlice<
   ServiceListingNavigationSliceVariation
 >;
 
+/**
+ * Item in *Works → Default → Primary → GalleryImages*
+ */
+export interface WorksSliceDefaultPrimaryGalleryimagesItem {
+  /**
+   * Image Src field in *Works → Default → Primary → GalleryImages*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works.default.primary.galleryimages[].image_src
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image_src: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *Works → Default → Primary*
+ */
+export interface WorksSliceDefaultPrimary {
+  /**
+   * IsSticky field in *Works → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: works.default.primary.issticky
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  issticky: prismic.BooleanField;
+
+  /**
+   * Section Title field in *Works → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works.default.primary.section_title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  section_title: prismic.KeyTextField;
+
+  /**
+   * Section Headline field in *Works → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works.default.primary.section_headline
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  section_headline: prismic.KeyTextField;
+
+  /**
+   * GalleryImages field in *Works → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works.default.primary.galleryimages[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  galleryimages: prismic.GroupField<
+    Simplify<WorksSliceDefaultPrimaryGalleryimagesItem>
+  >;
+}
+
+/**
+ * Default variation for Works Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type WorksSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<WorksSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Works*
+ */
+type WorksSliceVariation = WorksSliceDefault;
+
+/**
+ * Works Shared Slice
+ *
+ * - **API ID**: `works`
+ * - **Description**: Works
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type WorksSlice = prismic.SharedSlice<"works", WorksSliceVariation>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -1539,14 +1823,22 @@ declare module "@prismicio/client" {
       IconTextHighlightsSliceDefaultPrimary,
       IconTextHighlightsSliceVariation,
       IconTextHighlightsSliceDefault,
-      MaterialsSlice,
-      MaterialsSliceWithSectionTitlePrimaryMaterialsItem,
-      MaterialsSliceWithSectionTitlePrimary,
-      MaterialsSliceWithoutSectionTitlePrimaryMaterialsItem,
-      MaterialsSliceWithoutSectionTitlePrimary,
-      MaterialsSliceVariation,
-      MaterialsSliceWithSectionTitle,
-      MaterialsSliceWithoutSectionTitle,
+      MaterialsGridSlice,
+      MaterialsGridSliceWithSectionTitlePrimaryMaterialsItem,
+      MaterialsGridSliceWithSectionTitlePrimary,
+      MaterialsGridSliceWithoutSectionTitlePrimaryMaterialsItem,
+      MaterialsGridSliceWithoutSectionTitlePrimary,
+      MaterialsGridSliceVariation,
+      MaterialsGridSliceWithSectionTitle,
+      MaterialsGridSliceWithoutSectionTitle,
+      ProcessSlice,
+      ProcessSliceWithSectionTitlePrimaryStepsDataItem,
+      ProcessSliceWithSectionTitlePrimary,
+      ProcessSliceWithoutSectionTitlePrimaryStepsDataItem,
+      ProcessSliceWithoutSectionTitlePrimary,
+      ProcessSliceVariation,
+      ProcessSliceWithSectionTitle,
+      ProcessSliceWithoutSectionTitle,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
@@ -1556,6 +1848,11 @@ declare module "@prismicio/client" {
       ServiceListingNavigationSliceWithFeaturedItemsPrimary,
       ServiceListingNavigationSliceVariation,
       ServiceListingNavigationSliceWithFeaturedItems,
+      WorksSlice,
+      WorksSliceDefaultPrimaryGalleryimagesItem,
+      WorksSliceDefaultPrimary,
+      WorksSliceVariation,
+      WorksSliceDefault,
     };
   }
 }

@@ -1,0 +1,122 @@
+{
+  "id": "process",
+  "type": "SharedSlice",
+  "name": "Process",
+  "description": "Process",
+  "variations": [
+    {
+      "id": "withSectionTitle",
+      "name": "With Section Title",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "issticky": {
+          "type": "Boolean",
+          "config": {
+            "label": "IsSticky",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
+        },
+        "section_title": {
+          "type": "Text",
+          "config": {
+            "label": "Section title",
+            "placeholder": ""
+          }
+        },
+        "section_description": {
+          "type": "Text",
+          "config": {
+            "label": "Section description",
+            "placeholder": ""
+          }
+        },
+        "steps_data": {
+          "type": "Group",
+          "config": {
+            "label": "Steps Data",
+            "repeat": true,
+            "fields": {
+              "order": {
+                "type": "Number",
+                "config": {
+                  "label": "Order",
+                  "placeholder": ""
+                }
+              },
+              "title": {
+                "type": "Text",
+                "config": {
+                  "label": "Title",
+                  "placeholder": ""
+                }
+              },
+              "description": {
+                "type": "Text",
+                "config": {
+                  "label": "Description",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "withoutSectionTitle",
+      "name": "without Section Title",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "issticky": {
+          "type": "Boolean",
+          "config": {
+            "label": "IsSticky",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
+        },
+        "steps_data": {
+          "type": "Group",
+          "config": {
+            "label": "Steps Data",
+            "repeat": true,
+            "fields": {
+              "order": {
+                "type": "Number",
+                "config": {
+                  "label": "Order",
+                  "placeholder": ""
+                }
+              },
+              "title": {
+                "type": "Text",
+                "config": {
+                  "label": "Title",
+                  "placeholder": ""
+                }
+              },
+              "description": {
+                "type": "Text",
+                "config": {
+                  "label": "Description",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
