@@ -424,6 +424,7 @@ export type HeaderDocument<Lang extends string = string> =
   >;
 
 type HomeDocumentDataSlicesSlice =
+  | CtaSectionSlice
   | ProcessSlice
   | WorksSlice
   | MaterialsGridSlice
@@ -768,6 +769,196 @@ type AboutSliceVariation = AboutSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slices
  */
 export type AboutSlice = prismic.SharedSlice<"about", AboutSliceVariation>;
+
+/**
+ * Item in *CtaSection → Default → Primary → Heading1 Words*
+ */
+export interface CtaSectionSliceDefaultPrimaryHeading1WordsItem {
+  /**
+   * Word1 label field in *CtaSection → Default → Primary → Heading1 Words*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_section.default.primary.heading1_words[].word1_label
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  word1_label: prismic.KeyTextField;
+}
+
+/**
+ * Item in *CtaSection → Default → Primary → Heading2 Words*
+ */
+export interface CtaSectionSliceDefaultPrimaryHeading2WordsItem {
+  /**
+   * Word2 label field in *CtaSection → Default → Primary → Heading2 Words*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_section.default.primary.heading2_words[].word2_label
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  word2_label: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *CtaSection → Default → Primary*
+ */
+export interface CtaSectionSliceDefaultPrimary {
+  /**
+   * isSticky field in *CtaSection → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: cta_section.default.primary.issticky
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  issticky: prismic.BooleanField;
+
+  /**
+   * Heading1 Words field in *CtaSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_section.default.primary.heading1_words[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  heading1_words: prismic.GroupField<
+    Simplify<CtaSectionSliceDefaultPrimaryHeading1WordsItem>
+  >;
+
+  /**
+   * Heading2 Words field in *CtaSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_section.default.primary.heading2_words[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  heading2_words: prismic.GroupField<
+    Simplify<CtaSectionSliceDefaultPrimaryHeading2WordsItem>
+  >;
+
+  /**
+   * CTA Image field in *CtaSection → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_section.default.primary.cta_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  cta_image: prismic.ImageField<never>;
+
+  /**
+   * Person Name field in *CtaSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_section.default.primary.person_name
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  person_name: prismic.KeyTextField;
+
+  /**
+   * CTA tagline field in *CtaSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_section.default.primary.cta_tagline
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  cta_tagline: prismic.KeyTextField;
+
+  /**
+   * Email Address field in *CtaSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_section.default.primary.email_address
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  email_address: prismic.KeyTextField;
+
+  /**
+   * Address Details field in *CtaSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_section.default.primary.address_details
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  address_details: prismic.KeyTextField;
+
+  /**
+   * Address City field in *CtaSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_section.default.primary.address_city
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  address_city: prismic.KeyTextField;
+
+  /**
+   * Address Country field in *CtaSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_section.default.primary.address_country
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  address_country: prismic.KeyTextField;
+
+  /**
+   * Mobile Number field in *CtaSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_section.default.primary.mobile_number
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  mobile_number: prismic.KeyTextField;
+
+  /**
+   * Address Number field in *CtaSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_section.default.primary.address_number
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  address_number: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for CtaSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type CtaSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CtaSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CtaSection*
+ */
+type CtaSectionSliceVariation = CtaSectionSliceDefault;
+
+/**
+ * CtaSection Shared Slice
+ *
+ * - **API ID**: `cta_section`
+ * - **Description**: CtaSection
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type CtaSectionSlice = prismic.SharedSlice<
+  "cta_section",
+  CtaSectionSliceVariation
+>;
 
 /**
  * Primary content in *Hero → Default → Primary*
@@ -1813,6 +2004,12 @@ declare module "@prismicio/client" {
       AboutSliceDefaultPrimary,
       AboutSliceVariation,
       AboutSliceDefault,
+      CtaSectionSlice,
+      CtaSectionSliceDefaultPrimaryHeading1WordsItem,
+      CtaSectionSliceDefaultPrimaryHeading2WordsItem,
+      CtaSectionSliceDefaultPrimary,
+      CtaSectionSliceVariation,
+      CtaSectionSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,

@@ -1,0 +1,112 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"cta_tagline": {
+				"__TYPE__": "FieldContent",
+				"value": "cheese",
+				"type": "Text"
+			},
+			"email_address": {
+				"__TYPE__": "FieldContent",
+				"value": "out",
+				"type": "Text"
+			},
+			"address_city": {
+				"__TYPE__": "FieldContent",
+				"value": "soldier",
+				"type": "Text"
+			},
+			"address_country": {
+				"__TYPE__": "FieldContent",
+				"value": "grow",
+				"type": "Text"
+			},
+			"mobile_number": {
+				"__TYPE__": "FieldContent",
+				"value": "worth",
+				"type": "Text"
+			},
+			"address_number": {
+				"__TYPE__": "FieldContent",
+				"value": "voyage",
+				"type": "Text"
+			},
+			"person_name": {
+				"__TYPE__": "FieldContent",
+				"value": "complete",
+				"type": "Text"
+			},
+			"cta_image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43",
+					"width": 4024,
+					"height": 4024
+				},
+				"url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43",
+				"width": 4024,
+				"height": 4024,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"alt": "machine",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"issticky": {
+				"__TYPE__": "BooleanContent",
+				"value": false
+			},
+			"address_details": {
+				"__TYPE__": "FieldContent",
+				"value": "friend",
+				"type": "Text"
+			},
+			"heading1_words": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"word1_label",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "shout",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"heading2_words": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"word2_label",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "judge",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
