@@ -20,8 +20,8 @@ const CtaSection: FC<CtaSectionProps> = ({ slice }) => {
       data-slice-variation={slice.variation}
       className="flex h-full flex-col justify-between gap-y-14 bg-mywhite-50 py-20"
     >
-      <div className="grid w-full gap-x-10 lg:grid-cols-[1fr_1fr] max-lg:grid-rows-[1fr_1fr]">
-        <div className="grid grid-rows-[1fr_4em]">
+      <div className="grid w-full gap-x-0 lg:grid-cols-[4fr_5fr] xl:gap-x-8 2xl:gap-x-10 max-lg:grid-rows-[1fr_1fr]">
+        <div className="relative grid grid-rows-[1fr_3em]">
           <div className="flex max-w-[30em] flex-col lg:max-w-[34.25em]">
             {slice.primary.heading1_words.map((word, index) => (
               <div
@@ -33,17 +33,17 @@ const CtaSection: FC<CtaSectionProps> = ({ slice }) => {
                 </h1>
               </div>
             ))}
-            <PrismicNextImage
-              field={slice.primary.cta_image}
-              className="h-full w-[13rem] object-cover object-center lg:-translate-y-[22%] xl:-translate-y-[28%]"
-            />
           </div>
+          <PrismicNextImage
+            field={slice.primary.cta_image}
+            className="absolute left-0 top-[21%] h-[280px] w-[13rem] object-cover object-center lg:top-[18%] lg:h-fit"
+          />
           <div className="w-fit">
             <span>{slice.primary.cta_tagline}</span>
           </div>
         </div>
         <div className="grid grid-rows-[2fr_1fr] lg:pt-[16.25%]">
-          <div className="flex w-[35em] flex-col place-self-end">
+          <div className="flex flex-col place-self-end xl:w-full xl:max-w-full max-xl:w-[35em]">
             {slice.primary.heading2_words.map((word, index) => (
               <div
                 key={index}
