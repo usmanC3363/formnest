@@ -167,7 +167,77 @@ export type BlogPostDocument<Lang extends string = string> =
     Lang
   >;
 
-type FooterDocumentDataSlicesSlice = never;
+/**
+ * Item in *Footer → Social Links*
+ */
+export interface FooterDocumentDataSocialLinksItem {
+  /**
+   * Social Title field in *Footer → Social Links*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.social_links[].social_title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  social_title: prismic.KeyTextField;
+
+  /**
+   * Social Icon field in *Footer → Social Links*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.social_links[].social_icon
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  social_icon: prismic.ImageField<never>;
+
+  /**
+   * Social Url field in *Footer → Social Links*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.social_links[].social_url
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  social_url: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
+ * Item in *Footer → Inner pages*
+ */
+export interface FooterDocumentDataInnerPagesItem {
+  /**
+   * Page Title field in *Footer → Inner pages*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.inner_pages[].page_title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  page_title: prismic.KeyTextField;
+
+  /**
+   * Page Link field in *Footer → Inner pages*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.inner_pages[].page_link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  page_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
 
 /**
  * Content for Footer documents
@@ -185,34 +255,6 @@ interface FooterDocumentData {
   title: prismic.KeyTextField;
 
   /**
-   * Home Title field in *Footer*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: footer.home_title
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  home_title: prismic.KeyTextField;
-
-  /**
-   * Home Link field in *Footer*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: footer.home_link
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/fields/link
-   */
-  home_link: prismic.LinkField<
-    string,
-    string,
-    unknown,
-    prismic.FieldState,
-    never
-  >;
-
-  /**
    * Description field in *Footer*
    *
    * - **Field Type**: Text
@@ -224,68 +266,26 @@ interface FooterDocumentData {
   description: prismic.KeyTextField;
 
   /**
-   * Email Address field in *Footer*
+   * Social Links field in *Footer*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: footer.email_address
+   * - **API ID Path**: footer.social_links[]
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/fields/text
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
    */
-  email_address: prismic.KeyTextField;
+  social_links: prismic.GroupField<Simplify<FooterDocumentDataSocialLinksItem>>;
 
   /**
-   * Address field in *Footer*
+   * Inner pages field in *Footer*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: footer.address
+   * - **API ID Path**: footer.inner_pages[]
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/fields/text
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
    */
-  address: prismic.KeyTextField;
-
-  /**
-   * Slice Zone field in *Footer*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: footer.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/slices
-   */
-  slices: prismic.SliceZone<FooterDocumentDataSlicesSlice> /**
-   * Meta Title field in *Footer*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: footer.meta_title
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */;
-  meta_title: prismic.KeyTextField;
-
-  /**
-   * Meta Description field in *Footer*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: footer.meta_description
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  meta_description: prismic.KeyTextField;
-
-  /**
-   * OG Image field in *Footer*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: footer.og_image
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/fields/image
-   */
-  og_image: prismic.ImageField<never>;
+  inner_pages: prismic.GroupField<Simplify<FooterDocumentDataInnerPagesItem>>;
 }
 
 /**
@@ -1986,7 +1986,8 @@ declare module "@prismicio/client" {
       BlogPostDocumentDataSlicesSlice,
       FooterDocument,
       FooterDocumentData,
-      FooterDocumentDataSlicesSlice,
+      FooterDocumentDataSocialLinksItem,
+      FooterDocumentDataInnerPagesItem,
       HeaderDocument,
       HeaderDocumentData,
       HomeDocument,

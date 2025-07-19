@@ -13,24 +13,6 @@
           "placeholder": ""
         }
       },
-      "home_title": {
-        "type": "Text",
-        "config": {
-          "label": "Home Title",
-          "placeholder": ""
-        }
-      },
-      "home_link": {
-        "type": "Link",
-        "config": {
-          "label": "Home Link",
-          "placeholder": "",
-          "select": null,
-          "allowTargetBlank": true,
-          "allowText": true,
-          "repeat": false
-        }
-      },
       "description": {
         "type": "Text",
         "config": {
@@ -38,49 +20,66 @@
           "placeholder": ""
         }
       },
-      "email_address": {
-        "type": "Text",
+      "social_links": {
+        "type": "Group",
         "config": {
-          "label": "Email Address",
-          "placeholder": ""
+          "label": "Social Links",
+          "repeat": true,
+          "fields": {
+            "social_title": {
+              "type": "Text",
+              "config": {
+                "label": "Social Title",
+                "placeholder": ""
+              }
+            },
+            "social_icon": {
+              "type": "Image",
+              "config": {
+                "label": "Social Icon",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "social_url": {
+              "type": "Link",
+              "config": {
+                "label": "Social Url",
+                "placeholder": "",
+                "select": null,
+                "allowTargetBlank": true,
+                "allowText": true,
+                "repeat": false
+              }
+            }
+          }
         }
       },
-      "address": {
-        "type": "Text",
+      "inner_pages": {
+        "type": "Group",
         "config": {
-          "label": "Address",
-          "placeholder": ""
-        }
-      },
-      "slices": {
-        "type": "Slices",
-        "fieldset": "Slice Zone",
-        "config": {
-          "choices": {}
-        }
-      }
-    },
-    "SEO & Metadata": {
-      "meta_title": {
-        "type": "Text",
-        "config": {
-          "label": "Meta Title",
-          "placeholder": ""
-        }
-      },
-      "meta_description": {
-        "type": "Text",
-        "config": {
-          "label": "Meta Description",
-          "placeholder": ""
-        }
-      },
-      "og_image": {
-        "type": "Image",
-        "config": {
-          "label": "OG Image",
-          "constraint": {},
-          "thumbnails": []
+          "label": "Inner pages",
+          "repeat": true,
+          "fields": {
+            "page_title": {
+              "type": "Text",
+              "config": {
+                "label": "Page Title",
+                "placeholder": ""
+              }
+            },
+            "page_link": {
+              "type": "Link",
+              "config": {
+                "label": "Page Link",
+                "placeholder": "",
+                "select": null,
+                "allowTargetBlank": true,
+                "allowText": true,
+                "repeat": false
+              }
+            }
+          }
         }
       }
     }
