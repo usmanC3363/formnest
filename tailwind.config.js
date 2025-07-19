@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     screens: {
       // Min-width breakpoints (default behavior)
-      xs: "420px",
+      xs: "410px",
       sm: "640px",
       md: "768px",
       lg: "1024px",
@@ -16,7 +16,7 @@ module.exports = {
       "4xl": "2560px",
 
       // Max-width breakpoints (reverse approach)
-      "max-xs": { max: "420px" }, // For devices smaller than 450px, small mobiles iphones
+      "max-xs": { max: "410px" }, // For devices smaller than 450px, small mobiles iphones
       "max-sm": { max: "640px" }, // For devices smaller than 640px
       "max-md": { max: "768px" }, // For devices smaller than 768px
       "max-lg": { max: "1024px" }, // For devices smaller than 1024px

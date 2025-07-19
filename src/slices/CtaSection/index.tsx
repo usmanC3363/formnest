@@ -20,44 +20,63 @@ const CtaSection: FC<CtaSectionProps> = ({ slice }) => {
       data-slice-variation={slice.variation}
       className="flex h-full flex-col justify-between gap-y-14 bg-mywhite-50 py-20"
     >
-      <div className="grid w-full gap-x-0 lg:grid-cols-[4fr_5fr] xl:gap-x-8 2xl:gap-x-10 max-lg:grid-rows-[1fr_1fr]">
+      <div className="grid w-full gap-x-0 gap-y-10 lg:grid-cols-[1fr_1fr] lg:gap-x-4 xl:grid-cols-[4fr_5fr] xl:gap-x-14 max-lg:grid-rows-[1fr_1fr]">
         <div className="relative grid grid-rows-[1fr_3em]">
-          <div className="flex max-w-[30em] flex-col lg:max-w-[34.25em]">
+          <div className="flex max-w-[30em] flex-col gap-y-1 lg:w-[30em] xl:min-w-[34em]">
             {slice.primary.heading1_words.map((word, index) => (
               <div
                 key={index}
                 className={`${index % 2 === 0 ? "" : "self-end"} flex`}
               >
-                <h1 className="w-fit text-[5rem] uppercase leading-none tracking-[-0.04em] xl:text-[6.25rem]">
+                <span className="w-fit text-[4rem] uppercase leading-none tracking-[-0.04em] xs:text-[4.5rem] sm:text-[5rem] xl:text-[6.25rem]">
                   {word.word1_label}
-                </h1>
+                </span>
               </div>
             ))}
           </div>
           <PrismicNextImage
             field={slice.primary.cta_image}
-            className="absolute left-0 top-[21%] h-[280px] w-[13rem] object-cover object-center lg:top-[18%] lg:h-fit"
+            className="absolute left-0 top-[22%] h-[280px] w-[13rem] object-cover object-center lg:top-[19%] lg:h-fit"
           />
-          <div className="w-fit">
-            <span>{slice.primary.cta_tagline}</span>
+          <div className="w-fit max-w-52">
+            <span className="">{slice.primary.cta_tagline}</span>
           </div>
         </div>
-        <div className="grid grid-rows-[2fr_1fr] lg:pt-[16.25%]">
-          <div className="flex flex-col place-self-end xl:w-full xl:max-w-full max-xl:w-[35em]">
+        <div className="grid grid-rows-[1fr_1fr] gap-y-12 sm:min-w-[34em] sm:justify-self-end lg:justify-self-auto lg:pl-[7%] lg:pt-[16.25%]">
+          <div className="flex w-full min-w-full flex-col gap-y-1 place-self-end">
             {slice.primary.heading2_words.map((word, index) => (
               <div
                 key={index}
-                className={`flex ${index % 2 === 0 ? "self-end" : "max-w-[24.5em] self-start xl:max-w-[32em]"}`}
+                className={`flex ${index % 2 === 0 ? "self-end" : "max-w-full self-end xs:max-w-[88%] xs:self-start sm:max-w-[24.5em] xl:max-w-[32em]"}`}
               >
-                <h1
-                  className={`${index % 2 === 0 ? "leading-none" : "text-right leading-[133%]"} w-fit text-[5rem] uppercase tracking-[-0.04em] xl:text-[6.25rem]`}
+                <span
+                  className={`${index % 2 === 0 ? "leading-none" : "leading-[120%]"} w-fit text-right text-[4rem] uppercase tracking-[-0.04em] xs:text-[4.5rem] sm:text-[5rem] xl:text-[6.25rem]`}
                 >
                   {word.word2_label}
-                </h1>
+                </span>
               </div>
             ))}
           </div>
-          <div></div>
+          <div className="grid h-fit w-full grid-cols-[1fr_1fr] grid-rows-[6em_6em] gap-8">
+            <div className="flex h-fit w-fit flex-col gap-y-0.5">
+              <span>{slice.primary.person_name}</span>
+              <span>Formnest</span>
+            </div>
+            <div className="flex h-fit w-fit flex-col gap-y-3">
+              <span>Reach out to us:</span>
+              <span className="text-[18px]">{slice.primary.email_address}</span>
+            </div>
+            <div className="flex h-fit w-fit flex-col gap-y-0.5">
+              <span>{slice.primary.address_details}</span>
+              <span>{slice.primary.address_city}</span>
+              <span>{slice.primary.address_country}</span>
+              <span>{slice.primary.address_number}</span>
+            </div>
+            <div className="flex h-fit w-fit flex-col gap-y-3 self-end">
+              <span>Call us:</span>
+              <span className="text-[18px]">{slice.primary.mobile_number}</span>
+            </div>
+          </div>
         </div>
       </div>
     </Bounded>
