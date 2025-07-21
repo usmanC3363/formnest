@@ -53,9 +53,9 @@ module.exports = {
         },
       },
 
-      // fontFamily: {
-      //   montreal: ["var(--font-montreal)"],
-      // },
+      fontFamily: {
+        vonca: ["Vonca", "sans-serif"],
+      },
       keyframes: {
         scroll: {
           "0%": { transform: "translateX(0%)" },
