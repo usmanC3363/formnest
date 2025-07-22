@@ -508,6 +508,16 @@ export type HomeDocument<Lang extends string = string> =
  */
 export interface MenuDocumentDataMenuLinksItem {
   /**
+   * Order field in *Menu → Menu Links*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu.menu_links[].order
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  order: prismic.NumberField;
+
+  /**
    * Link Title field in *Menu → Menu Links*
    *
    * - **Field Type**: Text
@@ -534,8 +544,6 @@ export interface MenuDocumentDataMenuLinksItem {
   >;
 }
 
-type MenuDocumentDataSlicesSlice = never;
-
 /**
  * Content for Menu documents
  */
@@ -560,18 +568,7 @@ interface MenuDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
    */
-  menu_links: prismic.GroupField<Simplify<MenuDocumentDataMenuLinksItem>>;
-
-  /**
-   * Slice Zone field in *Menu*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: menu.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/slices
-   */
-  slices: prismic.SliceZone<MenuDocumentDataSlicesSlice> /**
+  menu_links: prismic.GroupField<Simplify<MenuDocumentDataMenuLinksItem>> /**
    * Meta Title field in *Menu*
    *
    * - **Field Type**: Text
@@ -1996,7 +1993,6 @@ declare module "@prismicio/client" {
       MenuDocument,
       MenuDocumentData,
       MenuDocumentDataMenuLinksItem,
-      MenuDocumentDataSlicesSlice,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,

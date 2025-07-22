@@ -19,6 +19,13 @@
           "label": "Menu Links",
           "repeat": true,
           "fields": {
+            "order": {
+              "type": "Number",
+              "config": {
+                "label": "Order",
+                "placeholder": ""
+              }
+            },
             "link_title": {
               "type": "Text",
               "config": {
@@ -38,13 +45,6 @@
               }
             }
           }
-        }
-      },
-      "slices": {
-        "type": "Slices",
-        "fieldset": "Slice Zone",
-        "config": {
-          "choices": {}
         }
       }
     },

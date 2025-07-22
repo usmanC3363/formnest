@@ -35,12 +35,6 @@ export default async function HeaderContent({ newdata }: Props) {
         </Link>
       </div>
 
-      {/* <CTAButton
-        text="Contact Us"
-        url="/contact"
-        buttonClass="px-2.5 py-1 lg:py-1.5 lg:px-3.5 bg-myblack-50 rounded-full text-mywhite-50 cursor-pointer w-fit justify-self-end max-md:hidden"
-      /> */}
-
       <Menu extraClass="" pageName="header" />
     </header>
   );

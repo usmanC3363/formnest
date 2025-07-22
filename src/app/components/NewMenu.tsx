@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { getCurrentScreenSize } from "../utils/constants.js";
 import { Content } from "@prismicio/client";
 import { GoArrowRight } from "react-icons/go";
+import { StyledHeading } from "./ui/StyledHeading";
 
 // Typing for individual link item
 type MenuLink = Content.MenuDocument["data"]["menu_links"][number];
@@ -29,58 +30,41 @@ export default function NewMenu({ menuLinks }: Props) {
     <>
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-50 min-h-screen bg-mywhite-50 backdrop-blur-lg transition-all duration-300 ease-in-out ${
+        className={`fixed inset-0 z-50 flex min-h-screen items-center justify-center bg-mywhite-50 backdrop-blur-lg transition-all ${
           open
-            ? "translate-x-0 delay-150 md:hidden"
-            : "w-screen translate-x-full delay-500"
+            ? "translate-y-8 duration-[1200ms] ease-[cubic-bezier(0.8,0,0.2,0.8)]"
+            : "w-screen -translate-y-full duration-[1200ms] ease-[cubic-bezier(0.8,0,0.2,1)]"
         }`}
       >
-        <div className="flex h-full w-full flex-col justify-center gap-8">
-          <div className="flex flex-col gap-14 px-6">
+        <div className="flex h-full w-[50%] flex-col justify-center gap-8">
+          <div className="flex flex-col gap-y-4">
             {menuLinks?.map((item, index) => (
-              <PrismicNextLink key={index} field={item.link_url}>
-                <button
-                  className={`flex h-10 w-full max-w-full items-center justify-between border-b border-myblack-200 transition-all duration-500 ease-in-out ${
-                    open ? "translate-x-0" : "translate-x-[200%]"
-                  }`}
-                  onClick={toggleMenu}
-                  style={{
-                    transitionDelay: `${200 + index * 100}ms`,
-                  }}
-                >
-                  <span className="text-3xl uppercase tracking-tighter">
-                    {item.link_title}
-                  </span>
-                  <GoArrowRight
-                    className={`w-12 text-3xl transition-all duration-300 ease-in-out`}
-                  />
-                </button>
+              <PrismicNextLink
+                key={index}
+                field={item.link_url}
+                className={`flex h-20 w-fit items-center justify-between gap-x-0.5 transition-all duration-500 ease-in-out ${
+                  open ? "opacity-100" : ""
+                } ${index % 2 === 0 ? "" : ``}`}
+                style={
+                  index % 2 === 0
+                    ? { translate: 10 + 45 * item.order }
+                    : { translate: -10 - 10 * item.order }
+                  //   {
+                  //   transitionDelay: `${200 + index * 100}ms`,
+                  // }
+                }
+                onClick={toggleMenu}
+              >
+                <span className="self-start text-xs">0{item.order}</span>
+                <StyledHeading
+                  text={item.link_title}
+                  headingClass="text-[4.5rem] uppercase tracking-[-0.04em] leading-none"
+                />
               </PrismicNextLink>
             ))}
           </div>
         </div>
       </div>
-
-      {/* Desktop Menu */}
-      {/* {["md", "lg", "xl", "2xl", "3xl"].includes(screenSize || "") && (
-        <div className="flex gap-2 lg:gap-4">
-          {menuLinks?.map((item, index) => (
-            <button
-              className={`group h-10 w-fit min-w-24 transition-all duration-300 ease-in-out hover:scale-[1.025] hover:font-medium lg:min-w-32`}
-              key={index}
-              // style={{
-              //   transitionDelay: `${
-              //     open ? 100 + index * 100 : 600 + index * 100
-              //   }ms`,
-              // }}
-            >
-              <PrismicNextLink field={item.link_url}>
-                <span className="2xl:text-lg">{item.link_title}</span>
-              </PrismicNextLink>
-            </button>
-          ))}
-        </div>
-      )} */}
 
       {/* Menu Toggle Button */}
       <button
