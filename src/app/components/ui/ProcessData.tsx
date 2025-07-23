@@ -1,5 +1,6 @@
 import React from "react";
 import { ProcessCardProps } from "@/app/utils/lib";
+import GSAPLineReveal from "./GSAPLineReveal";
 
 const ProcessData: React.FC<ProcessCardProps> = ({ cardData }) => {
   return (
@@ -13,9 +14,10 @@ const ProcessData: React.FC<ProcessCardProps> = ({ cardData }) => {
           <h2 className="text-[5rem] leading-[88%] xl:text-[6.25rem]">
             {item.title}
           </h2>
-          <span className="text-[18px] leading-[133%] lg:pr-8 xl:pr-28 max-md:max-w-[27em] max-md:pt-5">
-            {item.description}
-          </span>
+          <GSAPLineReveal
+            text={item.description}
+            textClass="text-[18px] leading-[133%] lg:pr-8 xl:pr-28 max-md:max-w-[27em] max-md:pt-5"
+          />
         </div>
       ))}
     </>

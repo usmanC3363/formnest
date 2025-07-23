@@ -5,6 +5,7 @@ import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import Bounded from "@/app/components/Bounded";
 import { GoArrowUpRight } from "react-icons/go";
 import { StyledHeading } from "@/app/components/ui/StyledHeading";
+import GSAPLineReveal from "@/app/components/ui/GSAPLineReveal";
 
 /**
  * Props for `Hero`.
@@ -43,12 +44,14 @@ const Hero: FC<HeroProps> = ({ slice }) => {
         <div className="grid w-full justify-between gap-x-20 place-self-center sm:grid-cols-[1fr_1fr] md:grid-cols-[3fr_3fr_1fr] md:items-end lg:h-fit max-sm:grid-rows-[1fr_1fr_3em] max-md:gap-y-4">
           {/* Taglines */}
 
-          <span className="w-full text-[16px] leading-[24px] lg:text-[18px] xl:max-w-[24.25em] 2xl:text-[20px] max-sm:max-w-80">
-            {slice.primary.tagline1}
-          </span>
-          <span className="w-full text-[16px] leading-[24px] lg:text-[18px] xl:max-w-[24.25em] 2xl:text-[20px] max-sm:max-w-80">
-            {slice.primary.tagline2}
-          </span>
+          <GSAPLineReveal
+            text={slice.primary.tagline1}
+            textClass="w-full text-[16px] leading-[24px] lg:text-[18px] xl:max-w-[24.25em] 2xl:text-[20px] max-sm:max-w-80"
+          />
+          <GSAPLineReveal
+            text={slice.primary.tagline2}
+            textClass="w-full text-[16px] leading-[24px] lg:text-[18px] xl:max-w-[24.25em] 2xl:text-[20px] max-sm:max-w-80"
+          />
 
           {/* CTA Button */}
           <div className="flex w-fit items-end border border-b-mybrown-50 md:place-self-end max-md:place-self-start">

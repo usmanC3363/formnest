@@ -2,6 +2,7 @@ import React from "react";
 import { createClient } from "@/prismicio";
 import { paddingClass } from "../utils/constants";
 import { PrismicNextLink } from "@prismicio/next";
+import GSAPLineReveal from "./ui/GSAPLineReveal";
 
 // import { PrismicLink } from "@prismicio/react";
 
@@ -20,9 +21,11 @@ export default async function Footer() {
 
         <div className="flex h-full w-full flex-col justify-between">
           <div className="flex flex-col gap-5 place-self-start">
-            <span className="max-w-[34.75rem] text-[20px] leading-[114%] sm:text-[24px] lg:text-[28px]">
-              {footer.data.description}
-            </span>
+            {/* DESCRIPTION */}
+            <GSAPLineReveal
+              text={footer.data.description}
+              textClass="max-w-[34.75rem] text-[20px] leading-[114%] sm:text-[24px] lg:text-[28px]"
+            />
           </div>
           <div></div>
           <span className="text-[18px]">

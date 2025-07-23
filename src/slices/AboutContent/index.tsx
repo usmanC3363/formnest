@@ -3,6 +3,7 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import Bounded from "@/app/components/Bounded";
 import { PrismicNextImage } from "@prismicio/next";
+import GSAPLineReveal from "@/app/components/ui/GSAPLineReveal";
 
 /**
  * Props for `IconTextHighlights`.
@@ -25,9 +26,10 @@ const IconTextHighlights: FC<IconTextHighlightsProps> = ({ slice }) => {
         {/* MISSION DIV */}
 
         <div className="flex max-w-[42em]">
-          <span className="text-[18px] leading-[133%]">
-            {slice.primary.mission}
-          </span>
+          <GSAPLineReveal
+            text={slice.primary.mission}
+            textClass="text-[18px] leading-[133%]"
+          />
         </div>
         {/* SubGrid */}
         <div className="grid gap-x-[6.25rem] gap-y-14 lg:grid-cols-[1fr_3fr]">
@@ -53,7 +55,10 @@ const IconTextHighlights: FC<IconTextHighlightsProps> = ({ slice }) => {
               <React.Fragment key={index}>
                 <div className="flex flex-col gap-y-2.5 lg:gap-y-2">
                   <span className="text-[28px]">{highlight.title}</span>
-                  <span className="text-[18px]">{highlight.description}</span>
+                  <GSAPLineReveal
+                    text={highlight.description}
+                    textClass="text-[18px]"
+                  />
                 </div>
               </React.Fragment>
             ))}

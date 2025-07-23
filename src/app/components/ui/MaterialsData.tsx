@@ -3,6 +3,7 @@
 import { PrismicNextImage } from "@prismicio/next";
 import React from "react";
 import { MaterialsCardProps } from "@/app/utils/lib";
+import GSAPLineReveal from "./GSAPLineReveal";
 
 const MaterialsData: React.FC<MaterialsCardProps> = ({ gridData }) => {
   return (
@@ -39,7 +40,10 @@ const MaterialsData: React.FC<MaterialsCardProps> = ({ gridData }) => {
               key={index}
               className="col-span-1 flex flex-col items-end justify-end px-4 py-[42px]"
             >
-              <h2 className="text-[44px]">{item.materialTitle}</h2>
+              <GSAPLineReveal
+                text={item.materialTitle}
+                textClass="text-[44px]"
+              />
             </div>
           );
         }

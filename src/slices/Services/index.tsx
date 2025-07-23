@@ -7,6 +7,7 @@ import { Arrows } from "@/app/utils/constants";
 import { BsDot } from "react-icons/bs";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { GoArrowUpRight } from "react-icons/go";
+import GSAPLineReveal from "@/app/components/ui/GSAPLineReveal";
 
 /**
  * Props for `ServiceListingNavigation`.
@@ -39,9 +40,10 @@ const ServiceListingNavigation: FC<ServiceListingNavigationProps> = ({
           </h1>
         </div>
         {/* Section Description */}
-        <span className="text-[18px] lg:text-[28px] max-sm:pl-9">
-          {slice.primary.section_description}
-        </span>
+        <GSAPLineReveal
+          text={slice.primary.section_description}
+          textClass="text-[18px] lg:text-[28px] max-sm:pl-9"
+        />
       </div>
       {/* Service Title and Images Main Grid */}
       <div className="grid h-[36em] w-full grid-cols-[1fr_2fr] items-center">

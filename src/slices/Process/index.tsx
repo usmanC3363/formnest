@@ -4,6 +4,7 @@ import { SliceComponentProps } from "@prismicio/react";
 import Bounded from "@/app/components/Bounded";
 import { BsDot } from "react-icons/bs";
 import ProcessData from "@/app/components/ui/ProcessData";
+import GSAPLineReveal from "@/app/components/ui/GSAPLineReveal";
 
 /**
  * Props for `Process`.
@@ -31,9 +32,10 @@ const Process: FC<ProcessProps> = ({ slice }) => {
           </h1>
         </div>
         {/* Section Description */}
-        <span className="text-[18px] lg:text-[28px] max-sm:pl-9">
-          {slice.primary.section_description}
-        </span>
+        <GSAPLineReveal
+          text={slice.primary.section_description}
+          textClass="text-[18px] lg:text-[28px] max-sm:pl-9"
+        />
       </div>
       <div className="flex w-full flex-col items-center">
         <ProcessData
