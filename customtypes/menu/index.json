@@ -43,6 +43,14 @@
                 "allowText": true,
                 "repeat": false
               }
+            },
+            "link_image": {
+              "type": "Image",
+              "config": {
+                "label": "Link Image",
+                "constraint": {},
+                "thumbnails": []
+              }
             }
           }
         }

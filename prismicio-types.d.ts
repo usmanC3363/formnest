@@ -542,6 +542,16 @@ export interface MenuDocumentDataMenuLinksItem {
     prismic.FieldState,
     never
   >;
+
+  /**
+   * Link Image field in *Menu → Menu Links*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu.menu_links[].link_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  link_image: prismic.ImageField<never>;
 }
 
 /**

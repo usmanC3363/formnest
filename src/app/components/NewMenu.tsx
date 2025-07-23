@@ -1,5 +1,5 @@
 "use client";
-import { PrismicNextLink } from "@prismicio/next";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import React, { useEffect, useState } from "react";
 import { getCurrentScreenSize } from "../utils/constants.js";
 import { Content } from "@prismicio/client";
@@ -14,6 +14,7 @@ type Props = {
 };
 
 export default function NewMenu({ menuLinks }: Props) {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [open, setOpen] = useState(false);
   const [screenSize, setScreenSize] = useState<string | null>(null);
 
@@ -28,41 +29,60 @@ export default function NewMenu({ menuLinks }: Props) {
 
   return (
     <>
-      {/* Mobile Menu Overlay */}
+      {/* Main Overlay */}
       <div
         className={`fixed inset-0 z-50 flex min-h-screen items-center justify-center bg-mywhite-50 backdrop-blur-lg transition-all ${
           open
-            ? "translate-y-8 duration-[1200ms] ease-[cubic-bezier(0.8,0,0.2,0.8)]"
+            ? "translate-y-[4%] duration-[1200ms] ease-[cubic-bezier(0.8,0,0.2,0.8)]"
             : "w-screen -translate-y-full duration-[1200ms] ease-[cubic-bezier(0.8,0,0.2,1)]"
         }`}
       >
-        <div className="flex h-full w-[50%] flex-col justify-center gap-8">
-          <div className="flex flex-col gap-y-4">
-            {menuLinks?.map((item, index) => (
-              <PrismicNextLink
+        <div className="flex h-full w-[60%] flex-col items-center justify-center gap-y-4">
+          {menuLinks?.map((item, index) => {
+            const isActive = hoveredIndex === index;
+            // const isAnyHovered = hoveredIndex !== null;
+            return (
+              <div
+                className={` ${index % 2 === 0 ? "justify-center" : "justify-end"} flex w-full max-w-[32rem]`}
                 key={index}
-                field={item.link_url}
-                className={`flex h-20 w-fit items-center justify-between gap-x-0.5 transition-all duration-500 ease-in-out ${
-                  open ? "opacity-100" : ""
-                } ${index % 2 === 0 ? "" : ``}`}
                 style={
                   index % 2 === 0
-                    ? { translate: 10 + 45 * item.order }
-                    : { translate: -10 - 10 * item.order }
-                  //   {
-                  //   transitionDelay: `${200 + index * 100}ms`,
-                  // }
+                    ? { translate: 0 + 45 * index }
+                    : { translate: 0 - 200 / index / 1.5 }
                 }
-                onClick={toggleMenu}
               >
-                <span className="self-start text-xs">0{item.order}</span>
-                <StyledHeading
-                  text={item.link_title}
-                  headingClass="text-[4.5rem] uppercase tracking-[-0.04em] leading-none"
-                />
-              </PrismicNextLink>
-            ))}
-          </div>
+                <PrismicNextLink
+                  field={item.link_url}
+                  className={`flex h-20 w-fit items-center justify-between gap-x-2 transition-all duration-500 ease-in-out ${
+                    open ? "opacity-100" : ""
+                  } ${index % 2 === 0 ? "" : ``}`}
+                  onClick={toggleMenu}
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                >
+                  <span
+                    className={`self-start text-xs transition-all duration-500 ease-in-out ${
+                      isActive ? "text-mybrown-50" : "text-mybrown-50/30"
+                    }`}
+                  >
+                    0{item.order}
+                  </span>
+                  <StyledHeading
+                    text={item.link_title}
+                    headingClass={`text-[4.5rem] min-w-fit uppercase tracking-[-0.04em] leading-none transition-all duration-500 ease-in-out ${
+                      isActive ? "text-mybrown-50" : "text-mybrown-50/30"
+                    }`}
+                  />
+                  <PrismicNextImage
+                    field={item.link_image}
+                    className={`h-[3.8125rem] w-[6.8125rem] translate-x-3 object-contain object-center transition-all duration-500 ease-in-out ${
+                      isActive ? "" : "translate-x-10 opacity-0"
+                    }`}
+                  />
+                </PrismicNextLink>
+              </div>
+            );
+          })}
         </div>
       </div>
 
