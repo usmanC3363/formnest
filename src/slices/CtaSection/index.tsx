@@ -3,6 +3,7 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import Bounded from "@/app/components/Bounded";
 import { PrismicNextImage } from "@prismicio/next";
+import GSAPLineReveal from "@/app/components/ui/GSAPLineReveal";
 
 /**
  * Props for `CtaSection`.
@@ -28,9 +29,11 @@ const CtaSection: FC<CtaSectionProps> = ({ slice }) => {
                 key={index}
                 className={`${index % 2 === 0 ? "" : "self-end"} flex`}
               >
-                <span className="w-fit text-[4rem] uppercase leading-none tracking-[-0.04em] xs:text-[4.5rem] sm:text-[5rem] xl:text-[6.25rem]">
-                  {word.word1_label}
-                </span>
+                <GSAPLineReveal
+                  text={word.word1_label}
+                  textClass="w-fit text-[4rem] uppercase leading-none tracking-[-0.04em]
+                xs:text-[4.5rem] sm:text-[5rem] xl:text-[6.25rem]"
+                />
               </div>
             ))}
           </div>
@@ -38,7 +41,7 @@ const CtaSection: FC<CtaSectionProps> = ({ slice }) => {
             field={slice.primary.cta_image}
             className="absolute left-0 top-[22%] h-[280px] w-[13rem] object-cover object-center lg:top-[19%] lg:h-fit"
           />
-          <div className="w-fit max-w-52">
+          <div className="slide-in-left w-fit max-w-52">
             <span className="">{slice.primary.cta_tagline}</span>
           </div>
         </div>
@@ -49,32 +52,35 @@ const CtaSection: FC<CtaSectionProps> = ({ slice }) => {
                 key={index}
                 className={`flex ${index % 2 === 0 ? "self-end" : "max-w-full self-end xs:max-w-[88%] xs:self-start sm:max-w-[24.5em] xl:max-w-[32em]"}`}
               >
-                <span
-                  className={`${index % 2 === 0 ? "leading-none" : "leading-[120%]"} w-fit text-right text-[4rem] uppercase tracking-[-0.04em] xs:text-[4.5rem] sm:text-[5rem] xl:text-[6.25rem]`}
-                >
-                  {word.word2_label}
-                </span>
+                <GSAPLineReveal
+                  text={word.word2_label}
+                  textClass={`${index % 2 === 0 ? "leading-none" : "leading-[120%]"} w-fit text-right text-[4rem] uppercase tracking-[-0.04em] xs:text-[4.5rem] sm:text-[5rem] xl:text-[6.25rem]`}
+                />
               </div>
             ))}
           </div>
           <div className="grid h-fit w-full grid-cols-[1fr_1fr] grid-rows-[6em_6em] gap-8">
             <div className="flex h-fit w-fit flex-col gap-y-0.5">
-              <span>{slice.primary.person_name}</span>
-              <span>Formnest</span>
+              <span className="fade-up">{slice.primary.person_name}</span>
+              <span className="fade-up">Formnest</span>
             </div>
             <div className="flex h-fit w-fit flex-col gap-y-3">
-              <span>Reach out to us:</span>
-              <span className="text-[18px]">{slice.primary.email_address}</span>
+              <span className="fade-up">Reach out to us:</span>
+              <span className="fade-up text-[18px]">
+                {slice.primary.email_address}
+              </span>
             </div>
             <div className="flex h-fit w-fit flex-col gap-y-0.5">
-              <span>{slice.primary.address_details}</span>
-              <span>{slice.primary.address_city}</span>
-              <span>{slice.primary.address_country}</span>
-              <span>{slice.primary.address_number}</span>
+              <span className="fade-up">{slice.primary.address_details}</span>
+              <span className="fade-up">{slice.primary.address_city}</span>
+              <span className="fade-up">{slice.primary.address_country}</span>
+              <span className="fade-up">{slice.primary.address_number}</span>
             </div>
             <div className="flex h-fit w-fit flex-col gap-y-3 self-end">
-              <span>Call us:</span>
-              <span className="text-[18px]">{slice.primary.mobile_number}</span>
+              <span className="fade-up">Call us:</span>
+              <span className="fade-up text-[18px]">
+                {slice.primary.mobile_number}
+              </span>
             </div>
           </div>
         </div>

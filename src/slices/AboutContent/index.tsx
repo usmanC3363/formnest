@@ -15,6 +15,10 @@ export type IconTextHighlightsProps =
  * Component for "IconTextHighlights" Slices.
  */
 const IconTextHighlights: FC<IconTextHighlightsProps> = ({ slice }) => {
+  // const highlightCount = slice.primary.highlights.length;
+
+  // Automatically manages the sequence
+  // useSequentialReveal(highlightCount, true);
   return (
     <Bounded
       isSticky={slice.primary.issticky}
@@ -43,7 +47,7 @@ const IconTextHighlights: FC<IconTextHighlightsProps> = ({ slice }) => {
                 >
                   <PrismicNextImage
                     field={abtImg.image}
-                    className="h-full w-full object-cover object-center"
+                    className="expand-height h-full w-full object-cover object-center"
                   />
                 </div>
               ))}
@@ -54,7 +58,9 @@ const IconTextHighlights: FC<IconTextHighlightsProps> = ({ slice }) => {
             {slice.primary.highlights.map((highlight, index) => (
               <React.Fragment key={index}>
                 <div className="flex flex-col gap-y-2.5 lg:gap-y-2">
-                  <span className="text-[28px]">{highlight.title}</span>
+                  <span className="slide-in-left text-[28px]">
+                    {highlight.title}
+                  </span>
                   <GSAPLineReveal
                     text={highlight.description}
                     textClass="text-[18px]"

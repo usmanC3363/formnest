@@ -41,9 +41,12 @@ export default async function Footer() {
             <div className="flex w-fit flex-col gap-y-2">
               {footer.data.inner_pages.slice(0, 3).map((innerPage, index) => (
                 <PrismicNextLink
-                  className=""
+                  className="fade-up"
                   field={innerPage.page_link}
                   key={index}
+                  style={{
+                    transitionDelay: `${150 + index * 120}ms`,
+                  }}
                 >
                   <span className="text-nowrap text-[18px] leading-[133%]">
                     {innerPage.page_title}
@@ -55,9 +58,12 @@ export default async function Footer() {
             <div className="flex w-fit flex-col gap-y-2">
               {footer.data.inner_pages.slice(3, 6).map((innerPage, index) => (
                 <PrismicNextLink
-                  className=""
+                  className="fade-up"
                   field={innerPage.page_link}
                   key={index}
+                  style={{
+                    transitionDelay: `${150 + index * 120}ms`,
+                  }}
                 >
                   <span className="text-nowrap text-[18px] leading-[133%]">
                     {innerPage.page_title}
@@ -70,9 +76,12 @@ export default async function Footer() {
             <div className="flex w-fit flex-col gap-2">
               {footer.data.social_links.map((social, index) => (
                 <PrismicNextLink
-                  className=""
+                  className="fade-up"
                   field={social.social_url}
                   key={index}
+                  style={{
+                    transitionDelay: `${150 + index * 120}ms`,
+                  }}
                 >
                   <span className="text-nowrap text-[18px] leading-[133%]">
                     {social.social_title}
@@ -84,14 +93,16 @@ export default async function Footer() {
           {/* NewsLetter */}
 
           <div className="flex flex-col gap-y-3">
-            <span className="text-[18px]">Sign up for our newsletter</span>
+            <span className="fade-up text-[18px]">
+              Sign up for our newsletter
+            </span>
             <div className="flex items-center border-b border-[#ccc]">
               <input
                 type="email"
                 placeholder="Type Your Email Address"
-                className="flex-1 bg-transparent py-2 text-sm placeholder-mywhite-50/30 focus:outline-none"
+                className="fade-up flex-1 bg-transparent py-2 text-sm placeholder-mywhite-50/30 focus:outline-none"
               />
-              <button className="text-sm text-mywhite-50">SEND</button>
+              <button className="fade-up text-sm text-mywhite-50">SEND</button>
             </div>
 
             <span className="py-1 text-[18px]">

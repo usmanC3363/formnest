@@ -24,7 +24,7 @@ const Process: FC<ProcessProps> = ({ slice }) => {
     >
       <div className="flex items-start gap-x-52 gap-y-8 lg:gap-x-60 max-sm:flex-col">
         {/* Section TITLE & Description */}
-        <div className="flex items-center gap-x-3.5">
+        <div className="slide-in-left flex items-center gap-x-3.5">
           <BsDot className="h-5 w-5 rounded-full bg-mybrown-50" />
           {/* Section TITLE */}
           <h1 className="text-[40px] uppercase md:text-[32px]">

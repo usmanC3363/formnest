@@ -32,7 +32,7 @@ const ServiceListingNavigation: FC<ServiceListingNavigationProps> = ({
     >
       <div className="flex items-start gap-x-52 gap-y-8 lg:gap-x-60 max-sm:flex-col">
         {/* Section TITLE & Description */}
-        <div className="flex items-center gap-x-3.5">
+        <div className="slide-in-left flex items-center gap-x-3.5">
           <BsDot className="h-5 w-5 rounded-full bg-mybrown-50" />
           {/* Section TITLE */}
           <h1 className="text-[40px] uppercase md:text-[32px]">
@@ -52,7 +52,7 @@ const ServiceListingNavigation: FC<ServiceListingNavigationProps> = ({
           {slice.primary.services_data.map((service, index) => (
             <div
               key={index}
-              className={`${index % 2 === 0 ? "justify-center" : ""} ${currentService === index ? "" : ""} flex w-full items-center transition-all duration-300 ease-in-out`}
+              className={`${index % 2 === 0 ? "slide-in-left justify-center" : "slide-in-right"} ${currentService === index ? "" : ""} flex w-full items-center transition-all duration-300 ease-in-out`}
             >
               <button
                 className={`${currentService === index ? "w-[90%]" : "w-[80%]"} flex items-center gap-x-0 transition-all duration-300 ease-in-out`}
@@ -106,11 +106,12 @@ const ServiceListingNavigation: FC<ServiceListingNavigationProps> = ({
         </div>
       </div>
       <div className="flex">
-        <PrismicNextLink field={slice.primary.view_services} className="w-fit">
-          <button className="flex items-center gap-2 border border-b-mybrown-50">
-            <span>View All</span>
-            <GoArrowUpRight className="text-xl" />
-          </button>
+        <PrismicNextLink
+          field={slice.primary.view_services}
+          className="slide-in-left flex w-fit items-center gap-2 border border-b-mybrown-50"
+        >
+          <span>View All</span>
+          <GoArrowUpRight className="text-xl" />
         </PrismicNextLink>
       </div>
     </Bounded>

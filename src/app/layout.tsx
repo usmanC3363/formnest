@@ -6,6 +6,7 @@ import "./fonts.css";
 // import InViewObserver from "./components/ui/InViewObserver";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import InViewObserver from "./components/ui/InViewObserver";
 
 export default function RootLayout({
   children,
@@ -17,7 +18,10 @@ export default function RootLayout({
       <body className="no-scrollbar h-full">
         <Header />
 
-        <div className="mt-32">{children}</div>
+        <div className="mt-32">
+          <InViewObserver />
+          {children}
+        </div>
         <Footer />
         <PrismicPreview repositoryName={repositoryName} />
       </body>

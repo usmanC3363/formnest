@@ -23,13 +23,6 @@
   }
 }
 
-/* h1 {
-  letter-spacing: -0.03em;
-  font-weight: 300;
-  color: #3f2b24; 
-}
-*/
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -95,4 +88,88 @@ body {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
+}
+
+.fade-up,
+.slide-in-right,
+.slide-in-left,
+.slide-in-up,
+.slide-in-down,
+.grow-in {
+  @apply transition-all duration-700 ease-in-out;
+}
+
+.expand-height,
+.expand-width {
+  @apply transition-all duration-[600ms] ease-linear;
+}
+/* Fade-up animation for headings and paragraphs */
+.fade-up {
+  @apply translate-y-8 opacity-0;
+}
+
+.fade-up.is-inview {
+  @apply translate-y-0 opacity-100;
+}
+
+/* Slide in from right animation */
+.slide-in-right {
+  @apply translate-x-16 opacity-0;
+}
+
+.slide-in-right.is-inview {
+  @apply translate-x-0 opacity-100;
+}
+
+/* Slide in from left animation */
+.slide-in-left {
+  @apply -translate-x-16 opacity-0;
+}
+
+.slide-in-left.is-inview {
+  @apply translate-x-0 opacity-100;
+}
+
+.slide-in-up {
+  @apply translate-y-16 opacity-0;
+}
+
+.slide-in-up.is-inview {
+  @apply translate-y-0 opacity-100;
+}
+.slide-in-down {
+  @apply -translate-y-16 opacity-0;
+}
+
+.slide-in-down.is-inview {
+  @apply -translate-y-0 opacity-100;
+}
+
+/* Grow animation (for images) */
+.grow-in {
+  @apply scale-75 opacity-0;
+}
+
+.grow-in.is-inview {
+  @apply scale-100 opacity-100;
+}
+
+/* Width animation (0 to full width) */
+.expand-width {
+  @apply w-0 opacity-0;
+  transition-property: width, opacity;
+  transform-origin: "left";
+}
+
+.expand-width.is-inview {
+  @apply w-full opacity-100;
+}
+.expand-height {
+  @apply h-0 opacity-0;
+  transition-property: height, opacity;
+  /* transform-origin: "top"; */
+}
+
+.expand-height.is-inview {
+  @apply h-full opacity-100;
 }

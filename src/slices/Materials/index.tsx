@@ -27,7 +27,7 @@ const Materials: FC<MaterialsProps> = ({ slice }) => {
     >
       <div className="flex flex-col gap-y-7">
         {/* Section Title and DOT */}
-        <div className="flex items-center gap-x-3.5">
+        <div className="slide-in-left flex items-center gap-x-3.5">
           <BsDot className="h-5 w-5 rounded-full bg-mybrown-50" />
           <h1 className="text-[40px] md:text-[32px]">
             {slice.primary.section_title}
@@ -35,7 +35,7 @@ const Materials: FC<MaterialsProps> = ({ slice }) => {
         </div>
 
         {/* Section Heading */}
-        <h1 className="text-[40px] leading-none tracking-[-0.04em] sm:text-[60px] md:text-[80px] xl:text-[6.25rem]">
+        <h1 className="fade-up text-[40px] leading-none tracking-[-0.04em] sm:text-[60px] md:text-[80px] xl:text-[6.25rem]">
           {slice.primary.section_headline}
         </h1>
       </div>

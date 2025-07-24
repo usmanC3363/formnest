@@ -34,10 +34,10 @@ const Hero: FC<HeroProps> = ({ slice }) => {
 
           <StyledHeading
             text={slice.primary.heading}
-            headingClass="min-w-fit text-[3em] uppercase tracking-[-0.04em] xs:text-[3.5rem] sm:text-[60px] md:text-[72px] lg:text-[6rem] xl:text-[6.25rem] 3xl:text-[7rem] max-xs:pr-12 max-sm:w-[22rem] max-md:leading-[133%]"
+            headingClass="slide-in-left min-w-fit text-[3em] uppercase tracking-[-0.04em] xs:text-[3.5rem] sm:text-[60px] md:text-[72px] lg:text-[6rem] xl:text-[6.25rem] 3xl:text-[7rem] max-xs:pr-12 max-sm:w-[22rem] max-md:leading-[133%]"
             headingStyle={{ wordSpacing: "0.1em" }}
           />
-          <hr className="h-[2.45px] w-full min-w-full bg-mybrown-50" />
+          <hr className="expand-width h-[2.45px] w-full min-w-full bg-mybrown-50" />
         </div>
 
         {/* Taglines and CTA */}
@@ -54,7 +54,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
           />
 
           {/* CTA Button */}
-          <div className="flex w-fit items-end border border-b-mybrown-50 md:place-self-end max-md:place-self-start">
+          <div className="slide-in-right flex w-fit items-end border border-b-mybrown-50 md:place-self-end max-md:place-self-start">
             <PrismicNextLink field={slice.primary.cta_link}>
               <button
                 className={`flex h-10 w-fit items-center gap-1 rounded-full`}
@@ -71,7 +71,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
           <PrismicNextImage
             priority
             field={slice.primary.hero_image}
-            className="absolute h-full w-full rounded-sm object-cover object-center pt-6"
+            className="slide-in-down absolute h-full w-full rounded-sm object-cover object-center pt-6"
           />
         </div>
       </div>
