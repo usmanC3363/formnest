@@ -1,0 +1,119 @@
+{
+  "type": "SharedSlice",
+  "id": "service_listing_navigation",
+  "name": "Services",
+  "variations": [
+    {
+      "id": "with_featured_items",
+      "name": "With Featured Items",
+      "description": "Displays service categories as a navigational list, a category description, and a grid of featured items belonging to the selected category.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "issticky": {
+          "type": "Boolean",
+          "config": {
+            "label": "IsSticky",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
+        },
+        "section_title": {
+          "type": "Text",
+          "config": {
+            "label": "section title",
+            "placeholder": ""
+          }
+        },
+        "section_description": {
+          "type": "Text",
+          "config": {
+            "label": "section description",
+            "placeholder": ""
+          }
+        },
+        "services_data": {
+          "type": "Group",
+          "config": {
+            "label": "Services Data",
+            "repeat": true,
+            "fields": {
+              "service_id": {
+                "type": "Number",
+                "config": {
+                  "label": "Service id",
+                  "placeholder": ""
+                }
+              },
+              "service_title": {
+                "type": "Text",
+                "config": {
+                  "label": "Service Title",
+                  "placeholder": ""
+                }
+              },
+              "service_image_1": {
+                "type": "Image",
+                "config": {
+                  "label": "Service Image 1",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "image_1_styles": {
+                "type": "Text",
+                "config": {
+                  "label": "Image 1 styles",
+                  "placeholder": ""
+                }
+              },
+              "service_image_2": {
+                "type": "Image",
+                "config": {
+                  "label": "Service Image 2",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "image_2_styles": {
+                "type": "Text",
+                "config": {
+                  "label": "Image 2 styles",
+                  "placeholder": ""
+                }
+              },
+              "service_image_3": {
+                "type": "Image",
+                "config": {
+                  "label": "Service Image 3",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "image_3_styles": {
+                "type": "Text",
+                "config": {
+                  "label": "Image 3 styles",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "view_services": {
+          "type": "Link",
+          "config": {
+            "label": "View All",
+            "placeholder": "",
+            "allowText": true,
+            "repeat": false,
+            "select": null
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

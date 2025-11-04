@@ -1,0 +1,124 @@
+{
+  "id": "cta_section",
+  "type": "SharedSlice",
+  "name": "CtaSection",
+  "description": "CtaSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "issticky": {
+          "type": "Boolean",
+          "config": {
+            "label": "isSticky",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
+        },
+        "heading1_words": {
+          "type": "Group",
+          "config": {
+            "label": "Heading1 Words",
+            "repeat": true,
+            "fields": {
+              "word1_label": {
+                "type": "Text",
+                "config": {
+                  "label": "Word1 label",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "heading2_words": {
+          "type": "Group",
+          "config": {
+            "label": "Heading2 Words",
+            "repeat": true,
+            "fields": {
+              "word2_label": {
+                "type": "Text",
+                "config": {
+                  "label": "Word2 label",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "cta_image": {
+          "type": "Image",
+          "config": {
+            "label": "CTA Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "person_name": {
+          "type": "Text",
+          "config": {
+            "label": "Person Name",
+            "placeholder": ""
+          }
+        },
+        "cta_tagline": {
+          "type": "Text",
+          "config": {
+            "label": "CTA tagline",
+            "placeholder": ""
+          }
+        },
+        "email_address": {
+          "type": "Text",
+          "config": {
+            "label": "Email Address",
+            "placeholder": ""
+          }
+        },
+        "address_details": {
+          "type": "Text",
+          "config": {
+            "label": "Address Details",
+            "placeholder": ""
+          }
+        },
+        "address_city": {
+          "type": "Text",
+          "config": {
+            "label": "Address City",
+            "placeholder": ""
+          }
+        },
+        "address_country": {
+          "type": "Text",
+          "config": {
+            "label": "Address Country",
+            "placeholder": ""
+          }
+        },
+        "mobile_number": {
+          "type": "Text",
+          "config": {
+            "label": "Mobile Number",
+            "placeholder": ""
+          }
+        },
+        "address_number": {
+          "type": "Text",
+          "config": {
+            "label": "Address Number",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

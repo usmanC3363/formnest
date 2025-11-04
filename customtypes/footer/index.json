@@ -1,0 +1,87 @@
+{
+  "format": "custom",
+  "id": "footer",
+  "label": "Footer",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": ""
+        }
+      },
+      "description": {
+        "type": "Text",
+        "config": {
+          "label": "Description",
+          "placeholder": ""
+        }
+      },
+      "social_links": {
+        "type": "Group",
+        "config": {
+          "label": "Social Links",
+          "repeat": true,
+          "fields": {
+            "social_title": {
+              "type": "Text",
+              "config": {
+                "label": "Social Title",
+                "placeholder": ""
+              }
+            },
+            "social_icon": {
+              "type": "Image",
+              "config": {
+                "label": "Social Icon",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "social_url": {
+              "type": "Link",
+              "config": {
+                "label": "Social Url",
+                "placeholder": "",
+                "select": null,
+                "allowTargetBlank": true,
+                "allowText": true,
+                "repeat": false
+              }
+            }
+          }
+        }
+      },
+      "inner_pages": {
+        "type": "Group",
+        "config": {
+          "label": "Inner pages",
+          "repeat": true,
+          "fields": {
+            "page_title": {
+              "type": "Text",
+              "config": {
+                "label": "Page Title",
+                "placeholder": ""
+              }
+            },
+            "page_link": {
+              "type": "Link",
+              "config": {
+                "label": "Page Link",
+                "placeholder": "",
+                "select": null,
+                "allowTargetBlank": true,
+                "allowText": true,
+                "repeat": false
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

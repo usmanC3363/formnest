@@ -1,0 +1,59 @@
+{
+  "id": "works",
+  "type": "SharedSlice",
+  "name": "Works",
+  "description": "Works",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "issticky": {
+          "type": "Boolean",
+          "config": {
+            "label": "IsSticky",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
+        },
+        "section_title": {
+          "type": "Text",
+          "config": {
+            "label": "Section Title",
+            "placeholder": ""
+          }
+        },
+        "section_headline": {
+          "type": "Text",
+          "config": {
+            "label": "Section Headline",
+            "placeholder": ""
+          }
+        },
+        "galleryimages": {
+          "type": "Group",
+          "config": {
+            "label": "GalleryImages",
+            "repeat": true,
+            "fields": {
+              "image_src": {
+                "type": "Image",
+                "config": {
+                  "label": "Image Src",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
