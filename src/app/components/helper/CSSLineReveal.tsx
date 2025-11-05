@@ -19,9 +19,9 @@ export default function CSSLineReveal({
   divClass = "",
   spanClass = "",
   delay = 0,
-  lineDelay = 6, // smoother stagger — not too slow
+  lineDelay = 1, // smoother stagger — not too slow
   duration = 1.25,
-  threshold = 1, // earlier trigger
+  threshold = 0.25, // earlier trigger
 }: CSSLineRevealProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
