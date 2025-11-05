@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import Bounded from "@/app/components/Bounded";
+import Bounded from "@/app/components/helper/Bounded";
 import { PrismicNextImage } from "@prismicio/next";
-import GSAPLineReveal from "@/app/components/ui/GSAPLineReveal";
+import CSSLineReveal from "@/app/components/helper/CSSLineReveal";
 
 /**
  * Props for `IconTextHighlights`.
@@ -30,10 +30,9 @@ const IconTextHighlights: FC<IconTextHighlightsProps> = ({ slice }) => {
         {/* MISSION DIV */}
 
         <div className="flex max-w-[42em]">
-          <GSAPLineReveal
-            text={slice.primary.mission}
-            textClass="text-[18px] leading-[133%]"
-          />
+          <CSSLineReveal textClass="text-[18px] leading-[133%]">
+            {slice.primary.mission}
+          </CSSLineReveal>
         </div>
         {/* SubGrid */}
         <div className="grid gap-x-[6.25rem] gap-y-14 lg:grid-cols-[1fr_3fr]">
@@ -45,9 +44,13 @@ const IconTextHighlights: FC<IconTextHighlightsProps> = ({ slice }) => {
                   key={index}
                   className={`${index === 0 ? "h-[260px] w-[180px] sm:w-[210px]" : "h-[127px] w-[180px] sm:w-[210px]"} relative`}
                 >
+                  <div
+                    className="expand-height absolute bottom-0 h-full w-full bg-white"
+                    style={{ transformOrigin: "top" }}
+                  />
                   <PrismicNextImage
                     field={abtImg.image}
-                    className="expand-height h-full w-full object-cover object-center"
+                    className="h-full w-full object-cover object-center"
                   />
                 </div>
               ))}
@@ -61,10 +64,9 @@ const IconTextHighlights: FC<IconTextHighlightsProps> = ({ slice }) => {
                   <span className="slide-in-left text-[28px]">
                     {highlight.title}
                   </span>
-                  <GSAPLineReveal
-                    text={highlight.description}
-                    textClass="text-[18px]"
-                  />
+                  <CSSLineReveal textClass="text-[18px]">
+                    {highlight.description}
+                  </CSSLineReveal>
                 </div>
               </React.Fragment>
             ))}

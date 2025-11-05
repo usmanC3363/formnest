@@ -2,12 +2,13 @@
 import React, { FC, useState } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import Bounded from "@/app/components/Bounded";
+import Bounded from "@/app/components/helper/Bounded";
 import { Arrows } from "@/app/utils/constants";
 import { BsDot } from "react-icons/bs";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { GoArrowUpRight } from "react-icons/go";
-import GSAPLineReveal from "@/app/components/ui/GSAPLineReveal";
+import GSAPLineReveal from "@/app/components/helper/GSAPLineReveal";
+import CSSLineReveal from "@/app/components/helper/CSSLineReveal";
 
 /**
  * Props for `ServiceListingNavigation`.
@@ -40,10 +41,9 @@ const ServiceListingNavigation: FC<ServiceListingNavigationProps> = ({
           </h1>
         </div>
         {/* Section Description */}
-        <GSAPLineReveal
-          text={slice.primary.section_description}
-          textClass="text-[18px] lg:text-[28px] max-sm:pl-9"
-        />
+        <CSSLineReveal textClass="text-[18px] lg:text-[28px] max-sm:pl-9">
+          {slice.primary.section_description}
+        </CSSLineReveal>
       </div>
       {/* Service Title and Images Main Grid */}
       <div className="grid h-[36em] w-full grid-cols-[1fr_2fr] items-center">

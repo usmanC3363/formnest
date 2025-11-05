@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import Bounded from "@/app/components/Bounded";
+import Bounded from "@/app/components/helper/Bounded";
 import { PrismicNextImage } from "@prismicio/next";
-import GSAPLineReveal from "@/app/components/ui/GSAPLineReveal";
+import CSSLineReveal from "@/app/components/helper/CSSLineReveal";
 
 /**
  * Props for `CtaSection`.
@@ -29,11 +29,12 @@ const CtaSection: FC<CtaSectionProps> = ({ slice }) => {
                 key={index}
                 className={`${index % 2 === 0 ? "" : "self-end"} flex`}
               >
-                <GSAPLineReveal
-                  text={word.word1_label}
+                <CSSLineReveal
                   textClass="w-fit text-[4rem] uppercase leading-none tracking-[-0.04em]
                 xs:text-[4.5rem] sm:text-[5rem] xl:text-[6.25rem]"
-                />
+                >
+                  {word.word1_label}
+                </CSSLineReveal>
               </div>
             ))}
           </div>
@@ -52,10 +53,11 @@ const CtaSection: FC<CtaSectionProps> = ({ slice }) => {
                 key={index}
                 className={`flex ${index % 2 === 0 ? "self-end" : "max-w-full self-end xs:max-w-[88%] xs:self-start sm:max-w-[24.5em] xl:max-w-[32em]"}`}
               >
-                <GSAPLineReveal
-                  text={word.word2_label}
+                <CSSLineReveal
                   textClass={`${index % 2 === 0 ? "leading-none" : "leading-[120%]"} w-fit text-right text-[4rem] uppercase tracking-[-0.04em] xs:text-[4.5rem] sm:text-[5rem] xl:text-[6.25rem]`}
-                />
+                >
+                  {word.word2_label}
+                </CSSLineReveal>
               </div>
             ))}
           </div>

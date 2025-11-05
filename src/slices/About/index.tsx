@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import Bounded from "@/app/components/Bounded";
+import Bounded from "@/app/components/helper/Bounded";
 import { PrismicNextImage } from "@prismicio/next";
 import { BsDot } from "react-icons/bs";
 
@@ -19,7 +19,7 @@ const About: FC<AboutProps> = ({ slice }) => {
       isSticky={slice.primary.issticky}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="-top-[45rem] h-[150vh] bg-white py-16 lg:grid lg:grid-cols-[3fr_1fr] xl:grid-cols-[2fr_1fr]"
+      className="-top-[44.95rem] h-[140vh] bg-white py-16 lg:grid lg:grid-cols-[3fr_1fr] xl:grid-cols-[2fr_1fr]"
     >
       {/* Main DIV */}
 
@@ -47,9 +47,13 @@ const About: FC<AboutProps> = ({ slice }) => {
 
         {/* About Image */}
         <div className="relative h-[34.625rem] w-full xl:w-[63.45rem]">
+          <div
+            className="expand-height absolute bottom-0 h-full w-full bg-white"
+            // style={{ transformOrigin: "top" }}
+          />
           <PrismicNextImage
             field={slice.primary.about_image}
-            className="expand-height h-full w-full object-cover object-center"
+            className="h-full w-full object-cover object-center"
           />
         </div>
       </div>
