@@ -1,7 +1,7 @@
 import React from "react";
 import { createClient } from "@/prismicio";
-import HeaderShell from "./ui/HeaderShell";
-import HeaderContent from "./ui/HeaderContent";
+import HeaderShell from "./helper/HeaderShell";
+import HeaderContent from "./helper/HeaderContent";
 import { Content } from "@prismicio/client";
 
 type HeaderDocument = Content.HeaderDocument;

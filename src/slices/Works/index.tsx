@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import Bounded from "@/app/components/Bounded";
+import Bounded from "@/app/components/helper/Bounded";
 import { BsDot } from "react-icons/bs";
 import { PrismicNextImage } from "@prismicio/next";
 

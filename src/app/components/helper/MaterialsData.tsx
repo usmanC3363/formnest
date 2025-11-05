@@ -3,7 +3,7 @@
 import { PrismicNextImage } from "@prismicio/next";
 import React from "react";
 import { MaterialsCardProps } from "@/app/utils/lib";
-import GSAPLineReveal from "./GSAPLineReveal";
+import CSSLineReveal from "./CSSLineReveal";
 
 const MaterialsData: React.FC<MaterialsCardProps> = ({ gridData }) => {
   return (
@@ -17,9 +17,10 @@ const MaterialsData: React.FC<MaterialsCardProps> = ({ gridData }) => {
             >
               <span className="slide-in-left">0{item.order}</span>
               <div className="relative h-60 w-full">
+                <div className="expand-height absolute bottom-0 h-full w-full bg-white" />
                 <PrismicNextImage
                   field={item.image}
-                  className="expand-height h-full w-full object-cover object-center"
+                  className="h-full w-full object-cover object-center"
                 />
               </div>
               <div className="flex flex-col gap-0.5">
@@ -40,10 +41,9 @@ const MaterialsData: React.FC<MaterialsCardProps> = ({ gridData }) => {
               key={index}
               className="col-span-1 flex flex-col items-end justify-end px-4 py-[42px]"
             >
-              <GSAPLineReveal
-                text={item.materialTitle}
-                textClass="text-[44px]"
-              />
+              <CSSLineReveal textClass="text-[44px]">
+                {item.materialTitle}
+              </CSSLineReveal>
             </div>
           );
         }

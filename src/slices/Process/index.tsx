@@ -1,10 +1,10 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import Bounded from "@/app/components/Bounded";
+import Bounded from "@/app/components/helper/Bounded";
 import { BsDot } from "react-icons/bs";
-import ProcessData from "@/app/components/ui/ProcessData";
-import GSAPLineReveal from "@/app/components/ui/GSAPLineReveal";
+import ProcessData from "@/app/components/helper/ProcessData";
+import CSSLineReveal from "@/app/components/helper/CSSLineReveal";
 
 /**
  * Props for `Process`.
@@ -20,7 +20,7 @@ const Process: FC<ProcessProps> = ({ slice }) => {
       isSticky={slice.primary.issticky}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex h-full flex-col gap-y-14 bg-white pt-20"
+      className="-top-48 flex h-[125vh] flex-col gap-y-14 bg-white pt-20"
     >
       <div className="flex items-start gap-x-52 gap-y-8 lg:gap-x-60 max-sm:flex-col">
         {/* Section TITLE & Description */}
@@ -32,10 +32,9 @@ const Process: FC<ProcessProps> = ({ slice }) => {
           </h1>
         </div>
         {/* Section Description */}
-        <GSAPLineReveal
-          text={slice.primary.section_description}
-          textClass="text-[18px] lg:text-[28px] max-sm:pl-9"
-        />
+        <CSSLineReveal textClass="text-[18px] lg:text-[28px] max-sm:pl-9">
+          {slice.primary.section_description}
+        </CSSLineReveal>
       </div>
       <div className="flex w-full flex-col items-center">
         <ProcessData

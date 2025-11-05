@@ -3,8 +3,7 @@ import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import React, { useEffect, useState } from "react";
 import { getCurrentScreenSize } from "../utils/constants.js";
 import { Content } from "@prismicio/client";
-import { GoArrowRight } from "react-icons/go";
-import { StyledHeading } from "./ui/StyledHeading";
+import { StyledHeading } from "./helper/StyledHeading";
 
 // Typing for individual link item
 type MenuLink = Content.MenuDocument["data"]["menu_links"][number];
