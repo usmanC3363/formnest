@@ -5,6 +5,7 @@ import { SliceComponentProps } from "@prismicio/react";
 import Bounded from "@/app/components/helper/Bounded";
 import { BsDot } from "react-icons/bs";
 import MaterialsData from "@/app/components/helper/MaterialsData";
+import { gridClass } from "@/app/utils/constants";
 
 export type MaterialsProps = SliceComponentProps<Content.MaterialsGridSlice>;
 
@@ -76,22 +77,25 @@ const Materials: FC<MaterialsProps> = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       // {...commonBoundedProps}
-      className="flex h-full flex-col gap-y-14 bg-white pb-12 pt-20 uppercase"
+      className="flex w-screen justify-center bg-white py-16"
     >
-      <div className="flex flex-col gap-y-7">
-        <div className="slide-in-left flex items-center gap-x-3.5">
-          <BsDot className="h-5 w-5 rounded-full bg-mybrown-50" />
-          <h1 className="text-[40px] md:text-[32px]">
-            {slice.primary.section_title}
+      <div
+        className={`grid h-full w-full flex-col gap-y-14 py-14 uppercase ${gridClass}`}
+      >
+        <div className="flex flex-col gap-y-7">
+          <div className="slide-in-left flex items-center gap-x-3.5">
+            <BsDot className="h-5 w-5 rounded-full bg-mybrown-50" />
+            <h1 className="text-[40px] md:text-[32px]">
+              {slice.primary.section_title}
+            </h1>
+          </div>
+
+          <h1 className="fade-up text-[40px] leading-none tracking-[-0.04em] sm:text-[60px] md:text-[80px] xl:text-[6.25rem]">
+            {slice.primary.section_headline}
           </h1>
         </div>
-
-        <h1 className="fade-up text-[40px] leading-none tracking-[-0.04em] sm:text-[60px] md:text-[80px] xl:text-[6.25rem]">
-          {slice.primary.section_headline}
-        </h1>
+        <MaterialsData gridData={gridData} />
       </div>
-
-      <MaterialsData gridData={gridData} />
     </Bounded>
   ) : (
     <Bounded
@@ -100,9 +104,13 @@ const Materials: FC<MaterialsProps> = ({ slice }) => {
       data-slice-variation={slice.variation}
       // {...commonBoundedProps}
       // ${insertIndex === 2 ? "-top-[30%]" : "-top-[45%]"}
-      className={`flex h-[55vh] flex-col justify-center gap-y-14 bg-white py-12 uppercase`}
+      className={`flex min-h-[30em] flex-col justify-center gap-y-14 bg-white py-12 uppercase`}
     >
-      <MaterialsData gridData={gridData} />
+      <div
+        className={`grid h-full w-full flex-col gap-y-14 py-14 uppercase ${gridClass}`}
+      >
+        <MaterialsData gridData={gridData} />
+      </div>
     </Bounded>
   );
 };

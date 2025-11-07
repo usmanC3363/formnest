@@ -28,7 +28,7 @@ const ServiceListingNavigation: FC<ServiceListingNavigationProps> = ({
       isSticky={slice.primary.issticky}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex h-full flex-col gap-y-14 bg-mywhite-50 py-10"
+      className="flex h-full flex-col gap-y-14 bg-mywhite-50 py-10 2xl:py-16"
     >
       <div className="flex items-start gap-x-52 gap-y-8 lg:gap-x-60 max-sm:flex-col">
         {/* Section TITLE & Description */}
@@ -71,6 +71,7 @@ const ServiceListingNavigation: FC<ServiceListingNavigationProps> = ({
             ))}
           </div>
 
+          {/* VIEW ALL BUTTON */}
           <PrismicNextLink
             field={slice.primary.view_services}
             className="slide-in-left flex w-fit items-center gap-2 border border-b-mybrown-50"
@@ -79,6 +80,7 @@ const ServiceListingNavigation: FC<ServiceListingNavigationProps> = ({
             <GoArrowUpRight className="text-xl" />
           </PrismicNextLink>
         </div>
+
         {/* Images GRID */}
         <div className="flex h-full w-full">
           <div className="relative grid h-full w-full grid-cols-8 grid-rows-8 items-center gap-x-2 gap-y-2 border-black">

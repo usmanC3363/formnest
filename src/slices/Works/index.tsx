@@ -21,7 +21,7 @@ const Works: FC<WorksProps> = ({ slice }) => {
       isSticky={slice.primary.issticky}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="relative flex min-h-[120vh] flex-col gap-y-14 bg-mywhite-50 py-24 uppercase"
+      className="relative flex h-[1000px] flex-col gap-y-14 bg-mywhite-50 py-24 uppercase 2xl:h-[65rem]"
     >
       <div className="flex flex-col gap-y-7">
         {/* Section Title and DOT */}
@@ -41,7 +41,7 @@ const Works: FC<WorksProps> = ({ slice }) => {
       {/* ---------- Gallery wrapper: constrains visual width ---------- */}
       {/* ---------- Full-bleed Gallery Section ---------- */}
       <div className="no-scrollbar max-w-screen absolute bottom-0 left-0 h-[70vh] w-full overflow-x-auto overflow-y-hidden scroll-smooth">
-        <div className="absolute bottom-0 left-12 flex min-w-full items-center gap-x-4 py-6 pr-20">
+        <div className="absolute bottom-[10%] left-12 flex min-w-full items-center gap-x-4 py-6 pr-20">
           {slice.primary.galleryimages.map((Img, index) => (
             <div
               key={index}
@@ -53,7 +53,7 @@ const Works: FC<WorksProps> = ({ slice }) => {
             >
               <PrismicNextImage
                 field={Img.image_src}
-                className="h-full w-full object-cover object-center"
+                className={`h-full w-full object-cover object-center`}
               />
             </div>
           ))}

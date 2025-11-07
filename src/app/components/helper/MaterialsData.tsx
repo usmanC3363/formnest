@@ -41,7 +41,7 @@ const MaterialsData: React.FC<MaterialsCardProps> = ({ gridData }) => {
               key={index}
               className="col-span-1 flex max-w-[19.5rem] flex-col items-end justify-end px-4 py-[34px]"
             >
-              <CSSLineReveal textClass="text-[44px]">
+              <CSSLineReveal textClass="text-[44px] pb-1">
                 {item.materialTitle}
               </CSSLineReveal>
             </div>

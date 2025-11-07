@@ -18,7 +18,7 @@ const Bounded = React.forwardRef<HTMLDivElement, BoundedProps>(
       <Comp
         ref={ref}
         className={clsx(
-          `${paddingClass}`,
+          `${paddingClass} `,
           isSticky ? "sticky top-24 -z-10 h-full" : "z-50", // <== sticky scroll behavior
           className,
         )}

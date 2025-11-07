@@ -21,14 +21,14 @@ const Hero: FC<HeroProps> = ({ slice }) => {
       isSticky={slice.primary.issticky}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className={`flex h-full w-screen flex-col justify-center xl:items-center`}
+      className={`flex h-full w-screen flex-col justify-center bg-mywhite-50 pb-20 lg:-mt-[2%] xl:items-center 2xl:mt-0`}
     >
       {/* Main Grid with Rows */}
-      <div className="relative grid h-full w-full md:grid-rows-[1fr_1fr_3fr] xl:justify-items-center xl:place-self-center 2xl:max-w-screen-2xl 2xl:py-20 3xl:max-w-screen-3xl max-md:grid-rows-[9.5em_2fr_2fr]">
+      <div className="relative grid h-full w-full gap-y-4 md:grid-rows-[1fr_1fr_3fr] xl:justify-items-center xl:place-self-center 2xl:max-w-screen-2xl 3xl:max-w-screen-3xl max-md:grid-rows-[auto_2fr_2fr]">
         {/* Hero Heading DIV */}
 
         <div
-          className={`flex h-auto min-w-full flex-col justify-end gap-y-8 rounded-lg sm:gap-y-0 max-sm:w-96`}
+          className={`flex min-w-full flex-col justify-end gap-y-0 rounded-lg max-sm:w-96`}
         >
           {/* Hero Heading */}
           {/* <CSSLineReveal> */}
@@ -70,7 +70,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
           <PrismicNextImage
             priority
             field={slice.primary.hero_image}
-            className="slide-in-down absolute h-full w-full rounded-sm object-cover object-center pt-6"
+            className="slide-in-down absolute h-full w-full rounded-sm object-cover object-center"
           />
         </div>
       </div>
