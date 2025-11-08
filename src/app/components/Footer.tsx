@@ -1,6 +1,6 @@
 import React from "react";
 import { createClient } from "@/prismicio";
-import { paddingClass } from "../utils/constants";
+import { gridClass, paddingClass } from "../utils/constants";
 import { PrismicNextLink } from "@prismicio/next";
 import CSSLineReveal from "./helper/CSSLineReveal";
 
@@ -12,11 +12,13 @@ export default async function Footer() {
   return (
     // Flex Container
     <footer
-      className={` ${paddingClass} flex h-full max-h-[50rem] flex-col items-center justify-end bg-mybrown-50 px-4 py-8 text-mywhite-50 md:max-h-[32rem]`}
+      className={`${paddingClass} flex h-full max-h-[50rem] flex-col items-center justify-end bg-mybrown-50 px-4 py-8 text-mywhite-50 md:max-h-[32rem]`}
     >
       {/* Main Grid */}
 
-      <div className="grid h-fit w-full max-w-full gap-y-7 md:grid-cols-[1fr_1fr] md:gap-x-[10%] lg:h-[80%] lg:justify-between lg:gap-x-[8%] xl:grid-cols-[4fr_5fr] xl:justify-items-center xl:gap-x-[15%] xl:place-self-center 2xl:max-w-screen-2xl 2xl:py-10 3xl:max-w-screen-2xl max-sm:h-full max-md:grid-rows-[2fr_3fr]">
+      <div
+        className={`${gridClass} grid h-fit gap-y-7 md:grid-cols-[1fr_1fr] md:gap-x-[10%] lg:h-[80%] lg:justify-between lg:gap-x-[8%] xl:grid-cols-[4fr_5fr] xl:gap-x-[15%] max-sm:h-full max-md:grid-rows-[2fr_3fr]`}
+      >
         {/* Description Flex */}
 
         <div className="flex h-full w-full flex-col justify-between">

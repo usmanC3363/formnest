@@ -38,7 +38,7 @@ export const isDarkColor = (bgColor) => {
 export const paddingClass = "px-[24px] lg:px-[44px] xl:px-[80px] 2xl:px-8";
 // export const paddingClass = "px-2 md:px-3 lg:px-9 xl:px-[2.5rem] 2xl:px-8";
 export const gridClass =
-  "xl:place-self-center  2xl:max-w-screen-2xl 3xl:max-w-screen-3xl";
+  "xl:place-self-center 2xl:max-w-screen-2xl 3xl:max-w-screen-3xl";
 
 export const secHeading =
   "text-5xl sm:text-6xl -tracking-[0.03em] lg:text-7xl font-light capitalize";
