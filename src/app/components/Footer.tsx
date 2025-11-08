@@ -17,7 +17,7 @@ export default async function Footer() {
       {/* Main Grid */}
 
       <div
-        className={`${gridClass} grid h-fit gap-y-7 md:grid-cols-[1fr_1fr] md:gap-x-[10%] lg:h-[80%] lg:justify-between lg:gap-x-[8%] xl:grid-cols-[4fr_5fr] xl:gap-x-[15%] max-sm:h-full max-md:grid-rows-[2fr_3fr]`}
+        className={`${gridClass} grid h-fit gap-y-7 md:grid-cols-[1fr_1fr] md:gap-x-[10%] lg:h-[80%] lg:justify-between lg:gap-x-[8%] xl:grid-cols-[4fr_5fr] xl:justify-items-center xl:gap-x-[15%] max-sm:h-full max-md:grid-rows-[2fr_3fr]`}
       >
         {/* Description Flex */}
 

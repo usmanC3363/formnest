@@ -4,6 +4,7 @@ import { SliceComponentProps } from "@prismicio/react";
 import Bounded from "@/app/components/helper/Bounded";
 import { PrismicNextImage } from "@prismicio/next";
 import CSSLineReveal from "@/app/components/helper/CSSLineReveal";
+import { gridClass } from "@/app/utils/constants";
 
 /**
  * Props for `CtaSection`.
@@ -21,7 +22,9 @@ const CtaSection: FC<CtaSectionProps> = ({ slice }) => {
       data-slice-variation={slice.variation}
       className="flex h-full flex-col justify-between gap-y-14 bg-mywhite-50 py-20"
     >
-      <div className="grid w-full gap-x-0 gap-y-10 lg:grid-cols-[1fr_1fr] lg:gap-x-4 xl:grid-cols-[4fr_5fr] xl:gap-x-14 max-lg:grid-rows-[1fr_1fr]">
+      <div
+        className={`${gridClass} grid w-full gap-x-0 gap-y-10 lg:grid-cols-[1fr_1fr] lg:gap-x-4 xl:grid-cols-[4fr_5fr] xl:gap-x-14 max-lg:grid-rows-[1fr_1fr]`}
+      >
         <div className="relative grid grid-rows-[1fr_3em]">
           <div className="flex max-w-[30em] flex-col gap-y-1 lg:w-[30em] xl:min-w-[34em]">
             {slice.primary.heading1_words.map((word, index) => (

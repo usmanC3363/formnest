@@ -26,7 +26,7 @@ const Works: FC<WorksProps> = ({ slice }) => {
       // className=""
     >
       <div
-        className={`${gridClass} grid h-[1000px] w-full gap-y-14 uppercase 2xl:h-[65rem]`}
+        className={`${gridClass} grid h-full w-full gap-y-14 uppercase 2xl:h-[65rem]`}
       >
         <div className="flex flex-col gap-y-7">
           {/* Section Title and DOT */}
@@ -46,7 +46,7 @@ const Works: FC<WorksProps> = ({ slice }) => {
         {/* ---------- Gallery wrapper: constrains visual width ---------- */}
         {/* ---------- Full-bleed Gallery Section ---------- */}
         <div className="no-scrollbar max-w-screen absolute bottom-0 left-0 h-[70vh] w-full overflow-x-auto overflow-y-hidden scroll-smooth">
-          <div className="absolute bottom-[10%] left-12 flex min-w-full items-center gap-x-4 py-6 pr-20">
+          <div className="absolute bottom-[10%] left-8 flex min-w-full items-center gap-x-4 py-6 pr-20 xs:left-[6%] sm:left-[8%] lg:left-[6%] 2xl:left-[9%]">
             {slice.primary.galleryimages.map((Img, index) => (
               <div
                 key={index}
