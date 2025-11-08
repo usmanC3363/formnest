@@ -14,14 +14,15 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body className="no-scrollbar h-full">
-        <Header />
-
-        <div className="mt-32">
-          <InViewObserver />
-          {children}
-        </div>
-        <Footer />
-        <PrismicPreview repositoryName={repositoryName} />
+        <main>
+          <Header />
+          <div className="mt-32">
+            <InViewObserver />
+            {children}
+          </div>
+          <Footer />
+          <PrismicPreview repositoryName={repositoryName} />
+        </main>
       </body>
     </html>
   );

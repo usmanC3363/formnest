@@ -14,10 +14,8 @@ export default async function Header() {
   const headerData: HeaderData = header.data;
 
   return (
-    <header>
-      <HeaderShell>
-        <HeaderContent newdata={headerData} />
-      </HeaderShell>
-    </header>
+    <HeaderShell>
+      <HeaderContent newdata={headerData} />
+    </HeaderShell>
   );
 }

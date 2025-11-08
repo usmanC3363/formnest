@@ -7,16 +7,16 @@ import CSSLineReveal from "./CSSLineReveal";
 
 const MaterialsData: React.FC<MaterialsCardProps> = ({ gridData }) => {
   return (
-    <div className="no-scrollbar z-50 grid min-w-full grid-cols-[auto_auto_auto_auto_1fr] gap-x-5 max-md:overflow-x-auto">
+    <div className="no-scrollbar z-40 grid min-w-full grid-cols-[auto_auto_auto_auto_1fr] gap-x-5 2xl:gap-x-14 max-md:overflow-x-auto">
       {gridData.map((item, index) => {
         if (item.type === "material") {
           return (
             <div
               key={index}
-              className="flex flex-col gap-y-2 transition-all duration-300 ease-in-out"
+              className="flex w-fit flex-col gap-y-2 transition-all duration-300 ease-in-out"
             >
               <span className="slide-in-left">0{item.order}</span>
-              <div className="relative h-60 w-full max-md:min-w-max">
+              <div className="relative h-60 w-full 2xl:h-80 max-md:min-w-max">
                 <div className="expand-height absolute bottom-0 h-full w-full bg-white" />
                 <PrismicNextImage
                   field={item.image}
@@ -41,7 +41,7 @@ const MaterialsData: React.FC<MaterialsCardProps> = ({ gridData }) => {
               key={index}
               className="col-span-1 flex max-w-[19.5rem] flex-col items-end justify-end px-4 py-[34px]"
             >
-              <CSSLineReveal textClass="text-[44px]">
+              <CSSLineReveal textClass="text-[44px] pb-1">
                 {item.materialTitle}
               </CSSLineReveal>
             </div>
