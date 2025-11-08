@@ -31,7 +31,7 @@ const ServiceListingNavigation: FC<ServiceListingNavigationProps> = ({
       className="flex h-full flex-col gap-y-14 bg-mywhite-50 py-10 2xl:py-16"
     >
       <div
-        className={`${gridClass} grid h-full w-full flex-col gap-y-14 bg-mywhite-50 py-10 2xl:py-16`}
+        className={`${gridClass} grid h-full w-full gap-y-14 bg-mywhite-50 py-10 2xl:py-16`}
       >
         <div className="flex items-start gap-x-52 gap-y-8 lg:gap-x-80 max-sm:flex-col">
           {/* Section TITLE & Description */}
@@ -48,7 +48,7 @@ const ServiceListingNavigation: FC<ServiceListingNavigationProps> = ({
           </CSSLineReveal>
         </div>
         {/* Service Title and Images Main Grid */}
-        <div className="grid min-h-[40rem] w-full grid-cols-[1fr_2fr] items-center">
+        <div className="grid min-h-[40rem] w-full items-center md:grid-cols-[1fr_2fr] max-md:min-h-[60rem]">
           {/* Button FLEX COl */}
           <div className="flex max-w-[20rem] flex-col gap-y-14">
             <div className="flex flex-col">

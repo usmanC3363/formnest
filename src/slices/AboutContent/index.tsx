@@ -25,7 +25,7 @@ const IconTextHighlights: FC<IconTextHighlightsProps> = ({ slice }) => {
       isSticky={slice.primary.issticky}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex w-screen justify-center bg-white py-16 lg:h-[100vh] xl:items-center 2xl:h-[70rem]"
+      className="flex w-screen justify-center bg-white py-16 lg:h-full xl:items-center 2xl:h-[70rem]"
     >
       <div
         className={`grid h-full ${gridClass} w-screen gap-x-14 bg-white py-16 lg:grid-cols-[1fr_3fr] xl:grid-cols-[1fr_4fr]`}
@@ -34,7 +34,7 @@ const IconTextHighlights: FC<IconTextHighlightsProps> = ({ slice }) => {
         <div className="order-2 flex flex-col gap-y-20 pl-2 lg:gap-y-24">
           {/* MISSION DIV */}
 
-          <div className="flex max-w-[42em]">
+          <div className="flex max-w-[80vw] sm:max-w-[42em]">
             <CSSLineReveal textClass="text-[18px] leading-[133%]">
               {slice.primary.mission}
             </CSSLineReveal>

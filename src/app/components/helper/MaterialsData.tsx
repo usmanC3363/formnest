@@ -7,7 +7,7 @@ import CSSLineReveal from "./CSSLineReveal";
 
 const MaterialsData: React.FC<MaterialsCardProps> = ({ gridData }) => {
   return (
-    <div className="no-scrollbar z-50 grid min-w-full grid-cols-[auto_auto_auto_auto_1fr] gap-x-5 2xl:gap-x-14 max-md:overflow-x-auto">
+    <div className="no-scrollbar z-40 grid min-w-full grid-cols-[auto_auto_auto_auto_1fr] gap-x-5 2xl:gap-x-14 max-md:overflow-x-auto">
       {gridData.map((item, index) => {
         if (item.type === "material") {
           return (
