@@ -25,7 +25,7 @@ const IconTextHighlights: FC<IconTextHighlightsProps> = ({ slice }) => {
       isSticky={slice.primary.issticky}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex w-screen justify-center bg-white py-16 lg:h-[100vh] xl:items-center 2xl:h-[75rem]"
+      className="flex w-screen justify-center bg-white py-16 lg:h-[100vh] xl:items-center 2xl:h-[70rem]"
     >
       <div
         className={`grid h-full ${gridClass} w-screen gap-x-14 bg-white py-16 lg:grid-cols-[1fr_3fr] xl:grid-cols-[1fr_4fr]`}
@@ -42,7 +42,7 @@ const IconTextHighlights: FC<IconTextHighlightsProps> = ({ slice }) => {
           {/* SubGrid */}
           <div className="grid gap-x-[6.25rem] gap-y-14 lg:grid-cols-[1fr_3fr]">
             {/* Images */}
-            <div className="flex gap-x-6 gap-y-10 lg:flex-col">
+            <div className="flex gap-x-6 gap-y-10 lg:flex-col 2xl:gap-y-20">
               {slice.primary.about_images &&
                 slice.primary.about_images.map((abtImg, index) => (
                   <div
@@ -62,14 +62,14 @@ const IconTextHighlights: FC<IconTextHighlightsProps> = ({ slice }) => {
             </div>
 
             {/* Highlights text */}
-            <div className="flex flex-col gap-y-12 lg:gap-y-14">
+            <div className="flex flex-col gap-y-12 lg:gap-y-14 2xl:gap-y-20">
               {slice.primary.highlights.map((highlight, index) => (
                 <React.Fragment key={index}>
-                  <div className="flex flex-col gap-y-2.5 lg:gap-y-2">
-                    <span className="slide-in-left text-[28px]">
+                  <div className="flex flex-col gap-y-2.5 lg:gap-y-2 2xl:gap-y-4">
+                    <span className="slide-in-left text-[28px] 2xl:text-4xl">
                       {highlight.title}
                     </span>
-                    <CSSLineReveal textClass="text-[18px]">
+                    <CSSLineReveal textClass="text-[18px] 2xl:text-xl">
                       {highlight.description}
                     </CSSLineReveal>
                   </div>

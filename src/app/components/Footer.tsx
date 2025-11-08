@@ -12,7 +12,7 @@ export default async function Footer() {
   return (
     // Flex Container
     <footer
-      className={`${paddingClass} flex h-full max-h-[50rem] flex-col items-center justify-end bg-mybrown-50 px-4 py-8 text-mywhite-50 md:max-h-[32rem]`}
+      className={`${paddingClass} flex h-[50rem] flex-col items-center justify-end bg-mybrown-50 px-4 pb-16 pt-8 text-mywhite-50 md:h-[32rem] 2xl:h-[50vh]`}
     >
       {/* Main Grid */}
 
