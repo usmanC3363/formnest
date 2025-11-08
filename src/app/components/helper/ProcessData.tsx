@@ -13,7 +13,11 @@ const ProcessData: React.FC<ProcessCardProps> = ({ cardData }) => {
           <span className="slide-in-left text-[18px] leading-[133%]">
             Step {item.order}
           </span>
-          <CSSLineReveal textClass="text-[5rem] leading-[100%] xl:text-[6.25rem]">
+          <CSSLineReveal
+            // divClass="w-fit"
+            // spanClass="w-fit"
+            textClass="md:leading-[100%] 2xl:leading-none w-fit text-[4rem] lg:text-[5rem] xl:text-[6.25rem]"
+          >
             {item.title}
           </CSSLineReveal>
 

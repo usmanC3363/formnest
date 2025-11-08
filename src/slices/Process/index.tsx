@@ -20,7 +20,7 @@ const Process: FC<ProcessProps> = ({ slice }) => {
       isSticky={slice.primary.issticky}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="-top-48 flex h-[125vh] flex-col gap-y-14 bg-white pt-20"
+      className="-top-48 flex h-[125vh] w-screen flex-col gap-y-14 bg-white pt-20 xl:items-center"
     >
       <div className="flex items-start gap-x-52 gap-y-8 lg:gap-x-60 max-sm:flex-col">
         {/* Section TITLE & Description */}

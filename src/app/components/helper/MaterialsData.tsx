@@ -13,7 +13,7 @@ const MaterialsData: React.FC<MaterialsCardProps> = ({ gridData }) => {
           return (
             <div
               key={index}
-              className="flex flex-col gap-y-2 transition-all duration-300 ease-in-out"
+              className="flex w-fit flex-col gap-y-2 transition-all duration-300 ease-in-out"
             >
               <span className="slide-in-left">0{item.order}</span>
               <div className="relative h-60 w-full max-md:min-w-max">
