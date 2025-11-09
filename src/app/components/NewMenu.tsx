@@ -36,18 +36,22 @@ export default function NewMenu({ menuLinks }: Props) {
             : "w-screen -translate-y-full duration-[1200ms] ease-[cubic-bezier(0.8,0,0.2,1)]"
         }`}
       >
-        <div className="flex h-full w-[60%] flex-col items-center justify-center gap-y-4">
+        <div className="flex h-full w-full flex-col items-center justify-center gap-y-0 lg:w-[60%] lg:gap-y-4">
           {menuLinks?.map((item, index) => {
             const isActive = hoveredIndex === index;
             // const isAnyHovered = hoveredIndex !== null;
             return (
               <div
-                className={` ${index % 2 === 0 ? "justify-center" : "justify-end"} flex w-full max-w-[32rem]`}
+                className={` ${index % 2 === 0 ? "justify-center" : "lg:justify-end"} flex w-full max-w-[32rem]`}
                 key={index}
                 style={
                   index % 2 === 0
-                    ? { translate: 0 + 45 * index }
-                    : { translate: 0 - 200 / index / 1.5 }
+                    ? screenSize === "xs"
+                      ? { translate: 25 + 20 * index }
+                      : { translate: 0 + 45 * index }
+                    : screenSize === "xs"
+                      ? { translate: 80 - 100 / (index / 0.75) }
+                      : { translate: 0 - 200 / index / 1.5 }
                 }
               >
                 <PrismicNextLink
@@ -68,7 +72,7 @@ export default function NewMenu({ menuLinks }: Props) {
                   </span>
                   <StyledHeading
                     text={item.link_title}
-                    headingClass={`text-[4.5rem] min-w-fit uppercase tracking-[-0.04em] leading-none transition-all duration-500 ease-in-out ${
+                    headingClass={`text-[3rem] lg:text-[4.5rem] min-w-fit uppercase tracking-[-0.04em] leading-none transition-all duration-500 ease-in-out ${
                       isActive ? "text-mybrown-50" : "text-mybrown-50/30"
                     }`}
                   />

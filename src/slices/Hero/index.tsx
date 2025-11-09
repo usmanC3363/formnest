@@ -21,14 +21,14 @@ const Hero: FC<HeroProps> = ({ slice }) => {
       isSticky={slice.primary.issticky}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className={`flex h-full w-screen flex-col justify-center bg-mywhite-50 pb-10 lg:-mt-[2.5%] xl:items-center 2xl:mt-0`}
+      className={`-mt-[5%] flex h-full w-screen flex-col justify-center bg-mywhite-50 pb-10 lg:-mt-[2.5%] xl:items-center 2xl:mt-0`}
     >
       {/* Main Grid with Rows */}
-      <div className="relative grid h-full w-full gap-y-4 md:grid-rows-[1fr_auto_3fr] xl:justify-items-center xl:gap-y-2 xl:place-self-center 2xl:max-w-screen-2xl 3xl:max-w-screen-3xl max-md:grid-rows-[auto_2fr_2fr]">
+      <div className="relative grid h-full w-full gap-y-6 md:grid-rows-[1fr_auto_3fr] xl:justify-items-center xl:gap-y-2 xl:place-self-center 2xl:max-w-screen-2xl 3xl:max-w-screen-3xl max-md:grid-rows-[auto_2fr_2fr]">
         {/* Hero Heading DIV */}
 
         <div
-          className={`flex h-fit min-w-full flex-col rounded-lg max-sm:w-96`}
+          className={`flex h-fit min-w-full flex-col rounded-lg max-sm:w-96 max-sm:gap-y-2`}
         >
           {/* Hero Heading */}
           <CSSLineReveal>
@@ -38,7 +38,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
               headingStyle={{ wordSpacing: "0.1em" }}
             />
           </CSSLineReveal>
-          <hr className="h-[2.45px] w-full min-w-full bg-mybrown-50" />
+          <hr className="h-[2.25px] w-full min-w-full bg-mybrown-50" />
         </div>
 
         {/* Taglines and CTA */}
@@ -66,7 +66,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
         </div>
 
         {/* Hero Image  */}
-        <div className="relative flex w-full justify-end pt-6 lg:min-h-[30em] 2xl:min-h-[20em]">
+        <div className="relative flex w-full justify-end sm:pt-6 lg:min-h-[30em] 2xl:min-h-[20em]">
           <div className="expand-height absolute bottom-0 h-full w-full bg-mywhite-50" />
           <PrismicNextImage
             priority
