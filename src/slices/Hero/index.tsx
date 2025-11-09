@@ -21,14 +21,14 @@ const Hero: FC<HeroProps> = ({ slice }) => {
       isSticky={slice.primary.issticky}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className={`flex h-full w-screen flex-col justify-center bg-mywhite-50 pb-20 lg:-mt-[2%] xl:items-center 2xl:mt-0`}
+      className={`flex h-full w-screen flex-col justify-center bg-mywhite-50 pb-10 lg:-mt-[2.5%] xl:items-center 2xl:mt-0`}
     >
       {/* Main Grid with Rows */}
-      <div className="relative grid h-full w-full gap-y-4 md:grid-rows-[1fr_1fr_3fr] xl:justify-items-center xl:place-self-center 2xl:max-w-screen-2xl 3xl:max-w-screen-3xl max-md:grid-rows-[auto_2fr_2fr]">
+      <div className="relative grid h-full w-full gap-y-4 md:grid-rows-[1fr_auto_3fr] xl:justify-items-center xl:gap-y-2 xl:place-self-center 2xl:max-w-screen-2xl 3xl:max-w-screen-3xl max-md:grid-rows-[auto_2fr_2fr]">
         {/* Hero Heading DIV */}
 
         <div
-          className={`flex min-w-full flex-col justify-end gap-y-0 rounded-lg max-sm:w-96`}
+          className={`flex h-fit min-w-full flex-col rounded-lg max-sm:w-96`}
         >
           {/* Hero Heading */}
           <CSSLineReveal>
@@ -42,7 +42,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
         </div>
 
         {/* Taglines and CTA */}
-        <div className="grid w-full justify-between gap-x-20 place-self-center sm:grid-cols-[1fr_1fr] md:grid-cols-[3fr_3fr_1fr] md:items-end lg:h-fit max-sm:grid-rows-[1fr_1fr_3em] max-md:gap-y-4">
+        <div className="grid w-full justify-between gap-x-20 place-self-center sm:grid-cols-[1fr_1fr] md:grid-cols-[3fr_3fr_1fr] lg:h-fit max-sm:grid-rows-[1fr_1fr_3em] max-md:gap-y-4">
           {/* Taglines */}
 
           <CSSLineReveal textClass="w-full text-[16px] leading-[24px] lg:text-[18px] xl:max-w-[24.25em] 2xl:text-[20px] max-sm:max-w-80">
@@ -66,11 +66,12 @@ const Hero: FC<HeroProps> = ({ slice }) => {
         </div>
 
         {/* Hero Image  */}
-        <div className="relative flex min-h-[20em] w-full justify-end lg:min-h-[30em]">
+        <div className="relative flex w-full justify-end pt-6 lg:min-h-[30em] 2xl:min-h-[20em]">
+          <div className="expand-height absolute bottom-0 h-full w-full bg-mywhite-50" />
           <PrismicNextImage
             priority
             field={slice.primary.hero_image}
-            className="slide-in-down absolute h-full w-full rounded-sm object-cover object-center"
+            className="h-full w-full rounded-sm object-cover object-center"
           />
         </div>
       </div>
