@@ -17,7 +17,12 @@ const MaterialsData: React.FC<MaterialsCardProps> = ({ gridData }) => {
             >
               <span className="slide-in-left">0{item.order}</span>
               <div className="relative h-60 w-full 2xl:h-80 max-md:min-w-max">
-                <div className="expand-height absolute bottom-0 h-full w-full bg-white" />
+                <div
+                  className="expand-height absolute bottom-0 h-full w-full bg-white"
+                  style={{
+                    transitionDelay: `${160 + index * 150}ms`,
+                  }}
+                />
                 <PrismicNextImage
                   field={item.image}
                   className="h-full w-fit object-cover object-center"

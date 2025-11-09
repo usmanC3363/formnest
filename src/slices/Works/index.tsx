@@ -22,7 +22,7 @@ const Works: FC<WorksProps> = ({ slice }) => {
       isSticky={slice.primary.issticky}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="relative flex h-[1000px] w-screen flex-col gap-y-14 bg-mywhite-50 py-24 xl:items-center 2xl:h-[65rem]"
+      className="relative flex h-[820px] w-screen flex-col gap-y-14 bg-mywhite-50 py-24 xl:items-center 1.5xl:h-[1000px] 2xl:h-[65rem]"
       // className=""
     >
       <div

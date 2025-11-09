@@ -80,7 +80,7 @@ const Materials: FC<MaterialsProps> = ({ slice }) => {
       className="flex w-screen justify-center bg-white py-16"
     >
       <div
-        className={`grid h-full w-full flex-col gap-y-14 py-14 uppercase ${gridClass}`}
+        className={`grid h-full w-full flex-col gap-y-14 py-0 uppercase ${gridClass}`}
       >
         <div className="flex flex-col gap-y-7">
           <div className="slide-in-left flex items-center gap-x-3.5">
@@ -107,7 +107,7 @@ const Materials: FC<MaterialsProps> = ({ slice }) => {
       className={`flex min-h-[30em] flex-col justify-center gap-y-14 bg-white py-12 uppercase`}
     >
       <div
-        className={`grid h-full w-full flex-col gap-y-14 py-14 uppercase ${gridClass}`}
+        className={`grid h-full w-full flex-col gap-y-14 py-0 uppercase ${gridClass}`}
       >
         <MaterialsData gridData={gridData} />
       </div>

@@ -20,12 +20,12 @@ const About: FC<AboutProps> = ({ slice }) => {
       isSticky={slice.primary.issticky}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="-top-[49.915rem] flex w-screen justify-center bg-white py-16 lg:h-[100vh] xl:items-center 2xl:h-[75rem]"
+      className="-top-[45rem] flex min-h-full w-screen justify-center bg-white py-16 xl:items-center 2xl:h-[75rem]"
     >
       {/* Main DIV */}
 
       <div
-        className={`${gridClass} w-full bg-white py-16 lg:grid lg:grid-cols-[3fr_1fr] xl:grid-cols-[2fr_1fr]`}
+        className={`${gridClass} w-full bg-white lg:grid lg:grid-cols-[3fr_1fr] xl:grid-cols-[2fr_1fr]`}
       >
         <div className="flex flex-col gap-y-8 uppercase">
           {/* Title and Heading Div */}
@@ -51,10 +51,7 @@ const About: FC<AboutProps> = ({ slice }) => {
 
           {/* About Image */}
           <div className="relative h-[34.625rem] w-full xl:w-[63.45rem]">
-            <div
-              className="expand-height absolute bottom-0 h-full w-full bg-white"
-              // style={{ transformOrigin: "top" }}
-            />
+            <div className="expand-height absolute bottom-0 h-full w-full bg-white" />
             <PrismicNextImage
               field={slice.primary.about_image}
               className="h-full w-full object-cover object-center"
