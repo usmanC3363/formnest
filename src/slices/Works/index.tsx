@@ -38,7 +38,7 @@ const Works: FC<WorksProps> = ({ slice }) => {
           </div>
 
           {/* Section Heading */}
-          <h1 className="fade-up text-[40px] leading-none tracking-[-0.04em] sm:text-[60px] md:text-[80px] xl:text-[6.25rem]">
+          <h1 className="fade-up text-[36px] leading-none tracking-[-0.04em] sm:text-[60px] md:text-[80px] xl:text-[6.25rem]">
             {slice.primary.section_headline}
           </h1>
         </div>

@@ -28,7 +28,7 @@ const IconTextHighlights: FC<IconTextHighlightsProps> = ({ slice }) => {
       className="flex w-screen justify-center bg-white py-16 lg:h-full xl:items-center 2xl:h-[70rem]"
     >
       <div
-        className={`grid h-full ${gridClass} w-screen gap-x-14 bg-white py-16 lg:grid-cols-[1fr_3fr] xl:grid-cols-[1fr_4fr]`}
+        className={`grid h-full ${gridClass} w-screen gap-x-14 bg-white lg:grid-cols-[1fr_3fr] xl:grid-cols-[1fr_4fr]`}
       >
         {/* className="" */}
         <div className="order-2 flex flex-col gap-y-20 pl-2 lg:gap-y-24">

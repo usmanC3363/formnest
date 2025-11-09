@@ -20,7 +20,7 @@ const About: FC<AboutProps> = ({ slice }) => {
       isSticky={slice.primary.issticky}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="-top-[45rem] flex min-h-full w-screen justify-center bg-white py-16 xl:items-center 2xl:h-[75rem]"
+      className="-top-[51rem] flex min-h-full w-screen justify-center bg-white py-16 xl:-top-[45.99rem] xl:items-center 2xl:h-[75rem]"
     >
       {/* Main DIV */}
 
@@ -30,12 +30,12 @@ const About: FC<AboutProps> = ({ slice }) => {
         <div className="flex flex-col gap-y-8 uppercase">
           {/* Title and Heading Div */}
 
-          <div className="flex w-full flex-col gap-y-4 md:gap-2">
+          <div className="flex w-full flex-col gap-y-4 md:gap-y-7">
             {/* SECTION title */}
 
-            <div className="slide-in-left flex items-center gap-5 md:gap-3.5">
-              <BsDot className="h-5 w-5 rounded-full bg-mybrown-50" />
-              <h1 className="text-[40px] leading-[100%] md:text-[32px]">
+            <div className="slide-in-left flex gap-x-5 sm:items-center md:gap-3.5">
+              <BsDot className="h-5 w-5 rounded-full bg-mybrown-50 max-sm:mt-4" />
+              <h1 className="text-[40px] leading-[120%] sm:leading-[100%] md:text-[32px]">
                 {slice.primary.section_title}
               </h1>
             </div>
