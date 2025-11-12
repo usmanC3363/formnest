@@ -31,7 +31,7 @@ const ServiceListingNavigation: FC<ServiceListingNavigationProps> = ({
       className="flex h-full flex-col gap-y-14 bg-mywhite-50 py-10 2xl:py-16"
     >
       <div
-        className={`${gridClass} grid h-full w-full gap-y-14 bg-mywhite-50 py-10 2xl:py-16`}
+        className={`${gridClass} grid h-full w-full gap-y-9 bg-mywhite-50 py-10 lg:gap-y-14 2xl:py-16`}
       >
         <div className="flex items-start gap-x-52 gap-y-8 lg:gap-x-80 max-sm:flex-col">
           {/* Section TITLE & Description */}
@@ -48,24 +48,36 @@ const ServiceListingNavigation: FC<ServiceListingNavigationProps> = ({
           </CSSLineReveal>
         </div>
         {/* Service Title and Images Main Grid */}
-        <div className="grid min-h-[40rem] w-full items-center md:grid-cols-[1fr_2fr] max-md:min-h-[60rem]">
+        <div className="grid w-full items-center lg:min-h-[40rem] lg:grid-cols-[1fr_2fr] max-lg:h-full">
           {/* Button FLEX COl */}
-          <div className="flex max-w-[20rem] flex-col gap-y-14">
-            <div className="flex flex-col">
+          <div className="flex flex-col justify-between gap-x-3 gap-y-14 lg:max-w-[20rem]">
+            <div className="xs-sm:grid-cols-2 sm-lg:grid-cols-[auto_auto_auto] lg:flex lg:flex-col max-lg:grid max-lg:min-w-full">
               {slice.primary.services_data.map((service, index) => (
                 <div
                   key={index}
-                  className={`${index % 2 === 0 ? "slide-in-left justify-center" : "slide-in-right"} ${currentService === index ? "" : ""} flex w-full items-center transition-all duration-300 ease-in-out`}
+                  className={` xs-sm:${
+                    index === 0
+                      ? "order-1"
+                      : index === 1
+                        ? "order-3"
+                        : index === 2
+                          ? "order-5"
+                          : index === 3
+                            ? "order-2"
+                            : index === 4
+                              ? "order-4"
+                              : "order-6"
+                  } ${index % 2 === 0 ? "slide-in-left lg:justify-center" : "slide-in-right xs-sm:place-self-center"} ${currentService === index ? "" : ""} flex w-fit items-center transition-all duration-300 ease-in-out lg:w-full`}
                 >
                   <button
-                    className={`${currentService === index ? "w-[90%]" : "w-[80%]"} flex items-center gap-x-0 transition-all duration-300 ease-in-out`}
+                    className={`lg:${currentService === index ? "w-[90%]" : "w-[80%]"} flex w-fit items-center gap-x-0 transition-all duration-300 ease-in-out max-lg:gap-x-3`}
                     onClick={() => toggleImages(index)}
                   >
                     <Arrows
-                      styles={`${currentService === index ? "" : "opacity-0 scale-x-0"} transition-all w-fit duration-300 ease-in-out`}
+                      styles={`${currentService === index ? "" : "opacity-0 scale-x-0"} max-md:size-8 transition-all w-fit duration-300 ease-in-out`}
                     />
                     <h2
-                      className={`${currentService === index ? "translate-x-4" : "text-mybrown-50/30"} w-fit flex-1 text-nowrap text-left text-[36px] leading-tight transition-all duration-300 ease-in-out lg:text-[44px]`}
+                      className={`lg:${currentService === index ? "translate-x-4" : "text-mybrown-50/30"} w-fit flex-1 text-nowrap text-left text-[24px] leading-tight transition-all duration-300 ease-in-out sm:text-[28px] md:text-[36px] lg:text-[44px]`}
                     >
                       {service.service_title}
                     </h2>
@@ -85,7 +97,7 @@ const ServiceListingNavigation: FC<ServiceListingNavigationProps> = ({
           </div>
 
           {/* Images GRID */}
-          <div className="flex h-full w-full">
+          <div className="flex h-full w-full max-lg:min-h-[30rem]">
             <div className="relative grid h-full w-full grid-cols-8 grid-rows-8 items-center gap-x-2 gap-y-2 border-black">
               {slice.primary.services_data.map((servImg, index) => (
                 <React.Fragment key={index}>
