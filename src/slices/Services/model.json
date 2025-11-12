@@ -62,26 +62,12 @@
                   "thumbnails": []
                 }
               },
-              "image_1_styles": {
-                "type": "Text",
-                "config": {
-                  "label": "Image 1 styles",
-                  "placeholder": ""
-                }
-              },
               "service_image_2": {
                 "type": "Image",
                 "config": {
                   "label": "Service Image 2",
                   "constraint": {},
                   "thumbnails": []
-                }
-              },
-              "image_2_styles": {
-                "type": "Text",
-                "config": {
-                  "label": "Image 2 styles",
-                  "placeholder": ""
                 }
               },
               "service_image_3": {
@@ -92,10 +78,45 @@
                   "thumbnails": []
                 }
               },
-              "image_3_styles": {
+              "image_1_title": {
                 "type": "Text",
                 "config": {
-                  "label": "Image 3 styles",
+                  "label": "Image 1 title",
+                  "placeholder": ""
+                }
+              },
+              "image_1_subtitle": {
+                "type": "Text",
+                "config": {
+                  "label": "Image 1 subtitle",
+                  "placeholder": ""
+                }
+              },
+              "image_2_title": {
+                "type": "Text",
+                "config": {
+                  "label": "Image 2 title",
+                  "placeholder": ""
+                }
+              },
+              "image_2_subtitle": {
+                "type": "Text",
+                "config": {
+                  "label": "Image 2 subtitle",
+                  "placeholder": ""
+                }
+              },
+              "image_3_title": {
+                "type": "Text",
+                "config": {
+                  "label": "Image 3 title",
+                  "placeholder": ""
+                }
+              },
+              "image_3_subtitle": {
+                "type": "Text",
+                "config": {
+                  "label": "Image 3 subtitle",
                   "placeholder": ""
                 }
               }
