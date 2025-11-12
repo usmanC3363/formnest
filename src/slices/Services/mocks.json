@@ -127,26 +127,50 @@
 								}
 							],
 							[
-								"image_1_styles",
+								"image_1_title",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "secret",
+									"value": "seldom",
 									"type": "Text"
 								}
 							],
 							[
-								"image_2_styles",
+								"image_1_subtitle",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "riding",
+									"value": "sharp",
 									"type": "Text"
 								}
 							],
 							[
-								"image_3_styles",
+								"image_2_title",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "mice",
+									"value": "friend",
+									"type": "Text"
+								}
+							],
+							[
+								"image_2_subtitle",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "as",
+									"type": "Text"
+								}
+							],
+							[
+								"image_3_title",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "rice",
+									"type": "Text"
+								}
+							],
+							[
+								"image_3_subtitle",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "automobile",
 									"type": "Text"
 								}
 							]

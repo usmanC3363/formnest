@@ -1731,16 +1731,6 @@ export interface ServiceListingNavigationSliceWithFeaturedItemsPrimaryServicesDa
   service_image_1: prismic.ImageField<never>;
 
   /**
-   * Image 1 styles field in *Services → With Featured Items → Primary → Services Data*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: service_listing_navigation.with_featured_items.primary.services_data[].image_1_styles
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  image_1_styles: prismic.KeyTextField;
-
-  /**
    * Service Image 2 field in *Services → With Featured Items → Primary → Services Data*
    *
    * - **Field Type**: Image
@@ -1749,16 +1739,6 @@ export interface ServiceListingNavigationSliceWithFeaturedItemsPrimaryServicesDa
    * - **Documentation**: https://prismic.io/docs/fields/image
    */
   service_image_2: prismic.ImageField<never>;
-
-  /**
-   * Image 2 styles field in *Services → With Featured Items → Primary → Services Data*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: service_listing_navigation.with_featured_items.primary.services_data[].image_2_styles
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  image_2_styles: prismic.KeyTextField;
 
   /**
    * Service Image 3 field in *Services → With Featured Items → Primary → Services Data*
@@ -1771,14 +1751,64 @@ export interface ServiceListingNavigationSliceWithFeaturedItemsPrimaryServicesDa
   service_image_3: prismic.ImageField<never>;
 
   /**
-   * Image 3 styles field in *Services → With Featured Items → Primary → Services Data*
+   * Image 1 title field in *Services → With Featured Items → Primary → Services Data*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: service_listing_navigation.with_featured_items.primary.services_data[].image_3_styles
+   * - **API ID Path**: service_listing_navigation.with_featured_items.primary.services_data[].image_1_title
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
-  image_3_styles: prismic.KeyTextField;
+  image_1_title: prismic.KeyTextField;
+
+  /**
+   * Image 1 subtitle field in *Services → With Featured Items → Primary → Services Data*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_listing_navigation.with_featured_items.primary.services_data[].image_1_subtitle
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  image_1_subtitle: prismic.KeyTextField;
+
+  /**
+   * Image 2 title field in *Services → With Featured Items → Primary → Services Data*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_listing_navigation.with_featured_items.primary.services_data[].image_2_title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  image_2_title: prismic.KeyTextField;
+
+  /**
+   * Image 2 subtitle field in *Services → With Featured Items → Primary → Services Data*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_listing_navigation.with_featured_items.primary.services_data[].image_2_subtitle
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  image_2_subtitle: prismic.KeyTextField;
+
+  /**
+   * Image 3 title field in *Services → With Featured Items → Primary → Services Data*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_listing_navigation.with_featured_items.primary.services_data[].image_3_title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  image_3_title: prismic.KeyTextField;
+
+  /**
+   * Image 3 subtitle field in *Services → With Featured Items → Primary → Services Data*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_listing_navigation.with_featured_items.primary.services_data[].image_3_subtitle
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  image_3_subtitle: prismic.KeyTextField;
 }
 
 /**

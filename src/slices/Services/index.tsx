@@ -33,8 +33,8 @@ const ServiceListingNavigation: FC<ServiceListingNavigationProps> = ({
       <div
         className={`${gridClass} grid h-full w-full gap-y-9 bg-mywhite-50 py-10 lg:gap-y-14 2xl:py-16`}
       >
-        <div className="flex items-start gap-x-52 gap-y-8 lg:gap-x-80 max-sm:flex-col">
-          {/* Section TITLE & Description */}
+        {/* Section TITLE & Description */}
+        <div className="flex max-w-[90rem] items-start justify-between gap-y-8 max-sm:flex-col">
           <div className="slide-in-left flex items-center gap-x-3.5">
             <BsDot className="h-5 w-5 rounded-full bg-mybrown-50" />
             {/* Section TITLE */}
@@ -42,8 +42,9 @@ const ServiceListingNavigation: FC<ServiceListingNavigationProps> = ({
               {slice.primary.section_title}
             </h1>
           </div>
+
           {/* Section Description */}
-          <CSSLineReveal textClass="text-[18px] lg:max-w-[50vw] 2xl:max-w-[30vw] lg:text-[28px] max-sm:pl-9">
+          <CSSLineReveal textClass="text-[18px] lg:max-w-[60vw] lg:text-[28px] max-sm:pl-9">
             {slice.primary.section_description}
           </CSSLineReveal>
         </div>
@@ -55,29 +56,31 @@ const ServiceListingNavigation: FC<ServiceListingNavigationProps> = ({
               {slice.primary.services_data.map((service, index) => (
                 <div
                   key={index}
-                  className={` xs-sm:${
-                    index === 0
-                      ? "order-1"
-                      : index === 1
-                        ? "order-3"
-                        : index === 2
-                          ? "order-5"
-                          : index === 3
-                            ? "order-2"
-                            : index === 4
-                              ? "order-4"
-                              : "order-6"
+                  className={`${
+                    service.service_id === 0 //furniture
+                      ? "xs-sm:order-1"
+                      : service.service_id === 1 //lighting
+                        ? "xs-sm:order-3"
+                        : service.service_id === 2 //tabletop
+                          ? "xs-sm:order-5"
+                          : service.service_id === 3 //decor
+                            ? "xs-sm:order-7"
+                            : service.service_id === 4 //textile
+                              ? "xs-sm:order-2"
+                              : service.service_id === 5 //wallcovering
+                                ? "xs-sm:order-4"
+                                : "xs-sm:order-6"
                   } ${index % 2 === 0 ? "slide-in-left lg:justify-center" : "slide-in-right xs-sm:place-self-center"} ${currentService === index ? "" : ""} flex w-fit items-center transition-all duration-300 ease-in-out lg:w-full`}
                 >
                   <button
-                    className={`lg:${currentService === index ? "w-[90%]" : "w-[80%]"} flex w-fit items-center gap-x-0 transition-all duration-300 ease-in-out max-lg:gap-x-3`}
+                    className={`lg:${currentService === index ? "w-[90%]" : "w-[80%]"} flex items-center gap-x-3 transition-all duration-300 ease-in-out max-lg:w-fit`}
                     onClick={() => toggleImages(index)}
                   >
                     <Arrows
                       styles={`${currentService === index ? "" : "opacity-0 scale-x-0"} max-md:size-8 transition-all w-fit duration-300 ease-in-out`}
                     />
                     <h2
-                      className={`lg:${currentService === index ? "translate-x-4" : "text-mybrown-50/30"} w-fit flex-1 text-nowrap text-left text-[24px] leading-tight transition-all duration-300 ease-in-out sm:text-[28px] md:text-[36px] lg:text-[44px]`}
+                      className={`lg:${currentService === index ? "translate-x-4" : "text-purple-600 text-opacity-30"} w-fit flex-1 text-nowrap text-left text-[24px] leading-tight transition-all duration-300 ease-in-out sm:text-[28px] md:text-[36px] lg:text-[44px]`}
                     >
                       {service.service_title}
                     </h2>

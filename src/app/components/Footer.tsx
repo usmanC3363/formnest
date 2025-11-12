@@ -93,17 +93,15 @@ export default async function Footer() {
           </div>
           {/* NewsLetter */}
 
-          <div className="flex flex-col gap-y-3">
-            <span className="fade-up text-[18px]">
-              Sign up for our newsletter
-            </span>
+          <div className="flex w-full flex-col gap-y-3 2xl:max-w-xl">
+            <span className="text-[18px]">Sign up for our newsletter</span>
             <div className="flex items-center border-b border-[#ccc]">
               <input
                 type="email"
                 placeholder="Type Your Email Address"
-                className="fade-up flex-1 bg-transparent py-2 text-sm placeholder-mywhite-50/30 focus:outline-none"
+                className="flex-1 bg-transparent py-2 text-sm placeholder-mywhite-50/30 focus:outline-none"
               />
-              <button className="fade-up text-sm text-mywhite-50">SEND</button>
+              <button className="text-sm text-mywhite-50">SEND</button>
             </div>
 
             <span className="py-1 text-[18px]">
