@@ -20,8 +20,8 @@ const Process: FC<ProcessProps> = ({ slice }) => {
     <Bounded
       isSticky={slice.primary.issticky}
       data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-      className="-top-48 flex h-[125vh] w-screen flex-col bg-white pt-20"
+      data-slice-variation={slice.variation} //-top-[17rem]
+      className="xs-sm:-top-[41.5%] flex h-[125vh] w-screen flex-col bg-white pt-20"
     >
       <div className={`${gridClass} grid w-full gap-y-20 2xl:gap-y-28`}>
         <div className="flex items-start gap-x-52 gap-y-8 lg:gap-x-80 max-sm:flex-col">
