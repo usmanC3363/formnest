@@ -51,7 +51,7 @@ const ServiceListingNavigation: FC<ServiceListingNavigationProps> = ({
         <div className="grid w-full items-center lg:min-h-[40rem] lg:grid-cols-[1fr_2fr] max-lg:h-full">
           {/* Button FLEX COl */}
           <div className="flex flex-col justify-between gap-x-3 gap-y-14 lg:max-w-[20rem]">
-            <div className="xs-sm:grid-cols-2 sm-lg:grid-cols-[auto_auto_auto] lg:flex lg:flex-col max-lg:grid max-lg:min-w-full">
+            <div className="lg:flex lg:flex-col xs-sm:grid-cols-2 sm-lg:grid-cols-[auto_auto_auto] max-lg:grid max-lg:min-w-full">
               {slice.primary.services_data.map((service, index) => (
                 <div
                   key={index}
