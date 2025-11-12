@@ -20,7 +20,7 @@ const About: FC<AboutProps> = ({ slice }) => {
       isSticky={slice.primary.issticky}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="-top-[51rem] flex min-h-full w-screen justify-center bg-white py-16 xl:-top-[45.99rem] xl:items-center 2xl:h-[75rem]"
+      className="-top-[51rem] flex min-h-full w-screen justify-center bg-white py-16 xl:-top-[45.99rem] xl:items-center 2xl:-top-[65%] 2xl:h-[75rem]"
     >
       {/* Main DIV */}
 

@@ -17,7 +17,8 @@ module.exports = {
 
       // contained breakpoints
 
-      "xs-sm": { min: "1px", max: "639px" },
+      "s-xs": { min: "1px", max: "409px" },
+      "xs-sm": { min: "409px", max: "639px" },
       "sm-md": { min: "640px", max: "767px" },
       "md-lg": { min: "768px", max: "1023px" },
       "sm-lg": { min: "640px", max: "1279px" },

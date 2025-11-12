@@ -24,7 +24,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
       className={`-mt-[5%] flex h-full w-screen flex-col justify-center bg-mywhite-50 pb-10 lg:-mt-[2.5%] xl:items-center 2xl:mt-0`}
     >
       {/* Main Grid with Rows */}
-      <div className="relative grid h-full w-full gap-y-6 md:grid-rows-[1fr_auto_3fr] xl:justify-items-center xl:gap-y-2 xl:place-self-center 2xl:max-w-screen-2xl 3xl:max-w-screen-3xl max-md:grid-rows-[auto_2fr_2fr]">
+      <div className="relative grid h-full w-full grid-rows-[auto_auto_auto] gap-y-6 sm:gap-y-2 md:gap-y-6 xl:grid-rows-[1fr_auto_3fr] xl:justify-items-center xl:gap-y-2 xl:place-self-center 2xl:max-w-screen-2xl 3xl:max-w-screen-3xl max-md:grid-rows-[auto_2fr_2fr]">
         {/* Hero Heading DIV */}
 
         <div
@@ -34,31 +34,36 @@ const Hero: FC<HeroProps> = ({ slice }) => {
           <CSSLineReveal>
             <StyledHeading
               text={slice.primary.heading}
-              headingClass=" min-w-fit text-[3em] uppercase tracking-[-0.04em] xs:text-[3.5rem] sm:text-[60px] md:text-[72px] lg:text-[6rem] xl:text-[6.25rem] 3xl:text-[7rem] max-xs:pr-12 max-sm:w-[22rem] max-md:leading-[133%]"
+              headingClass=" min-w-fit text-[3em] uppercase tracking-[-0.04em] xs:text-[3.5rem] sm:text-[60px] md:text-[72px] lg:text-[6.75vw] 2xl:text-[6.25vw] 3xl:text-[8rem] max-xs:pr-12 max-sm:w-[22rem] max-md:leading-[133%]"
               headingStyle={{ wordSpacing: "0.1em" }}
             />
           </CSSLineReveal>
           <hr className="h-[2.25px] w-full min-w-full bg-mybrown-50" />
         </div>
 
+        {/* 
+            .....            .....            .....            .....            .....
         {/* Taglines and CTA */}
-        <div className="grid w-full justify-between gap-x-20 place-self-center sm:grid-cols-[1fr_1fr] md:grid-cols-[3fr_3fr_1fr] lg:h-fit max-sm:grid-rows-[1fr_1fr_3em] max-md:gap-y-4">
+
+        <div className="grid w-full justify-between gap-x-20 place-self-center sm:grid-cols-[1fr_1fr] lg:h-fit lg:grid-cols-[auto_auto_auto] max-sm:grid-rows-[1fr_1fr_3em] max-lg:gap-y-4">
           {/* Taglines */}
 
-          <CSSLineReveal textClass="w-full text-[16px] leading-[24px] lg:text-[18px] xl:max-w-[24.25em] 2xl:text-[20px] max-sm:max-w-80">
+          <CSSLineReveal textClass="w-full text-[16px] leading-[24px] lg:text-[18px] xl:max-w-[24.25em] 2xl:text-[20px] text-justify max-w-[80vw]">
             {slice.primary.tagline1}
           </CSSLineReveal>
-          <CSSLineReveal textClass="w-full text-[16px] leading-[24px] lg:text-[18px] xl:max-w-[24.25em] 2xl:text-[20px] max-sm:max-w-80">
+          <CSSLineReveal textClass="w-full text-[16px] leading-[24px] lg:text-[18px] xl:max-w-[24.25em] 2xl:text-[20px] text-justify max-w-[80vw]">
             {slice.primary.tagline2}
           </CSSLineReveal>
 
           {/* CTA Button */}
-          <div className="slide-in-right flex w-fit items-end border border-b-mybrown-50 md:place-self-end max-md:place-self-start">
+          <div className="slide-in-right flex w-fit items-end border border-b-mybrown-50 lg:place-self-end max-lg:place-self-start">
             <PrismicNextLink field={slice.primary.cta_link}>
               <button
                 className={`flex h-10 w-fit items-center gap-1 rounded-full`}
               >
-                <span className="font-medium">{slice.primary.cta_title}</span>
+                <span className="text-nowrap font-medium">
+                  {slice.primary.cta_title}
+                </span>
                 <GoArrowUpRight className="w-8 text-xl" />
               </button>
             </PrismicNextLink>
