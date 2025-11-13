@@ -23,7 +23,7 @@ const CtaSection: FC<CtaSectionProps> = ({ slice }) => {
       className="flex h-full flex-col justify-between gap-y-14 bg-mywhite-50 py-20"
     >
       <div
-        className={`${gridClass} grid w-full gap-x-0 gap-y-10 lg:grid-cols-[1fr_1fr] lg:gap-x-4 xl:grid-cols-[4fr_5fr] xl:gap-x-14 max-lg:grid-rows-[1fr_1fr]`}
+        className={`${gridClass} grid w-full gap-x-0 gap-y-10 lg:grid-cols-[1fr_1fr] lg:gap-x-4 xl:grid-cols-[4fr_5fr] xl:gap-x-12 2xl:gap-x-28 max-lg:grid-rows-[1fr_1fr]`}
       >
         <div className="relative grid grid-rows-[1fr_3em]">
           <div className="flex max-w-[30em] flex-col gap-y-1 lg:w-[30em] xl:min-w-[34em]">
