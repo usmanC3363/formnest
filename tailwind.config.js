@@ -18,11 +18,13 @@ module.exports = {
       // contained breakpoints
 
       "s-xs": { min: "1px", max: "409px" },
+      "s-sm": { min: "1px", max: "639px" },
       "xs-sm": { min: "409px", max: "639px" },
       "sm-md": { min: "640px", max: "767px" },
       "md-lg": { min: "768px", max: "1023px" },
       "sm-lg": { min: "640px", max: "1279px" },
       "lg-xl": { min: "1024px", max: "1279px" },
+      "lg-2xl": { min: "1024px", max: "1535px" },
       "xl-2xl": { min: "1280px", max: "1535px" },
 
       // Max-width breakpoints (reverse approach)
