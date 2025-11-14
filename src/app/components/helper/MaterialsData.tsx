@@ -18,9 +18,9 @@ const MaterialsData: React.FC<MaterialsCardProps> = ({ gridData }) => {
               <span className="slide-in-left">0{item.order}</span>
               <div className="relative h-60 w-full 2xl:h-80 max-md:min-w-max">
                 <div
-                  className="expand-height absolute bottom-0 h-full w-full bg-white"
+                  className="expand-height absolute bottom-0 h-full w-full border-none bg-white outline-none"
                   style={{
-                    transitionDelay: `${160 + index * 150}ms`,
+                    transitionDelay: `${50 + index * 80}ms`,
                   }}
                 />
                 <PrismicNextImage
@@ -46,9 +46,19 @@ const MaterialsData: React.FC<MaterialsCardProps> = ({ gridData }) => {
               key={index}
               className="col-span-1 flex max-w-[19.5rem] flex-col items-end justify-end px-4 py-[34px]"
             >
-              <CSSLineReveal textClass="text-[44px] pb-1">
-                {item.materialTitle}
-              </CSSLineReveal>
+              <div className="flex flex-col gap-y-1.5 pb-2 text-[44px]">
+                {item.materialTitle.split(" ").map((word, index) => (
+                  <span
+                    key={index}
+                    className="slide-in-left leading-none"
+                    style={{
+                      transitionDelay: `${50 + index * 120}ms`,
+                    }}
+                  >
+                    {word}
+                  </span>
+                ))}
+              </div>
             </div>
           );
         }
