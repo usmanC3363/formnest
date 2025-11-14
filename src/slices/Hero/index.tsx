@@ -31,16 +31,12 @@ const Hero: FC<HeroProps> = ({ slice }) => {
           className={`flex h-fit min-w-full flex-col rounded-lg max-sm:w-96 max-sm:gap-y-2`}
         >
           {/* Hero Heading */}
-          <CSSLineReveal>
-            <StyledHeading
-              text={slice.primary.heading}
-              // WIP
-              // ?.slice(" ")
-              // .map((word, index) => word)}
-              headingClass=" min-w-fit text-[3em] uppercase tracking-[-0.04em] xs:text-[3.5rem] sm:text-[60px] md:text-[72px] lg:text-[6.75vw] 2xl:text-[6.25vw] 3xl:text-[8rem] max-xs:pr-12 max-sm:w-[22rem] max-md:leading-[133%]"
-              headingStyle={{ wordSpacing: "0.1em" }}
-            />
-          </CSSLineReveal>
+
+          <StyledHeading
+            text={slice.primary.heading}
+            headingClass="min-w-fit text-[3em] uppercase tracking-[-0.04em] xs:text-[3.5rem] sm:text-[60px] md:text-[72px] lg:text-[6.75vw] 2xl:text-[6.25vw] 3xl:text-[8rem] max-xs:pr-12 max-sm:w-[22rem] max-md:leading-[133%]"
+            headingStyle={{ wordSpacing: "0.1em" }}
+          />
           <hr className="h-[2.25px] w-full min-w-full bg-mybrown-50" />
         </div>
 
