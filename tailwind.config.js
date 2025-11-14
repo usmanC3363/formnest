@@ -22,8 +22,10 @@ module.exports = {
       "xs-sm": { min: "409px", max: "639px" },
       "sm-md": { min: "640px", max: "767px" },
       "md-lg": { min: "768px", max: "1023px" },
-      "sm-lg": { min: "640px", max: "1279px" },
+      "sm-lg": { min: "640px", max: "1023px" },
       "lg-xl": { min: "1024px", max: "1279px" },
+      "lg-1.5xl": { min: "1024px", max: "1366px" },
+      "md-2xl": { min: "768px", max: "1535px" },
       "lg-2xl": { min: "1024px", max: "1535px" },
       "xl-2xl": { min: "1280px", max: "1535px" },
 

@@ -48,11 +48,12 @@ const ServiceListingNavigation: FC<ServiceListingNavigationProps> = ({
             {slice.primary.section_description}
           </CSSLineReveal>
         </div>
-        {/* Service Title and Images Main Grid */}
-        <div className="grid w-full max-w-[1550px] items-center lg:min-h-[40rem] lg:grid-cols-[1fr_2fr] xl:grid-cols-[1fr_3fr] xl:gap-x-24 max-lg:h-full">
-          {/* Button FLEX COl */}
+        {/* Service Titles and Images Main Grid */}
+        <div className="grid w-full max-w-[1550px] items-center md:grid-cols-[1fr_2fr] lg:min-h-[40rem] xl:grid-cols-[1fr_3fr] xl:gap-x-24 max-sm:gap-y-8 max-lg:h-full">
+          {/* Button and view all FLEX  */}
           <div className="flex flex-col justify-between gap-x-3 gap-y-14 lg:max-w-[20rem]">
-            <div className="lg:flex lg:flex-col s-sm:grid-cols-[auto_auto] sm-lg:grid-cols-[auto_auto_auto] max-lg:grid max-lg:min-w-full">
+            {/* Button FLEX COl  */}
+            <div className="md:flex md:flex-col s-sm:grid-cols-[auto_auto] sm-lg:grid-cols-[auto_auto_auto] max-md:grid max-md:min-w-full max-md:gap-y-1">
               {slice.primary.services_data.map((service, index) => (
                 <div
                   key={index}
@@ -73,14 +74,14 @@ const ServiceListingNavigation: FC<ServiceListingNavigationProps> = ({
                   } ${index % 2 === 0 ? "lg:justify-center" : "s-sm:place-self-end"} ${currentService === index ? "" : "opacity-30"} flex w-fit items-center transition-all duration-200 ease-linear lg:min-w-full`}
                 >
                   <button
-                    className={`${currentService === index ? "lg:w-[100%] lg:gap-x-5" : "lg:w-[80%] lg:gap-x-0"} flex items-center transition-all duration-200 ease-linear max-lg:w-fit max-lg:gap-x-3`}
+                    className={`${currentService === index ? "md:w-[100%] md:gap-x-5" : "md:w-[80%] lg:gap-x-0"} flex items-center transition-all duration-200 ease-linear max-lg:w-fit max-lg:gap-x-3`}
                     onClick={() => toggleImages(index)}
                   >
                     <Arrows
                       styles={`${currentService === index ? "" : "opacity-0 scale-x-0"} max-md:size-8 lg:min-w-fit transition-all duration-200 ease-linear`}
                     />
                     <h2
-                      className={`${currentService === index ? "" : "-translate-x-[10%] lg:-translate-x-[20%]"} text-left text-[24px] leading-tight transition-all duration-200 ease-linear sm:text-[28px] md:text-[36px] lg:w-fit lg:text-nowrap lg:text-[44px]`}
+                      className={`${currentService === index ? "" : "-translate-x-[10%] lg:-translate-x-[20%]"} text-left text-[24px] leading-tight transition-all duration-200 ease-linear sm:text-[28px] md:text-[32px] lg:w-fit lg:text-nowrap lg:text-[44px]`}
                     >
                       {service.service_title}
                     </h2>
@@ -100,41 +101,43 @@ const ServiceListingNavigation: FC<ServiceListingNavigationProps> = ({
           </div>
 
           {/* Images GRID */}
-          <div className="flex h-full w-fit place-self-end max-lg:min-h-[30rem]">
-            <div className="relative grid h-full w-full max-w-4xl grid-cols-9 grid-rows-[5vh_5vh_5vh_5vh_5vh_5vh_5vh_5vh] gap-x-2.5 gap-y-2.5 border-black lg:grid-rows-[6vh_6vh_6vh_6vh_6vh_6vh_6vh_6vh_6vh] 2xl:max-w-5xl">
+          <div className="flex h-full w-fit place-self-end">
+            <div className="relative grid h-full max-h-[25rem] w-full max-w-4xl grid-cols-9 grid-rows-[6%_6%_6%_6%_6%_6%_6%_6%] gap-x-2.5 gap-y-2.5 border-black md:max-h-[35rem] md:grid-rows-[10%_10%_10%_10%_10%_10%_10%_10%] lg:max-h-[40rem] 2xl:max-w-5xl">
               {slice.primary.services_data.map((servImg, index) => (
                 <React.Fragment key={index}>
                   {/* FIRST IMAGE */}
 
                   <div
-                    className={`${index === 0 && "row-start-4 lg:col-end-3"} ${index === 1 && "col-start-2 row-start-2 lg:col-start-3 lg:row-start-1"} ${index === 2 && "col-start-2 row-start-3 lg:col-end-4 lg:row-start-3"} ${index === 3 && "col-end-4 row-end-3"} ${index === 4 && "col-start-4 row-start-2"} ${index === 5 && "col-start-1 row-end-4"} ${index === 6 && "col-start-4 row-end-3"} ${currentService === index ? "min-h-full min-w-max" : "pointer-events-none opacity-0"} flex flex-col gap-y-2.5 transition-all duration-200 ease-linear lg-2xl:scale-[0.8]`}
+                    className={`${index === 0 && "row-start-4 md:col-end-3"} ${index === 1 && "col-start-2 row-start-2 md:col-start-3 md:row-start-1"} ${index === 2 && "col-start-2 row-start-3 md:col-end-4 md:row-start-3"} ${index === 3 && "col-start-1 row-start-3 md:col-end-4 md:row-end-3"} ${index === 4 && "col-start-1 row-start-3 md:col-start-4 md:row-start-2"} ${index === 5 && "col-start-1 row-start-1 md:row-start-2 md:row-end-4"} ${index === 6 && "col-start-1 row-start-1 md:col-start-4 md:row-end-3"} ${currentService === index ? "min-h-fit min-w-max" : "pointer-events-none opacity-0"} flex scale-100 flex-col gap-y-2.5 transition-all duration-200 ease-linear md-lg:scale-[0.7] lg-2xl:scale-[0.8]`}
+                    style={{ transformOrigin: "top" }}
                   >
                     <PrismicNextImage
                       field={servImg.service_image_1}
                       className={`lg:min-h-max lg:min-w-max max-lg:h-fit max-lg:w-fit`}
                     />
                     <div className="">
-                      <p className="w-fit text-sm uppercase lg-2xl:scale-[1]">
+                      <p className="md-2xl:text-lg w-fit text-sm uppercase lg:text-nowrap">
                         {servImg.image_1_title}
                       </p>
-                      <p className="w-fit text-xs uppercase opacity-50 lg-2xl:scale-[1]">
+                      <p className="md-2xl:text-sm w-fit text-xs uppercase opacity-50">
                         {servImg.image_1_subtitle}
                       </p>
                     </div>
                   </div>
                   {/* SECOND IMAGE */}
                   <div
-                    className={`${index === 0 && "col-start-5 row-start-3 lg:col-start-6 max-lg:ml-3"} ${index === 1 && "col-start-5 row-start-6 lg:col-start-6 lg:row-start-5"} ${index === 2 && "col-start-6 row-start-3 lg:col-end-8 lg:row-start-3"} ${index === 3 && "col-start-5 row-end-4"} ${index === 4 && "col-start-6 row-start-2 ml-5"} ${index === 5 && "col-start-3 row-end-4"} ${index === 6 && "col-start-4 row-end-7"} ${currentService === index ? "min-h-full min-w-max" : "pointer-events-none opacity-0"} flex flex-col gap-y-2.5 transition-all duration-200 ease-linear lg-2xl:scale-[0.8]`}
+                    className={`${index === 0 && "col-start-5 row-start-3 md:col-start-6 max-lg:ml-3"} ${index === 1 && "col-start-5 row-start-8 md:col-start-6 md:row-start-5"} ${index === 2 && "col-start-6 row-start-3 md:col-end-8 md:row-start-3"} ${index === 3 && "col-start-4 row-start-5 md:col-start-4 md:row-end-4"} ${index === 4 && "col-start-4 row-start-3 ml-5 md:col-start-6 md:row-start-2"} ${index === 5 && "col-start-1 row-end-9 md:col-start-3 md:row-end-4"} ${index === 6 && "col-start-1 row-end-9 md:col-start-4 md:row-end-7"} ${currentService === index ? "min-h-max min-w-max" : "pointer-events-none opacity-0"} flex flex-col gap-y-2.5 transition-all duration-200 ease-linear md-lg:scale-[0.7] lg-2xl:scale-[0.8]`}
+                    style={{ transformOrigin: "top" }}
                   >
                     <PrismicNextImage
                       field={servImg.service_image_2}
                       className={`lg:min-h-max lg:min-w-max max-lg:h-fit max-lg:w-fit`}
                     />
                     <div className="">
-                      <p className="text-sm uppercase lg:w-fit lg:text-nowrap lg-2xl:scale-[1]">
+                      <p className="md-2xl:text-lg w-fit text-sm uppercase lg:text-nowrap">
                         {servImg.image_2_title}
                       </p>
-                      <p className="w-fit text-xs uppercase opacity-50 lg-2xl:scale-[1]">
+                      <p className="md-2xl:text-sm w-fit text-xs uppercase opacity-50">
                         {servImg.image_2_subtitle}
                       </p>
                     </div>
@@ -143,17 +146,18 @@ const ServiceListingNavigation: FC<ServiceListingNavigationProps> = ({
                   {/* THIRD IMAGE */}
                   {servImg.service_image_3 && (
                     <div
-                      className={`${index === 3 && "col-start-7 row-end-3"} ${index === 4 && "col-start-4 row-start-6"} ${index === 5 && "col-start-7 row-end-4"} ${index === 6 && "col-end-7 row-end-3 ml-5"} ${currentService === index ? "min-h-full min-w-max" : "pointer-events-none opacity-0"} flex flex-col gap-y-2.5 transition-all duration-200 ease-linear lg-2xl:scale-[0.8]`}
+                      className={`${index === 3 && "col-start-7 row-start-3 md:col-start-7 md:row-end-3"} ${index === 4 && "col-start-1 row-start-9 md:col-start-4 md:row-start-6 lg-2xl:-ml-[30px]"} ${index === 5 && "col-start-5 row-start-1 md:col-start-8 md:row-start-2"} ${index === 6 && "col-start-5 row-start-1 md:col-start-7 md:row-end-3"} ${currentService === index ? "min-h-max min-w-max" : "pointer-events-none opacity-0"} flex flex-col gap-y-2.5 transition-all duration-200 ease-linear md-lg:scale-[0.7] lg-2xl:scale-[0.8]`}
+                      style={{ transformOrigin: "top" }}
                     >
                       <PrismicNextImage
                         field={servImg.service_image_3}
                         className={`lg:min-h-max lg:min-w-max max-lg:h-fit max-lg:w-fit`}
                       />
                       <div className="">
-                        <p className="text-sm uppercase lg:w-fit lg:text-nowrap">
+                        <p className="md-2xl:text-lg w-fit text-sm uppercase lg:text-nowrap">
                           {servImg.image_3_title}
                         </p>
-                        <p className="w-fit text-xs uppercase opacity-50">
+                        <p className="md-2xl:text-sm w-fit text-xs uppercase opacity-50">
                           {servImg.image_3_subtitle}
                         </p>
                       </div>
