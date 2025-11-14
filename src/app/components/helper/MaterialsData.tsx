@@ -3,7 +3,6 @@
 import { PrismicNextImage } from "@prismicio/next";
 import React from "react";
 import { MaterialsCardProps } from "@/app/utils/lib";
-import CSSLineReveal from "./CSSLineReveal";
 
 const MaterialsData: React.FC<MaterialsCardProps> = ({ gridData }) => {
   return (
