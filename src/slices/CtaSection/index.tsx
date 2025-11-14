@@ -43,7 +43,7 @@ const CtaSection: FC<CtaSectionProps> = ({ slice }) => {
           </div>
           <PrismicNextImage
             field={slice.primary.cta_image}
-            className="absolute left-0 top-[22%] h-[280px] w-[13rem] object-cover object-center lg:top-[19%] lg:h-fit"
+            className="absolute left-0 top-[22%] h-[304px] w-[13.125rem] object-cover object-center lg:top-[19%] lg:h-fit"
           />
           <div className="slide-in-left w-fit max-w-52">
             <span className="">{slice.primary.cta_tagline}</span>

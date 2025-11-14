@@ -104,9 +104,6 @@ body {
   @apply transition-all duration-500 ease-linear;
 }
 
-.expand-height {
-  @apply transition-all duration-500 ease-in-out;
-}
 /* Fade-up animation for headings and paragraphs */
 .fade-up {
   @apply translate-y-8 opacity-0;
@@ -169,8 +166,15 @@ body {
   @apply w-full opacity-100;
 }
 .expand-height {
-  @apply h-full;
+  @apply transition-all duration-1000;
   transition-property: height;
+  transition-timing-function: cubic-bezier(
+    1,
+    0,
+    0,
+    1
+  ); /* <— replace easing here */
+
   transform-origin: bottom;
   /* -ms-transform-origin: top; */
   /* transform-origin: "top"; */
@@ -179,3 +183,7 @@ body {
 .expand-height.is-inview {
   @apply h-0;
 }
+
+/* .expand-height {
+  @apply transition-all duration-500;
+} */
